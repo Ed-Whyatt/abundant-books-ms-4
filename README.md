@@ -207,6 +207,10 @@ Am I Responsive has been used for the responsive image at the top of README.md y
 -   [Python](https://www.python.org/)
 
 ### Frameworks libraries and programming interface
+1. [Django 3.2.16](https://docs.djangoproject.com/en/4.1/releases/3.2.15/)
+    - Django was used as the main python framework in the development of this project.
+1. [django-allauth 0.41.0](https://django-allauth.readthedocs.io/en/latest/)
+    - Django Allauth is integrated set of Django applications addressing authentication, registration, account management and has been used in this project.
 1. [Bootstrap 5.2.0:](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
     - Bootstrap was used to assist with the responsiveness and styling of the website.
 1. [Google Fonts:](https://fonts.google.com/)
@@ -221,7 +225,7 @@ Am I Responsive has been used for the responsive image at the top of README.md y
     - Balsamiq was used to create the wireframes.
 1. [Am I Responsive Design:](http://ami.responsivedesign.is/)
     - Am I Responsive Design was used for the responsive image in Readme.
-1. [jinja](https://jinja.palletsprojects.com/en/3.1.x/)
+1. [Django jinja](https://pypi.org/project/django-jinja/)
     - Templating language for Python, to simplify displaying data from the backend of this project smoothly and effectively in HTML.
 1. [SQLAlchemy](https://www.sqlalchemy.org/)
     - Used to filter and search through the database.
