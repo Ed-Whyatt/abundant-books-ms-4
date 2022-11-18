@@ -1,108 +1,350 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Abundant Books</h1>
 
-Welcome USER_NAME,
+## A responsive book ecommerce website application for customers to view and purchase books available.
+***
+## Code Institute – HTML, CSS, JavaScript, python+Django and PostgreSQL -  Milestone Project 4.
+***
+## [Click Here To View The Live Project](#)
+***
+## ![Text](#) - RESPONSIVEW image
+***
+## UX user experience
+***
+## User stories
+- ### First time user goals
+    
+    1. As a First time user, I want to easily navigate to register and then log in when first entering the website application.
+    2. As a First Time User, I want to navigate the website easily and interact with the content.
+    3. As a first time user I want to easily navigate to look for the books available.
+    4. As a first time user I want to easily add books to my bag.
+    5. As a first time user I want to easily checkout and pay for the items in my bag.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+- ### Returning user goals
+    1. As a Returning User, I want log in easily and view my purchase history.
+    2. As a Returning User, I want to see the current deals of the months.
+    3. As a Returning User, I want to see the current authors of the month.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+- ### Frequent user goals
+    1. As a Frequent user, I want to easily sign up to the newsletter.
+    2. As a Frequent user, I want to easily the updated deals of the months.
+    3. As a Frequent user, I want to easily the updated authors of the months.
 
-## Gitpod Reminders
+- ### Admin user goals
+    1. As an Admin User, I want access to add new books to the website application.
+    2. As an Admin User, I want access to edit books on the website application.
+    3. As an Admin User, I want access to delete books on the website application.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# Design
 
-`python3 -m http.server`
+## Design Introduction
+- This ecommerce website application is designed for users who are interested in purchasing books and returning to see the latest deals and authors. 
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## Colour Scheme
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- ### [Color Mind](http://colormind.io/) : Colormind has been used to aid the decision the colour scheme for the project.
 
-A blue button should appear to click: _Make Public_,
+### The main colours used in this website are:
+- #### The main colours used for text and backgrounds:
+### ![Text](#)
 
-Another blue button should appear to click: _Open Browser_.
+## Typography:
+- ### The fonts use throughout this website are:
+    - Google fonts 'Lato'with a fallback of sans-serif.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Imagery
 
-To log into the Heroku toolbelt CLI:
+- 
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Wireframes
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- ### Large screens
 
-------
+1. Landing Home page genral user Wireframe 
+### ![text](#)
 
-## Release History
+2. Landing Home page Managment Wireframe 
+### ![text](#)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+3. Log In page Wireframe 
+### ![text](#)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+4. Log Out page Wireframe 
+### ![text](#)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+5. Register page Wireframe 
+### ![text](#)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+6. Profile page Wireframe 
+### ![text](#)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+7. Books page Wireframe 
+### ![text](#)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+8. Books Managment page Wireframe 
+### ![text](#)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+9. Book Information page Wireframe
+### ![text](#)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+10. Book Information Managment page Wireframe
+### ![text](#)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+11. Shopping Bag page Wireframe
+### ![text](#)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+12. Checkout page Wireframe
+### ![text](#)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- ### Medium Screens click to view
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+1. Landing Home page genral user Wireframe - [view](#)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+2. Landing Home page Managment Wireframe - [view](#)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+3. Log In page Wireframe - [view](#)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+4. Log Out page Wireframe - [view](#)
 
-------
+5. Register page Wireframe - [view](#)
 
-## FAQ about the uptime script
+6. Profile page Wireframe - [view](#)
 
-**Why have you added this script?**
+7. Books page Wireframe - [view](#)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+8. Books Managment page Wireframe - [view](#)
 
-**How will this affect me?**
+9. Book Information page Wireframe - [view](#)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+10. Book Information Managment page Wireframe - [view](#)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+11. Shopping Bag page Wireframe - [view](#)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+12. Checkout page Wireframe - [view](#)
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- ### Small Screens click to view
 
-**Can I opt out?**
+1. Landing Home page genral user Wireframe - [view](#)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+2. Landing Home page Managment Wireframe - [view](#)
+
+3. Log In page Wireframe - [view](#)
+
+4. Log Out page Wireframe - [view](#)
+
+5. Register page Wireframe - [view](#)
+
+6. Profile page Wireframe - [view](#)
+
+7. Books page Wireframe - [view](#)
+
+8. Books Managment page Wireframe - [view](#)
+
+9. Book Information page Wireframe - [view](#)
+
+10. Book Information Managment page Wireframe - [view](#)
+
+11. Shopping Bag page Wireframe - [view](#)
+
+12. Checkout page Wireframe - [view](#)
+
+
+# Data Structure
+- [PostgreSQL](#) is used for the backend functionality of the application, that allows admin to create categories and users to register and log in to the Movie Lounge.
+
+## Data Model
+# ![text](#)
+
+- Collections
+- 
+- 
+- 
+
+
+# Features
+Am I Responsive has been used for the responsive image at the top of README.md you can view there website below and interact with this project on each device.
+-   ### Responsive on all devices - [view](#)
+
+## Interactive elements.
+- Navigation
+    - Navigation on large screens
+    ### ![text](#)
+    - Navigation on small screens
+    ### ![text](#)
+    - Navigation small screens open
+    ### ![text](#)
+- Footer
+    - Links to social media
+    ### ![text](#)
+- Home screen
+    - Movie edit and delete user movies
+    ### ![text](#)
+    - Movie view more information
+    ### ![text](#)
+    - Movie edit page
+    ### ![text](#)
+    - Movie delete modal
+    ### ![text](#)
+
+
+- Log in
+   ### ![text](#)
+- Register
+   ### ![text](#)
+- User logged in display name
+    - User logged in
+    ### ![text](#)
+    - User not logged in
+    ### ![text](#)
+
+
+## Technologies Used
+### Languages Used
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+-   [Python](https://www.python.org/)
+
+### Frameworks libraries and programming interface
+1. [Bootstrap 5.2.0:](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+    - Bootstrap was used to assist with the responsiveness and styling of the website.
+1. [Google Fonts:](https://fonts.google.com/)
+    - Google fonts is used to import the Google font 'Lato' with a fallback of sans-serif into the style.css file which is used on all pages throughout the project.
+1. [Font Awesome:](https://fontawesome.com/)
+    - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
+1. [Git](https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+1. [GitHub:](https://github.com/)
+    - GitHub is used to store the projects code after being pushed from Git.
+1. [Balsamiq:](https://balsamiq.com/)
+    - Balsamiq was used to create the wireframes.
+1. [Am I Responsive Design:](http://ami.responsivedesign.is/)
+    - Am I Responsive Design was used for the responsive image in Readme.
+1. [jinja](https://jinja.palletsprojects.com/en/3.1.x/)
+    - Templating language for Python, to simplify displaying data from the backend of this project smoothly and effectively in HTML.
+1. [SQLAlchemy](https://www.sqlalchemy.org/)
+    - Used to filter and search through the database.
+1. [Heroku](https://id.heroku.com/login)
+    - A cloud based platform for that is used for hosting this python web based application. 
+1. [SmartDraw](https://cloud.smartdraw.com/)
+    - SmartDraw helps us create compelling visual content - including Org Charts, Business Processes and Work Flowcharts and has been used for the Data Modal image.
+
+***
+## Testing
+
+### Testing is in TESTING.md - [Link to TESTING.md](/TESTING.md)
+***
+
+## Deployment
+***
+
+## Setting up 
+
+
+
+
+## Deployment on Heroku and linking git repo, aws and prosgress.
+
+1. To deploy the project online to a Heroku application, we need to
+set up some required files that Heroku needs in order to run the app.
+First, we need to tell Heroku which applications and dependencies are required to run our app,
+which must be in a file called 'requirements.txt'.
+while in the gitpod workspace terminal type.
+```bash
+pip3 freeze --local > requirements.txt
+```
+you should now have a requirements.txt with all of the installed packages needed.
+```txt
+click==8.1.3
+dnspython==2.2.1
+Flask==2.2.2
+Flask-PyMongo==2.3.0
+Flask-SQLAlchemy==2.5.1
+greenlet==1.1.3
+itsdangerous==2.1.2
+omdb==0.10.1
+psycopg2==2.9.3
+pymongo==4.2.0
+SQLAlchemy==1.4.41
+Werkzeug==2.2.2
+```
+2. Next, you need a Procfile which is what Heroku looks for to know which file runs the app, and how to run it, so we'll use the echo command: "echo web: python run.py > Procfile".
+```bash
+echo web: python run.py > Procfile
+```
+you should now have a Procfile with the following in it:
+```bash
+web: python run.py
+```
+2. Head over to the Heroku website [https://devcenter.heroku.com/](https://devcenter.heroku.com/) now, where you should create an account and account if you do not have one already. Navigate to the dashboard once logged in and click on the button for creating a new app on your profile.
+3. Heroku apps must have a unique name, which generally use a 'dash' or 'hyphen' instead of spaces, and should use all lowercase letters e.g. movie-lounge.
+Make sure to select the region closest to you, and then click "Create App".
+4. On the "Resources" tab, underneath the "Add-ons" section.
+Search for "Heroku Postgres", which will provide us with various Plans to choose from.
+For our purposes, the free 'Hobby Dev' is perfectly suitable.
+5. Once the Postgres database has been attached to our app, click on the "Settings" tab, and scroll to the section called "Config Vars".
+Config Variables are the same thing as Environment Variables, which contain confidential key-value pairs located in the Setting up Flask Development env.py in this README.md
+As you can see after revealing the config vars, our new Postgres database URL has been
+automatically applied for us and is being hosted on Amazon AWS.
+5. Back within our Heroku config vars, we need to add the other variables that are currently saved within the env.py file. The only two that we do not want to include are the "DEVELOPMENT" and "DB_URL" variables. So, your Heroku vars should look like the following.
+#### ![text](/documentation/heroku-images/heroku-vars.png)
+6. Now go back in the gitpod workspace, and open the ```__init__.py``` file.
+As you can see, the app is currently configured to look for the local database, so we can add a conditional check for Heroku's Postgres database.
+If the "DEVELOPMENT" environment variable is set to True, then we are working with our local database.
+Otherwise, since we didn't set that variable on Heroku, then it should use Heroku's "DATABASE_URL" instead.
+The updated information in the ```__init__.py``` file should now look like the following.
+```python
+
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
+
 
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+7. From within the "Deploy" tab in Heroku, You can now deploy directly from the GitHub repository clone. Click on the GitHub tab and, Make sure your own GitHub profile is displayed, then add your repository name and click Search.
+If successfully found, you can now click "Connect" which will link your app to the repository. On this project, we were pushing all changes to the main or master branch, so now we can select "Enable Automatic Deploys", followed by "Deploy Branch".
+You should see the message, "Your app was successfully deployed".
+8. After we can see the updates being made on Heroku’s Activity tab, and the build is
+complete, the final step we need to perform is to create our tables on the database.
+Scroll to the top, and click the "More" dropdown button, then select "Run console".
+9. within the console terminal type "python3" to access the Python interpreter.
+from movielounge import db db.create_all()
+Our Heroku database should now have the tables and columns created from our models.py file,
+from movielounge import db
+```psql
+Python 3.8.11 (default, Sep  7 2022, 11:13:18) 
+[GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from movielounge import db
+````
+- Now, using db, we need to perform the .create_all() method:
+```psql
+Python 3.8.11 (default, Sep  7 2022, 11:13:18) 
+[GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from movielounge import db
+>>> db.create_all()
+````
+11. once that’s done we can exit() this console. Everything should be linked up properly now, so we can finally click on the "Open App" button.
 
-**Anything more?**
+## Credits
+***
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+###  Code
 
----
+   -   [Code Institute](https://codeinstitute.net/): Code Institutes lessons have help with all coding throughout this project.
 
-Happy coding!
+   -   [Code Institute Sample README.md](https://github.com/Code-Institute-Solutions/SampleREADME): Code Institute Sample README.md has been used to help with readme layout.
+
+   -   [Bootstrap5](https://getbootstrap.com/docs/5.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
+
+   -   [W3 Schools](https://www.w3schools.com/): W3 Schools has been used with some elements in this project.
+
+### Content
+   -   All content was written by the developer.
+
+### Acknowledgments
+
+   -	My mentor for continuous helpful feedback.
+   -	Tutor support at Code Institute.
+   -	Support from staff at The City of Bristol collage.
+   -	Members on Code Institutes Slack.
