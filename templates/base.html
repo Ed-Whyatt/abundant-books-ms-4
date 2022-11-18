@@ -41,6 +41,11 @@ html<!DOCTYPE html>
 <title>Abundent Books {% block extra_title %}{% endblock %}</title>
 </head>
 <body>
+    <header class="container-fluid fixed-top"></header>
+
+    {% if messages %}
+    <div class="message"></div>
+    {% endif %}
 
 </body>
 </html>
