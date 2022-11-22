@@ -1,8 +1,52 @@
+html {
+    height: 100%;
+}
+
 body {
     min-height: 100vh;
     position: relative;
-    margin: 0;
-    padding-bottom: 100px;
-    box-sizing: border-box;
 }
 
+.header-container {
+    height: 100px;
+}
+
+.book-image {
+    height: 200px;
+    width: 30%;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 20px;
+    background-color: black;
+}
+
+.book-bg-one {
+    height: 230px;
+    background-color: #CD6B44;
+    width: 100%;
+}
+
+.book-bg-two {
+    height: 230px;
+    background-color: #0092C4;
+    width: 100%;
+}
+
+.book-bg-three {
+    height: 230px;
+    background-color: #D58725;
+    width: 100%;
+}
+
+.book-bg-four {
+    height: 230px;
+    background-color: #4EBBCE;
+    width: 100%;
+}
+
+
+.book-bottom {
+    height:70px;
+    background-color: #F5F5F5;
+    width: 100%;
+}
