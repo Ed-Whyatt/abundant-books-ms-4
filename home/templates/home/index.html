@@ -4,3 +4,27 @@
 {% block content %}
 
 {% endblock %}
+
+
+
+{% block postloadjs %}
+<script src="{% static 'owlcarousel/js/owl.carousel.min.js' %}"></script>
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    })
+</script>
+{% endblock %}
