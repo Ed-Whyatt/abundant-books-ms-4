@@ -75,17 +75,18 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="false" role="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="false"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Browse Category
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item dropend">
-                                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">By Category Name</a>
+                                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                                                    role="button" aria-expanded="false">By Category Name</a>
                                                 <ul class="dropdown-menu">
-                                                  <li><a class="dropdown-item" href="#">Art Photography</a></li>
+                                                    <li><a class="dropdown-item" href="#">Art Photography</a></li>
                                                 </ul>
-                                              </li>
+                                            </li>
                                             <li>
                                                 <hr class="dropdown-divider">
                                             </li>
@@ -131,14 +132,14 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="user-options">
                                         {% if request.user.is_authenticated %}
-                                            {% if request.user.is_superuser %}
-                                                <a href="#" class="dropdown-item">Product Management</a>
-                                            {% endif %}
-                                            <a href="#" class="dropdown-item">My Profile</a>
-                                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                        {% if request.user.is_superuser %}
+                                        <a href="#" class="dropdown-item">Product Management</a>
+                                        {% endif %}
+                                        <a href="#" class="dropdown-item">My Profile</a>
+                                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                         {% else %}
-                                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                                         {% endif %}
                                     </ul>
                                 </li>
@@ -147,14 +148,15 @@
 
                         <!-- Shopping Bag -->
                         <div class="col-6 py-1 py-lg-0">
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="#">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                                href="#">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                     <p class="my-0">
                                         {% if grand_total %}
-                                            ${{ grand_total|floatformat:2 }}
+                                        ${{ grand_total|floatformat:2 }}
                                         {% else %}
-                                            $0.00
+                                        $0.00
                                         {% endif %}
                                     </p>
                                 </div>

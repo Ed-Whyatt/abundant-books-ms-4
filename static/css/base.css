@@ -50,3 +50,19 @@ body {
     background-color: #F5F5F5;
     width: 100%;
 }
+
+.home-main {
+    background-color: #F5F5F5;
+}
+
+.owl-carousel {
+    background-color: #F5F5F5;
+}
+
+.author-image {
+    height: 120px;
+    width: 80px;
+    background-color: black;
+    margin-left: 50px;
+    margin-top: 40px;
+}
