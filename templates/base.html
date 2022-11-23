@@ -58,47 +58,45 @@
 
         <!-- Bootstrap navbar -->
         <div class="row">
+            <nav class="navbar navbar-expand-lg">
+                <!-- Small screen toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/mobile-top-header.html' %}
 
-            <div class="col-2 py-1 py-lg-0">
-                <nav class="navbar navbar-expand-lg">
-                    <!-- Small screen toggle -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                <!-- Category dropdown -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="col-2 nav-link dropdown-toggle" href="#" data-bs-auto-close="false" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Browse Category
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item dropend">
+                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                        aria-expanded="false">By Category Name</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Art Photography</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">All Books</a></li>
+                                <li><a class="dropdown-item" href="#">By Price</a></li>
+                                <li><a class="dropdown-item" href="#">By Rating</a></li>
+                                <li><a class="dropdown-item" href="#">News Letter</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
-                    <!-- Category dropdown -->
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="false" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Browse Category
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item dropend">
-                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                                            role="button" aria-expanded="false">By Category Name</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Art Photography</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">All Books</a></li>
-                                    <li><a class="dropdown-item" href="#">By Price</a></li>
-                                    <li><a class="dropdown-item" href="#">By Rating</a></li>
-                                    <li><a class="dropdown-item" href="#">News Letter</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-
-            <div id="topnav" class="d-none d-lg-flex col-4">
+            <div id="topnav" class="d-none d-lg-flex col-2">
                 <!-- Search bar -->
                 <form class="d-flex" role="search">
                     <input class="form-control border border-black rounded-0" type="text" name="q"
@@ -108,7 +106,7 @@
             </div>
 
             <!-- Main title logo -->
-            <div id="topnav" class="d-none d-lg-flex col-4 py-1 py-lg-0 text-center"><a class="navbar-brand"
+            <div id="topnav" class="col-lg-4 col-md-4 py-1 py-lg-0 text-center"><a class="navbar-brand"
                     href="{% url 'home' %}">
                     <h2><span class="abundent-logo">Abundent</span><span class="books-logo">Books</span></h2>
                 </a>
@@ -147,8 +145,8 @@
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                             href="#">
                             <div class="text-center mt-2">
-                                <p>|  <i class="fas fa-shopping-bag fa-lg"></i> Check Out</p>
-                                
+                                <p>| <i class="fas fa-shopping-bag fa-lg"></i> Check Out</p>
+
                                 <p class="my-0">
                                     {% if grand_total %}
                                     ${{ grand_total|floatformat:2 }}
