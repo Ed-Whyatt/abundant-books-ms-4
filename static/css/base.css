@@ -7,16 +7,12 @@ body {
     position: relative;
 }
 
-.header-container {
-    height: 100px;
-}
-
-.book-image {
-    height: 200px;
-    width: 30%;
+.carousel-image {
+    height: 230px;
+    width: 35%;
     position: absolute;
     margin-top: 50px;
-    margin-left: 20px;
+    margin-left: 40px;
     background-color: black;
 }
 
@@ -68,7 +64,7 @@ body {
     margin-top: 40px;
 }
 
-.deal-image {
+.book-image {
     height: 120px;
     width: 80px;
     background-color: black;
