@@ -56,116 +56,113 @@
 <body>
     <header class="container-fluid">
 
+        <!-- Bootstrap navbar -->
         <div class="row">
 
-            <!-- Bootstrap navbar -->
-            <nav class="navbar navbar-expand-lg">
-                <div class="col-4">
-                    <div class="row">
+            <div class="col-2 py-1 py-lg-0">
+                <nav class="navbar navbar-expand-lg">
+                    <!-- Small screen toggle -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                        <div class="col-6 py-1 py-lg-0">
-                            <!-- Small screen toggle -->
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-
-                            <!-- Category dropdown -->
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="false"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Browse Category
-                                        </a>
+                    <!-- Category dropdown -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="false" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Browse Category
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item dropend">
+                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                                            role="button" aria-expanded="false">By Category Name</a>
                                         <ul class="dropdown-menu">
-                                            <li class="nav-item dropend">
-                                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                                                    role="button" aria-expanded="false">By Category Name</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="#">Art Photography</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <hr class="dropdown-divider">
-                                            </li>
-                                            <li><a class="dropdown-item" href="#">All Books</a></li>
-                                            <li><a class="dropdown-item" href="#">By Price</a></li>
-                                            <li><a class="dropdown-item" href="#">By Rating</a></li>
-                                            <li><a class="dropdown-item" href="#">News Letter</a></li>
+                                            <li><a class="dropdown-item" href="#">Art Photography</a></li>
                                         </ul>
                                     </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">All Books</a></li>
+                                    <li><a class="dropdown-item" href="#">By Price</a></li>
+                                    <li><a class="dropdown-item" href="#">By Rating</a></li>
+                                    <li><a class="dropdown-item" href="#">News Letter</a></li>
                                 </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div id="topnav" class="d-none d-lg-flex col-4">
+                <!-- Search bar -->
+                <form class="d-flex" role="search">
+                    <input class="form-control border border-black rounded-0" type="text" name="q"
+                        placeholder="Search our site">
+                    <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <!-- Main title logo -->
+            <div id="topnav" class="d-none d-lg-flex col-4 py-1 py-lg-0 text-center"><a class="navbar-brand"
+                    href="{% url 'home' %}">
+                    <h2><span class="abundent-logo">Abundent</span><span class="books-logo">Books</span></h2>
+                </a>
+            </div>
+
+            <div id="topnav" class="d-none d-lg-flex col-2">
+                <div class="row">
+
+                    <!-- User dropdown -->
+                    <div class="col-6 py-1 py-lg-0">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    My Account
+                                    <i class="fas fa-user fa-lg"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="user-options">
+                                    {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                    <a href="#" class="dropdown-item">Product Management</a>
+                                    {% endif %}
+                                    <a href="#" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                    {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    {% endif %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Shopping Bag -->
+                    <div class="col-6 py-1 py-lg-0">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                            href="#">
+                            <div class="text-center mt-2">
+                                <p>|  <i class="fas fa-shopping-bag fa-lg"></i> Check Out</p>
+                                
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                    ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                    $0.00
+                                    {% endif %}
+                                </p>
                             </div>
-                        </div>
-
-                        <!-- Search bar -->
-                        <div class="col-6 py-1 py-lg-0">
-                            <form class="d-flex" role="search">
-                                <input class="form-control border border-black rounded-0" type="text" name="q"
-                                    placeholder="Search our site">
-                                <button class="btn btn-outline-success" type="submit"><i
-                                        class="fas fa-search"></i></button>
-                            </form>
-                        </div>
-
+                        </a>
                     </div>
+
                 </div>
+            </div>
 
-                <!-- Main title logo -->
-                <div class="col-4 py-1 py-lg-0 text-center"><a class="navbar-brand" href="{% url 'home' %}">
-                        <h2><span class="abundent-logo">Abundent</span><span class="books-logo">Books</span></h2>
-                    </a>
-                </div>
-
-                <div class="col-4">
-                    <div class="row">
-
-                        <!-- User dropdown -->
-                        <div class="col-6 py-1 py-lg-0">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <i class="fas fa-user fa-lg"></i>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="user-options">
-                                        {% if request.user.is_authenticated %}
-                                        {% if request.user.is_superuser %}
-                                        <a href="#" class="dropdown-item">Product Management</a>
-                                        {% endif %}
-                                        <a href="#" class="dropdown-item">My Profile</a>
-                                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                                        {% else %}
-                                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                                        {% endif %}
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Shopping Bag -->
-                        <div class="col-6 py-1 py-lg-0">
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                                href="#">
-                                <div class="text-center">
-                                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                    <p class="my-0">
-                                        {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                        {% else %}
-                                        $0.00
-                                        {% endif %}
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </nav>
         </div>
     </header>
 
