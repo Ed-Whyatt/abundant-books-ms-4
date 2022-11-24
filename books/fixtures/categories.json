@@ -1,0 +1,266 @@
+[
+    {
+        "pk": 1,
+        "model": "books.category",
+        "fields": {
+            "name": "art_phtography",
+            "friendly_name": "Art Phtography"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "books.category",
+        "fields": {
+            "name": "biography",
+            "friendly_name": "Biography"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "books.category",
+        "fields": {
+            "name": "business_finance_law",
+            "friendly_name": "Business Finance Law"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "books.category",
+        "fields": {
+            "name": "childrens_books",
+            "friendly_name": "Childrens Books"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "books.category",
+        "fields": {
+            "name": "computing",
+            "friendly_name": "Computing"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "books.category",
+        "fields": {
+            "name": "crafts_hobbies",
+            "friendly_name": "Crafts Hobbies"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "books.category",
+        "fields": {
+            "name": "crime_thriller",
+            "friendly_name": "Crime Thriller"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "books.category",
+        "fields": {
+            "name": "dictionaries_languages",
+            "friendly_name": "Dictionaries Languages"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "books.category",
+        "fields": {
+            "name": "entertainment",
+            "friendly_name": "Entertainment"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "books.category",
+        "fields": {
+            "name": "food_drink",
+            "friendly_name": "Food Drink"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "books.category",
+        "fields": {
+            "name": "graphic_novels_nime-Manga",
+            "friendly_name": "Graphic Novels Anime Manga"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "books.category",
+        "fields": {
+            "name": "health",
+            "friendly_name": "Health"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "books.category",
+        "fields": {
+            "name": "history_archaeology",
+            "friendly_name": "History Archaeology"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "books.category",
+        "fields": {
+            "name": "home_garden",
+            "friendly_name": "Home Garden"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "books.category",
+        "fields": {
+            "name": "humour",
+            "friendly_name": "Humour"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "books.category",
+        "fields": {
+            "name": "medical",
+            "friendly_name": "Medical"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "books.category",
+        "fields": {
+            "name": "mind_body_spirit",
+            "friendly_name": "Mind Body Spirit"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "books.category",
+        "fields": {
+            "name": "natural_history",
+            "friendly_name": "Natural History"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "books.category",
+        "fields": {
+            "name": "personal_development",
+            "friendly_name": "Personal Development"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "books.category",
+        "fields": {
+            "name": "poetry_drama",
+            "friendly_name": "Poetry Drama"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "books.category",
+        "fields": {
+            "name": "reference",
+            "friendly_name": "Reference"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "books.category",
+        "fields": {
+            "name": "religion",
+            "friendly_name": "Religion"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "books.category",
+        "fields": {
+            "name": "romance",
+            "friendly_name": "Romance"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "books.category",
+        "fields": {
+            "name": "science_fiction_fantasy_horror",
+            "friendly_name": "Science Fiction Fantasy Horror"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "books.category",
+        "fields": {
+            "name": "science_geography",
+            "friendly_name": "Science Geography"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "books.category",
+        "fields": {
+            "name": "society_social_sciences",
+            "friendly_name": "Society Social Sciences"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "books.category",
+        "fields": {
+            "name": "sport",
+            "friendly_name": "Sport"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "books.category",
+        "fields": {
+            "name": "stationery",
+            "friendly_name": "Stationery"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "books.category",
+        "fields": {
+            "name": "teaching_resources_education",
+            "friendly_name": "Teaching Resources Education"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "books.category",
+        "fields": {
+            "name": "technology_engineering",
+            "friendly_name": "Technology Engineering"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "books.category",
+        "fields": {
+            "name": "teen_young_adult",
+            "friendly_name": "Teen Young Adult"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "books.category",
+        "fields": {
+            "name": "transport",
+            "friendly_name": "Transport"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "books.category",
+        "fields": {
+            "name": "travel_holiday_guides",
+            "friendly_name": "Travel Holiday Guides"
+        }
+    }   
+]
