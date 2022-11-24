@@ -198,6 +198,9 @@ Am I Responsive has been used for the responsive image at the top of README.md y
     - User not logged in
     ### ![text](#)
 
+### owl carsel
+
+### kaggle fixtures
 
 ## Technologies Used
 ### Languages Used
