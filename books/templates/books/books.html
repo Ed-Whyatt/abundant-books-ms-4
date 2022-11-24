@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css  %}
+<style>
+    .bg-lite-gray {
+        background-color: #F5F5F5;
+    }
+</style>
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -12,12 +20,33 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-6">
-            {{ books }}
+<div class="container-fluid bg-lite-gray">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-6 mt-3">
+                <div class="card card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="book-image"></div>
+                        </div>
+                        <div class="col-6">
+                            <div class="deal-text">
+                                <h3>Name: Dave Tayler</h3>
+                                <br>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
         </div>
     </div>
+    
 </div>
 {% endblock %}
 
