@@ -15,14 +15,14 @@ def all_books(request):
     return render(request, 'books/books.html', context)
 
 
-def book_info(request):
+def book_info(request, book_id):
     """
     A view to return individuel product information
     """
-    books = get_object_or_404(Books, pk=book_id)
+    book = get_object_or_404(Book, pk=book_id)
 
     context = {
         'book': book,
     }
 
-    return render(request, 'books/books_info.html', context)
+    return render(request, 'books/book_info.html', context)

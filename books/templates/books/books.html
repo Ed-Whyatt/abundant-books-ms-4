@@ -17,7 +17,7 @@
 <div class="container header-container">
     <div class="row">
         <div class="col">
-
+            <h2>Books</h2>
         </div>
     </div>
 </div>
@@ -35,7 +35,9 @@
                     <div class="row">
                         <div class="col-4">
                             <div class="book-image card-body">
-                                <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                <a href="{% url 'book_info' book.id %}">
+                                    <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                </a>
                             </div>
                         </div>
                         <div class="col-6">
