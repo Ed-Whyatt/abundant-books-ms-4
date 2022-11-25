@@ -6,6 +6,10 @@
     .bg-lite-gray {
         background-color: #F5F5F5;
     }
+
+    .stars {
+        display: inline;
+    }
 </style>
 {% endblock %}
 
@@ -25,28 +29,101 @@
     <div class="container">
         <div class="row">
 
+            {% for book in books %}
             <div class="col-6 mt-3">
                 <div class="card card-body">
                     <div class="row">
                         <div class="col-4">
-                            <div class="book-image"></div>
+                            <div class="book-image">
+                                <img class="" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                            </div>
                         </div>
                         <div class="col-6">
                             <div class="deal-text">
-                                <h3>Name: Dave Tayler</h3>
+                                <h3>{{ book.name }}</h3>
+                                <p>Author: {{ book.author }}</p>
+                                <ul>
+                                    {% if book.book_depository_stars == "0.00" %}
+                                    <li class="stars">
+                                        0<i class="far fa-star"></i><i class="far fa-star"></i><i
+                                            class="far fa-star"></i><i class="far fa-star"></i><i
+                                            class="far fa-star"></i>
+                                    </li>
+                                    {% elif book.book_depository_stars == 0.50 %}
+                                    <li class="stars">
+                                        0.5<i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i
+                                            class="far fa-star"></i><i class="far fa-star"></i><i
+                                            class="far fa-star"></i>
+                                    </li>
+                                    {% elif book.book_depository_stars == 1.00 %}
+                                    <li class="stars">
+                                        1 <i class="fas fa-star"></i><i class="far fa-star"></i><i
+                                            class="far fa-star"></i><i class="far fa-star"></i><i
+                                            class="far fa-star"></i>
+                                    </li>
+                                    {% elif book.book_depository_stars == 1.50 %}
+                                    <li class="stars">
+                                        1.5 <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i
+                                            class="far fa-star"></i><i class="far fa-star"></i><i
+                                            class="far fa-star"></i>
+                                    </li>
+                                    {% elif book.book_depository_stars == 2.00 %}
+                                    <li class="stars">
+                                        2 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="far fa-star"></i><i class="far fa-star"></i><i
+                                            class="far fa-star"></i>
+                                    </li>
+                                    {% elif book.book_depository_stars == 2.50 %}
+                                    <li class="stars">
+                                        2.5 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i
+                                            class="far fa-star"></i>
+                                    </li>
+                                    {% elif book.book_depository_stars == 3.00 %}
+                                    <li class="stars">
+                                        3 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="far fa-star"></i><i
+                                            class="far fa-star"></i>
+                                    </li>
+                                    {% elif book.book_depository_stars == 3.50 %}
+                                    <li class="stars">
+                                        3.5<i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i
+                                            class="far fa-star"></i>
+                                    </li>
+                                    {% elif book.book_depository_stars == 4.00 %}
+                                    <li class="stars">
+                                        4<i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="far fa-star"></i>
+                                    </li>
+                                    {% elif book.book_depository_stars == 4.50 %}
+                                    <li class="stars">
+                                        4.5<i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star-half-alt"></i>
+                                    </li>
+                                    {% elif book.book_depository_stars == 5.00 %}
+                                    <li class="stars">
+                                        5<i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </li>
+                                    {% endif %}
+                                </ul>
                                 <br>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut
-                                    labore et dolore magna aliqua.</p>
+                                <p>RRP: {{ book.old_price }}: </p>
+                                <p><strong>Price: {{ book.price }}</strong></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-    
+            {% endfor %}
+
         </div>
     </div>
-    
+
 </div>
 {% endblock %}
 
