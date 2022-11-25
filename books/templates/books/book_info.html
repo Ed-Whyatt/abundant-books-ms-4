@@ -29,8 +29,7 @@
     <div class="container">
         <div class="row">
 
-            {% for book in books %}
-            <div class="col-12 col-md-6 col-lg-4 mt-3">
+            <div class="col-8 offset-2 mt-3">
                 <div class="card">
                     <div class="row">
                         <div class="col-4">
@@ -41,7 +40,6 @@
                         <div class="col-6">
                             <div class="deal-text card-body">
                                 <h3>{{ book.name }}</h3>
-                                <p>Author: {{ book.author }}</p>
                                 <ul>
                                     {% if book.book_depository_stars == "0.00" %}
                                     <li class="stars">
@@ -119,7 +117,12 @@
                     </div>
                 </div>
             </div>
-            {% endfor %}
+
+            <div class="col-8 offset-2 mt-3">
+                
+            </div>
+
+
 
         </div>
     </div>
