@@ -30,16 +30,16 @@
         <div class="row">
 
             {% for book in books %}
-            <div class="col-6 mt-3">
-                <div class="card card-body">
+            <div class="col-12 col-md-6 col-lg-4 mt-3">
+                <div class="card">
                     <div class="row">
                         <div class="col-4">
-                            <div class="book-image">
-                                <img class="" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                            <div class="book-image card-body">
+                                <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="deal-text">
+                            <div class="deal-text card-body">
                                 <h3>{{ book.name }}</h3>
                                 <p>Author: {{ book.author }}</p>
                                 <ul>
