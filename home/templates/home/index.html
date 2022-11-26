@@ -259,8 +259,10 @@
         function classAddRmove() {
             if ($(window).width() <= 991) {
                 document.getElementById("nav-category").classList.remove("col-2");
+                document.getElementById("navbar-class-change").classList.add("navbar-nav");
             } else {
                 document.getElementById("nav-category").classList.add("col-2");
+                document.getElementById("navbar-class-change").classList.remove("navbar-nav");
             }
         }
     });

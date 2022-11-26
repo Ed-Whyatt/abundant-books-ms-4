@@ -44,6 +44,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
+    <script scr="{% static 'js/base.js' %}"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -71,7 +72,7 @@
 
             <div id="topnav" class="col-2 d-none d-lg-flex">
                 <!-- Search bar -->
-                <form class="d-flex" role="search" method="GET" action="{% url 'books' %}">
+                    <form class="d-flex" role="search" method="GET" action="{% url 'books' %}"></form>
                     <button class="btn" type="submit"><i class="fas fa-search"></i></button>
                     <input class="form-control border border-black rounded-0" type="text" name="q"
                         placeholder="Search our site">

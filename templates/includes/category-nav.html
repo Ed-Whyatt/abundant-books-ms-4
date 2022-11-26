@@ -8,7 +8,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
                 <p class="d-none mt-3 d-lg-block text-black">Browse Categorys<span> <i class="fas fa-chevron-down"></i></span></p>
             </a>
-            <ul class="dropdown-menu">
+            <ul id="navbar-class-change" class="dropdown-menu navbar-nav"> <!-- add/remove bootstrap nav-bar-nav useing js -->
                 <li><a class="dropdown-item" href="{% url 'home' %}">Home</a></li>
                 <li>
                     <hr class="dropdown-divider">
@@ -25,13 +25,13 @@
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                     aria-expanded="false">A - C</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Art Photography</a></li>
-                                    <li><a class="dropdown-item" href="#">Biography</a></li>
-                                    <li><a class="dropdown-item" href="#">Business</a></li>
-                                    <li><a class="dropdown-item" href="#">Children's Books</a></li>
-                                    <li><a class="dropdown-item" href="#">Computing</a></li>
-                                    <li><a class="dropdown-item" href="#">Crafts & Hobbies</a></li>
-                                    <li><a class="dropdown-item" href="#">Crime & Thriller</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=art_phtography">Art & Photography</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=biography">Biography</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=business_finance_law">Business, Finance & Law</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=childrens_books">Children's Books</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=computing">Computing</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=crafts_hobbies">Crafts & Hobbies</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=crime_thriller">Crime & Thriller</a></li>
                                 </ul>
                             </li>
 
@@ -39,10 +39,10 @@
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                     aria-expanded="false">D - G</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Dictionaries Languages</a></li>
-                                    <li><a class="dropdown-item" href="#">Entertainment/a></li>
-                                    <li><a class="dropdown-item" href="#">Food Drink</a></li>
-                                    <li><a class="dropdown-item" href="#">Graphic Novels Anime Manga</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=dictionaries_languages">Dictionaries & Languages</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=entertainment">Entertainment</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=food_drink">Food & Drink</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=graphic_novels_nime-Manga">Graphic, Novels, Anime & Manga</a></li>
                                 </ul>
                             </li>
 
@@ -50,13 +50,13 @@
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                     aria-expanded="false">H - N</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Health</a></li>
-                                    <li><a class="dropdown-item" href="#">History Archaeology</a></li>
-                                    <li><a class="dropdown-item" href="#">Home Garden</a></li>
-                                    <li><a class="dropdown-item" href="#">Humour</a></li>
-                                    <li><a class="dropdown-item" href="#">Medical</a></li>
-                                    <li><a class="dropdown-item" href="#">Mind Body Spirit</a></li>
-                                    <li><a class="dropdown-item" href="#">Natural History</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=health">Health</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=history_archaeology">History Archaeology</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=home_garden">Home Garden</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=humour">Humour</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=medical">Medical</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=mind_body_spirit">Mind, Body & Spirit</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=natural_history">Natural History</a></li>
                                 </ul>
                             </li>
 
@@ -64,15 +64,16 @@
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                     aria-expanded="false">P - S</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Personal Development</a></li>
-                                    <li><a class="dropdown-item" href="#">Poetry Drama</a></li>
-                                    <li><a class="dropdown-item" href="#">Reference</a></li>
-                                    <li><a class="dropdown-item" href="#">Religion</a></li>
-                                    <li><a class="dropdown-item" href="#">Romance</a></li>
-                                    <li><a class="dropdown-item" href="#">Science Fiction Fantasy Horror</a></li>
-                                    <li><a class="dropdown-item" href="#">Science Geography</a></li>
-                                    <li><a class="dropdown-item" href="#">Society Social Sciences</a></li>
-                                    <li><a class="dropdown-item" href="#">Sport</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=personal_development">Personal Development</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=poetry_drama">Poetry & Drama</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=reference">Reference</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=religion">Religion</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=romance">Romance</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=science_fiction_fantasy_horror">Science Fiction, Fantasy & Horror</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=science_geography">Science & Geography</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=society_social_sciences">Society, Social & Sciences</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=sport">Sport</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=stationery">Stationery</a></li>
                                 </ul>
                             </li>
 
@@ -80,11 +81,11 @@
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                     aria-expanded="false">T - Z</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Teaching Resources Education</a></li>
-                                    <li><a class="dropdown-item" href="#">Technology Engineering</a></li>
-                                    <li><a class="dropdown-item" href="#">Teen Young Adult</a></li>
-                                    <li><a class="dropdown-item" href="#">Transport</a></li>
-                                    <li><a class="dropdown-item" href="#">Travel Holiday Guides</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=teaching_resources_education">Teaching Resources & Education</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=technology_engineering">Technology & Engineering</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=teen_young_adult">Teen & Young Adult</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=transport">Transport</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'books' %}?category=travel_holiday_guides">Travel & Holiday Guides</a></li>
                                 </ul>
                             </li>
                         
