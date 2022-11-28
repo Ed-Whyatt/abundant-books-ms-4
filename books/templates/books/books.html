@@ -13,6 +13,30 @@
 </style>
 {% endblock %}
 
+{% block extra_js %}
+<script>
+    // Remove col-2 class for Browse Category navlink dropndown for mobile view
+    jQuery(document).ready(function (e) {
+        classAddRmove();
+
+        $(window).resize(function () {
+            classAddRmove();
+        });
+
+        function classAddRmove() {
+            if ($(window).width() <= 991) {
+                document.getElementById("nav-category").classList.remove("col-2");
+                document.getElementById("navbar-class-change").classList.add("navbar-nav");
+                
+            } else {
+                document.getElementById("nav-category").classList.add("col-2");
+                document.getElementById("navbar-class-change").classList.remove("navbar-nav");
+            }
+        }
+    });
+</script>
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -116,7 +140,17 @@
                                 <br>
                                 <p>RRP: {{ book.old_price }}: </p>
                                 <p><strong>Price: {{ book.price }}</strong></p>
+
                                 <p>Cat: {{ book.category }}</p>
+
+                                {% if book.category %}
+                                <p class="">
+                                    <a class="text-muted" href="{% url 'books' %}?category={{ book.category.name }}">
+                                        <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                                    </a>
+                                </p>
+                                {% endif %}
+
                                 <p>pk: {{ book.pk }}</p>
                             </div>
                         </div>
@@ -132,25 +166,4 @@
 {% endblock %}
 
 {% block postloadjs %}
-<script>
-    // Remove col-2 class for Browse Category navlink dropndown for mobile view
-    jQuery(document).ready(function (e) {
-        classAddRmove();
-
-        $(window).resize(function () {
-            classAddRmove();
-        });
-
-        function classAddRmove() {
-            if ($(window).width() <= 991) {
-                document.getElementById("nav-category").classList.remove("col-2");
-                document.getElementById("navbar-class-change").classList.add("navbar-nav");
-                
-            } else {
-                document.getElementById("nav-category").classList.add("col-2");
-                document.getElementById("navbar-class-change").classList.remove("navbar-nav");
-            }
-        }
-    });
-</script>
 {% endblock %}

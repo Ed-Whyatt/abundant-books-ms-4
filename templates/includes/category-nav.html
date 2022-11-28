@@ -95,8 +95,8 @@
                     <hr class="dropdown-divider">
                 </li>
                 <li><a class="dropdown-item" href="{% url 'books' %}">All Books</a></li>
-                <li><a class="dropdown-item" href="#">By Price</a></li>
-                <li><a class="dropdown-item" href="#">By Rating</a></li>
+                <li><a class="dropdown-item" href="{% url 'books' %}?sort=price&direction=asc">By Price</a></li>
+                <li><a class="dropdown-item" href="{% url 'books' %}?sort=book_depository_stars&direction=desc">By Rating</a></li>
                 <li><a class="dropdown-item" href="#">News Letter</a></li>
             </ul>
         </li>
