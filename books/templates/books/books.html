@@ -56,7 +56,6 @@
                     <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
                 </a>
             {% endfor %}
-            <hr class="w-50 mb-1">
         </div>
     </div>
 
@@ -67,8 +66,8 @@
                     <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                     <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                     <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                    <option value="book_depository_stars_asc" {% if current_sorting == 'book_depository_stars_asc' %}selected{% endif %}>Rating (low to high)</option>
-                    <option value="book_depository_stars_desc" {% if current_sorting == 'book_depository_stars_desc' %}selected{% endif %}>Rating (high to low)</option>
+                    <option value="book_depository_stars_asc" {% if current_sorting == 'book_depository_stars' %}selected{% endif %}>Rating (low to high)</option>
+                    <option value="book_depository_stars_desc" {% if current_sorting == 'book_depository_stars' %}selected{% endif %}>Rating (high to low)</option>
                     <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
                     <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
                     <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
@@ -105,13 +104,7 @@
                                 <h3>{{ book.name }}</h3>
                                 <p>Author: {{ book.author }}</p>
                                 <ul>
-                                    {% if book.book_depository_stars == "0.00" %}
-                                    <li class="stars">
-                                        0<i class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 0.50 %}
+                                    {% if book.book_depository_stars == 0.50 %}
                                     <li class="stars">
                                         0.5<i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i
                                             class="far fa-star"></i><i class="far fa-star"></i><i
@@ -171,6 +164,12 @@
                                             class="fas fa-star"></i><i class="fas fa-star"></i><i
                                             class="fas fa-star"></i>
                                     </li>
+                                    {% else %}
+                                    <li class="stars">
+                                        0<i class="far fa-star"></i><i class="far fa-star"></i><i
+                                            class="far fa-star"></i><i class="far fa-star"></i><i
+                                            class="far fa-star"></i>
+                                    </li>
                                     {% endif %}
                                 </ul>
                                 <br>
@@ -195,11 +194,70 @@
             </div>
             {% endfor %}
 
+            <div class="col">
+                <div class="btt-button shadow-sm rounded-0 border border-black">
+                    <a class="btt-link d-flex h-100">
+                        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                    </a>	
+                </div>
+            </div>
+
         </div>
     </div>
 
+
 </div>
+
 {% endblock %}
 
 {% block postloadjs %}
+    {{ block.super }}
+    <!-- Script for back to top button -->
+    <script type="text/javascript">
+        $('.btt-link').click(function(e) {
+            window.scrollTo(0,0)
+        })
+    </script>
+
+
+<!-- Script for book category, price, rating, and name order select -->
+    <script type="text/javascript">
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectedVal = selector.val();
+            console.log(selectedVal)
+            if(selectedVal == "book_depository_stars_asc"){
+                var sort = "book_depository_stars";
+                var direction = "desc";
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            }else if (selectedVal == "book_depository_stars_desc"){
+                var sort = "book_depository_stars";
+                var direction = "asc";
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else if(selectedVal != "reset"){
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
 {% endblock %}
