@@ -226,45 +226,46 @@
 
 
 {% block postloadjs %}
-<!-- Owl js -->
-<script src="{% static 'owlcarousel/js/owl.carousel.min.js' %}"></script>
-<script>
-    // Owl Carousel start function.
-    // Docs: https://owlcarousel2.github.io/OwlCarousel2/docs/started-installation.html
-    $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 4
-            }
-        }
-    })
+    {{ block.super }}
+        <!-- Owl js -->
+        <script src="{% static 'owlcarousel/js/owl.carousel.min.js' %}"></script>
+        <script>
+            // Owl Carousel start function.
+            // Docs: https://owlcarousel2.github.io/OwlCarousel2/docs/started-installation.html
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            })
 
-    // Remove col-2 class for Browse Category navlink dropndown for mobile view
-    jQuery(document).ready(function (e) {
-        classAddRmove();
+            // Remove col-2 class for Browse Category navlink dropndown for mobile view
+            jQuery(document).ready(function (e) {
+                classAddRmove();
 
-        $(window).resize(function () {
-            classAddRmove();
-        });
+                $(window).resize(function () {
+                    classAddRmove();
+                });
 
-        function classAddRmove() {
-            if ($(window).width() <= 991) {
-                document.getElementById("nav-category").classList.remove("col-2");
-                document.getElementById("navbar-class-change").classList.add("navbar-nav");
-            } else {
-                document.getElementById("nav-category").classList.add("col-2");
-                document.getElementById("navbar-class-change").classList.remove("navbar-nav");
-            }
-        }
-    });
-</script>
+                function classAddRmove() {
+                    if ($(window).width() <= 991) {
+                        document.getElementById("nav-category").classList.remove("col-2");
+                        document.getElementById("navbar-class-change").classList.add("navbar-nav");
+                    } else {
+                        document.getElementById("nav-category").classList.add("col-2");
+                        document.getElementById("navbar-class-change").classList.remove("navbar-nav");
+                    }
+                }
+            });
+        </script>
 {% endblock %}

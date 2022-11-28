@@ -125,7 +125,7 @@
                     <!-- Shopping Bag -->
                     <div class="col-6 py-1 py-lg-0">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                            href="#">
+                            href="{% url 'view_bag' %}">
                             <div class="text-center mt-2">
                                 <p><i class="fas fa-shopping-bag fa-lg"></i> Check Out</p>
 
