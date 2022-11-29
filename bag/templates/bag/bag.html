@@ -32,7 +32,7 @@
                                 <p class="my-0">£{{ item.book.price }}</p>
                             </td>
                             <td class="py-3 w-25">
-                                <p class="my-0">{{ item.quantity }}</p>
+                                {% include "bag/quantity-form.html" %}
                             </td>
                             <td class="py-3">
                                 <p class="my-0">£{{ item.book.price }}</p>
@@ -100,5 +100,6 @@
         window.scrollTo(0, 0)
     })
 </script>
+{% include 'books/includes/quantity_input_script.html' %}
 
 {% endblock %}
