@@ -72,3 +72,21 @@ def adjust_bag(request, item_id):
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
+
+
+def adjust_bag(request, item_id):
+    """Adjust the quantity of the specified product to the specified amount"""
+
+    book = get_object_or_404(Book, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    bag = request.session.get('bag', {})
+
+    if quantity > 0:
+        bag[item_id] = quantity
+        # messages.success(request, (f'Updated {product.name} 'f'quantity to {bag[item_id]}'))
+    else:
+        bag.pop(item_id)
+        # messages.success(request, (f'Removed {product.name} 'f'from your bag'))
+
+    request.session['bag'] = bag
+    return redirect(reverse('view_bag'))
