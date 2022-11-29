@@ -190,73 +190,73 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script>
-        // Remove col-2 class for Browse Category navlink dropndown for mobile view
-        jQuery(document).ready(function (e) {
-            classAddRmove();
-    
-            $(window).resize(function () {
+        <script>
+            // Remove col-2 class for Browse Category navlink dropndown for mobile view
+            jQuery(document).ready(function (e) {
                 classAddRmove();
-            });
-    
-            function classAddRmove() {
-                if ($(window).width() <= 991) {
-                    document.getElementById("nav-category").classList.remove("col-2");
-                    document.getElementById("navbar-class-change").classList.add("navbar-nav");
-                    
-                } else {
-                    document.getElementById("nav-category").classList.add("col-2");
-                    document.getElementById("navbar-class-change").classList.remove("navbar-nav");
+        
+                $(window).resize(function () {
+                    classAddRmove();
+                });
+        
+                function classAddRmove() {
+                    if ($(window).width() <= 991) {
+                        document.getElementById("nav-category").classList.remove("col-2");
+                        document.getElementById("navbar-class-change").classList.add("navbar-nav");
+                        
+                    } else {
+                        document.getElementById("nav-category").classList.add("col-2");
+                        document.getElementById("navbar-class-change").classList.remove("navbar-nav");
+                    }
                 }
-            }
-        });
-    </script>
-    <!-- Script for back to top button -->
-    <script type="text/javascript">
-        $('.btt-link').click(function(e) {
-            window.scrollTo(0,0)
-        })
-    </script>
+            });
+        </script>
+        <!-- Script for back to top button -->
+        <script type="text/javascript">
+            $('.btt-link').click(function(e) {
+                window.scrollTo(0,0)
+            })
+        </script>
 
 
-    <!-- Script for book category, price, rating, and name order select -->
-    <script type="text/javascript">
-        $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
+        <!-- Script for book category, price, rating, and name order select -->
+        <script type="text/javascript">
+            $('#sort-selector').change(function() {
+                var selector = $(this);
+                var currentUrl = new URL(window.location);
 
-            var selectedVal = selector.val();
-            console.log(selectedVal)
-            if(selectedVal == "book_depository_stars_asc"){
-                var sort = "book_depository_stars";
-                var direction = "desc";
+                var selectedVal = selector.val();
+                console.log(selectedVal)
+                if(selectedVal == "book_depository_stars_asc"){
+                    var sort = "book_depository_stars";
+                    var direction = "desc";
 
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
+                    currentUrl.searchParams.set("sort", sort);
+                    currentUrl.searchParams.set("direction", direction);
 
-                window.location.replace(currentUrl);
-            }else if (selectedVal == "book_depository_stars_desc"){
-                var sort = "book_depository_stars";
-                var direction = "asc";
+                    window.location.replace(currentUrl);
+                }else if (selectedVal == "book_depository_stars_desc"){
+                    var sort = "book_depository_stars";
+                    var direction = "asc";
 
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
+                    currentUrl.searchParams.set("sort", sort);
+                    currentUrl.searchParams.set("direction", direction);
 
-                window.location.replace(currentUrl);
-            } else if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
+                    window.location.replace(currentUrl);
+                } else if(selectedVal != "reset"){
+                    var sort = selectedVal.split("_")[0];
+                    var direction = selectedVal.split("_")[1];
 
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
+                    currentUrl.searchParams.set("sort", sort);
+                    currentUrl.searchParams.set("direction", direction);
 
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
+                    window.location.replace(currentUrl);
+                } else {
+                    currentUrl.searchParams.delete("sort");
+                    currentUrl.searchParams.delete("direction");
 
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>
+                    window.location.replace(currentUrl);
+                }
+            })
+        </script>
 {% endblock %}
