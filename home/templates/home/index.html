@@ -113,44 +113,36 @@
 
                             <div class="row">
 
+                                {% for book in books %}
                                 <div class="col-6">
                                     <div class="card card-body">
                                         <div class="row">
                                             <div class="col-4">
-                                                <div class="book-image"></div>
+                                                <div class="book-image">
+                                                    <img class="img-fluid" src="{{ book.img_paths.url }}"
+                                                        alt="{{ book.name }}">
+                                                </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="deal-text">
-                                                    <h3>Auther Name: Dave Tayler</h3>
+                                                    <h3>Book Name: {{ book.name }} </h3>
+                                                    <p>Auther Name: {{ book.author }}</p>
+                                                    {% if book.category %}
+                                                    <p class="">
+                                                        <a class="text-muted"
+                                                            href="{% url 'books' %}?category={{ book.category.name }}">
+                                                            <i
+                                                                class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                                                        </a>
+                                                    </p>
+                                                    {% endif %}
                                                     <br>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                        eiusmod tempor incididunt ut
-                                                        labore et dolore magna aliqua.</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-6">
-                                    <div class="card card-body">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="book-image"></div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="deal-text">
-                                                    <h3>Auther Name: Dave Tayler</h3>
-                                                    <br>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                        eiusmod
-                                                        tempor incididunt ut
-                                                        labore et dolore magna aliqua.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
 
                             </div>
 
@@ -160,7 +152,9 @@
 
                     <div class="collapse multi-collapse" id="multiCollapseExample2">
                         <div class="card card-body">
-                            Two
+                            {% for book in books %}
+                            
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -226,46 +220,46 @@
 
 
 {% block postloadjs %}
-    {{ block.super }}
-        <!-- Owl js -->
-        <script src="{% static 'owlcarousel/js/owl.carousel.min.js' %}"></script>
-        <script>
-            // Owl Carousel start function.
-            // Docs: https://owlcarousel2.github.io/OwlCarousel2/docs/started-installation.html
-            $('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 0,
-                nav: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 3
-                    },
-                    1000: {
-                        items: 4
-                    }
-                }
-            })
+{{ block.super }}
+<!-- Owl js -->
+<script src="{% static 'owlcarousel/js/owl.carousel.min.js' %}"></script>
+<script>
+    // Owl Carousel start function.
+    // Docs: https://owlcarousel2.github.io/OwlCarousel2/docs/started-installation.html
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    })
 
-            // Remove col-2 class for Browse Category navlink dropndown for mobile view
-            jQuery(document).ready(function (e) {
-                classAddRmove();
+    // Remove col-2 class for Browse Category navlink dropndown for mobile view
+    jQuery(document).ready(function (e) {
+        classAddRmove();
 
-                $(window).resize(function () {
-                    classAddRmove();
-                });
+        $(window).resize(function () {
+            classAddRmove();
+        });
 
-                function classAddRmove() {
-                    if ($(window).width() <= 991) {
-                        document.getElementById("nav-category").classList.remove("col-2");
-                        document.getElementById("navbar-class-change").classList.add("navbar-nav");
-                    } else {
-                        document.getElementById("nav-category").classList.add("col-2");
-                        document.getElementById("navbar-class-change").classList.remove("navbar-nav");
-                    }
-                }
-            });
-        </script>
+        function classAddRmove() {
+            if ($(window).width() <= 991) {
+                document.getElementById("nav-category").classList.remove("col-2");
+                document.getElementById("navbar-class-change").classList.add("navbar-nav");
+            } else {
+                document.getElementById("nav-category").classList.add("col-2");
+                document.getElementById("navbar-class-change").classList.remove("navbar-nav");
+            }
+        }
+    });
+</script>
 {% endblock %}

@@ -1,8 +1,16 @@
 from django.shortcuts import render
+from books.models import Book, Category
 
 
 def index(request):
     """
-    A view to return home index page
+    A view to return home index page with book products
     """
-    return render(request, 'home/index.html')
+
+    books = Book.objects.all()
+
+    context = {
+        'books': books,
+    }
+
+    return render(request, 'home/index.html', context)
