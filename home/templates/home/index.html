@@ -95,79 +95,148 @@
 
                         <button class="btn" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample2" aria-expanded="false"
-                            aria-controls="multiCollapseExample2 multiCollapseExample3">Crime & Thriller</button>
+                            aria-controls="multiCollapseExample2">Crime & Thriller</button>
 
                         <button class="btn" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample3" aria-expanded="false"
-                            aria-controls="multiCollapseExample3">History & Archaeology</button>
+                            aria-controls="multiCollapseExample3">Natural History</button>
 
                         <button class="btn" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample4" aria-expanded="false"
                             aria-controls="multiCollapseExample4">Humer</button>
+                            
                     </p>
                 </div>
 
                 <div class="col-12">
                     <div class="container">
                         <div class="collapse show multi-collapse" id="multiCollapseExample1">
-
-                            <div class="row">
-
-                                {% for book in books %}
-                                <div class="col-6">
-                                    <div class="card card-body">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="book-image">
-                                                    <img class="img-fluid" src="{{ book.img_paths.url }}"
-                                                        alt="{{ book.name }}">
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="deal-text">
-                                                    <h3>Book Name: {{ book.name }} </h3>
-                                                    <p>Auther Name: {{ book.author }}</p>
-                                                    {% if book.category %}
-                                                    <p class="">
-                                                        <a class="text-muted"
-                                                            href="{% url 'books' %}?category={{ book.category.name }}">
-                                                            <i
-                                                                class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                                                        </a>
-                                                    </p>
-                                                    {% endif %}
-                                                    <br>
-                                                </div>
-                                            </div>
+                            {% for book in books %}
+                            {% if book.category|lower == "biography"|lower %}
+                            <div class="card card-body">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="book-image">
+                                            <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="deal-text">
+                                            <h3>Book Name: {{ book.name }} </h3>
+                                            <p>Auther Name: {{ book.author }}</p>
+                                            {% if book.category %}
+                                            <p class="">
+                                                <a class="text-muted"
+                                                    href="{% url 'books' %}?category={{ book.category.name }}">
+                                                    <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                                                </a>
+                                            </p>
+                                            {% endif %}
+                                            <br>
                                         </div>
                                     </div>
                                 </div>
-                                {% endfor %}
-
                             </div>
+                            {% endif %}
+                            {% endfor %}
 
                         </div>
 
                     </div>
 
                     <div class="collapse multi-collapse" id="multiCollapseExample2">
+
+                        {% for book in books %}
+                        {% if book.category|lower == "crime thriller"|lower %}
                         <div class="card card-body">
-                            {% for book in books %}
-                            
-                            {% endfor %}
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="book-image">
+                                        <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="deal-text">
+                                        <h3>Book Name: {{ book.name }} </h3>
+                                        <p>Auther Name: {{ book.author }}</p>
+                                        {% if book.category %}
+                                        <p class="">
+                                            <a class="text-muted"
+                                                href="{% url 'books' %}?category={{ book.category.name }}">
+                                                <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                                            </a>
+                                        </p>
+                                        {% endif %}
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        {% endif %}
+                        {% endfor %}
+
                     </div>
 
                     <div class="collapse multi-collapse" id="multiCollapseExample3">
+                        {% for book in books %}
+                        {% if book.category|lower == "natural history"|lower %}
                         <div class="card card-body">
-                            Three
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="book-image">
+                                        <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="deal-text">
+                                        <h3>Book Name: {{ book.name }} </h3>
+                                        <p>Auther Name: {{ book.author }}</p>
+                                        {% if book.category %}
+                                        <p class="">
+                                            <a class="text-muted"
+                                                href="{% url 'books' %}?category={{ book.category.name }}">
+                                                <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                                            </a>
+                                        </p>
+                                        {% endif %}
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
 
                     <div class="collapse multi-collapse" id="multiCollapseExample4">
+                        {% for book in books %}
+                        {% if book.category|lower == "humour"|lower %}
                         <div class="card card-body">
-                            Four
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="book-image">
+                                        <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="deal-text">
+                                        <h3>Book Name: {{ book.name }} </h3>
+                                        <p>Auther Name: {{ book.author }}</p>
+                                        {% if book.category %}
+                                        <p class="">
+                                            <a class="text-muted"
+                                                href="{% url 'books' %}?category={{ book.category.name }}">
+                                                <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                                            </a>
+                                        </p>
+                                        {% endif %}
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
 
