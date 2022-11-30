@@ -22,11 +22,11 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- Font awesome css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Static base css -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <!-- Owl Carousel css -->
     <link rel="stylesheet" href="{% static 'owlcarousel/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'owlcarousel/css/owl.theme.default.min.css' %}">
+     <!-- Static base css -->
+     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css  %}
@@ -44,6 +44,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
+    <!-- Stripe js -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- JS -->
     <script scr="{% static 'js/base.js' %}"></script>
     {% endblock %}
 
@@ -171,7 +174,7 @@
     {% endblock %}
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         let toastElList = [].slice.call(document.querySelectorAll('.toast'))
         let toastList = toastElList.map(function (toastEl) {
         let option = {
