@@ -25,8 +25,8 @@
     <!-- Owl Carousel css -->
     <link rel="stylesheet" href="{% static 'owlcarousel/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'owlcarousel/css/owl.theme.default.min.css' %}">
-     <!-- Static base css -->
-     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!-- Static base css -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css  %}
@@ -46,8 +46,7 @@
     </script>
     <!-- Stripe js -->
     <script src="https://js.stripe.com/v3/"></script>
-    <!-- JS -->
-    <script scr="{% static 'js/base.js' %}"></script>
+    
     {% endblock %}
 
     {% block extra_js %}
@@ -174,18 +173,21 @@
     {% endblock %}
 
     {% block postloadjs %}
-    <script>
-        let toastElList = [].slice.call(document.querySelectorAll('.toast'))
-        let toastList = toastElList.map(function (toastEl) {
-        let option = {
-            animation: true,
-            autohide: true,
-            delay: 10000,
-        }
-        let bsToast = new bootstrap.Toast(toastEl, option)
-        bsToast.show();
-        })
-    </script>
+        {{ block.super }}
+        <!-- JS -->
+            <script scr="{% static 'js/base.js' %}"></script>
+            <script>
+                let toastElList = [].slice.call(document.querySelectorAll('.toast'))
+                let toastList = toastElList.map(function (toastEl) {
+                let option = {
+                    animation: true,
+                    autohide: true,
+                    delay: 10000,
+                }
+                let bsToast = new bootstrap.Toast(toastEl, option)
+                bsToast.show();
+                })
+            </script>
     {% endblock %}
 
 </body>
