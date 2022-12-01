@@ -237,6 +237,8 @@ Am I Responsive has been used for the responsive image at the top of README.md y
 1. [SmartDraw](https://cloud.smartdraw.com/)
     - SmartDraw helps us create compelling visual content - including Org Charts, Business Processes and Work Flowcharts and has been used for the Data Modal image.
 
+    ADD STRIPE
+
 ***
 ## Testing
 
