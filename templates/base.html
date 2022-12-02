@@ -46,7 +46,7 @@
     </script>
     <!-- Stripe js -->
     <script src="https://js.stripe.com/v3/"></script>
-
+    <script src="{% static 'js/base.js' %}"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -197,7 +197,7 @@
             })
         </script>
          <!-- Toasts JS -->
-        <script scr="{% static 'js/base.js' %}"></script>
+        
         <script>
             let toastElList = [].slice.call(document.querySelectorAll('.toast'))
             let toastList = toastElList.map(function (toastEl) {
@@ -237,7 +237,7 @@
             })
         </script>
     {% endblock %}
-
+    
 </body>
 
 </html>
