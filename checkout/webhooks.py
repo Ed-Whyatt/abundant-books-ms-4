@@ -31,7 +31,7 @@ def webhook(request):
         return HttpResponse(status=400)
     except Exception as e:
         return HttpResponse(content=e, status=400)
-    
+
     print('sucess!')
 
     # Set up a webhook handler
