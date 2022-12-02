@@ -16,33 +16,23 @@
 
 <div class="owl-carousel owl-theme">
 
+    {% for book in carousel_books %}
     <div class="book-container item">
-        <div class="book-bg-one">
-            <div class="carousel-image"></div>
+        <div class="book-bg-colour">
+            <div class="carousel-image">
+                <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+            </div>
         </div>
         <div class="book-bottom"></div>
     </div>
+    {% endfor %}
 
-    <div class="book-container item">
+    <!-- <div class="book-container item">
         <div class="book-bg-two">
             <div class="carousel-image"></div>
         </div>
         <div class="book-bottom"></div>
-    </div>
-
-    <div class="book-container item">
-        <div class="book-bg-three">
-            <div class="carousel-image"></div>
-        </div>
-        <div class="book-bottom"></div>
-    </div>
-
-    <div class="book-container item">
-        <div class="book-bg-four">
-            <div class="carousel-image"></div>
-        </div>
-        <div class="book-bottom"></div>
-    </div>
+    </div> -->
 
 </div>
 
@@ -285,9 +275,6 @@
 
 
 {% endblock %}
-
-
-
 {% block postloadjs %}
 {{ block.super }}
 {% endblock %}
