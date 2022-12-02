@@ -46,7 +46,7 @@
     </script>
     <!-- Stripe js -->
     <script src="https://js.stripe.com/v3/"></script>
-    
+
     {% endblock %}
 
     {% block extra_js %}
@@ -79,7 +79,8 @@
                         <input class="form-control border border-black rounded-0" type="text" name="q"
                             placeholder="Search our site">
                         <div class="input-group-append">
-                            <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
+                            <button class="form-control form-control btn btn-black border border-black rounded-0"
+                                type="submit">
                                 <span>
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -90,8 +91,7 @@
             </div>
 
             <!-- Main title logo -->
-            <div id="topnav" class="col-lg-4 mt-2 text-center"><a class="navbar-brand"
-                    href="{% url 'home' %}">
+            <div id="topnav" class="col-lg-4 mt-2 text-center"><a class="navbar-brand" href="{% url 'home' %}">
                     <h2><span class="abundent-logo">Abundent</span><strong class="books-logo">Books</strong></h2>
                 </a>
             </div>
@@ -152,17 +152,17 @@
     <div class="message-container">
         {% for message in messages %}
         {% with message.level as level %}
-            {% if level == 40 %}
-                {% include 'includes/toasts/toast_error.html' %}
-            {% elif level == 30 %}
-                {% include 'includes/toasts/toast_warning.html' %}
-            {% elif level == 25 %}
-                {% include 'includes/toasts/toast_success.html' %}
-            {% else %}
-                {% include 'includes/toasts/toast_info.html' %}
-            {% endif %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
         {% endwith %}
-    {% endfor %}
+        {% endfor %}
     </div>
     {% endif %}
 
@@ -173,12 +173,34 @@
     {% endblock %}
 
     {% block postloadjs %}
-        {{ block.super }}
-        <!-- JS -->
-            <script scr="{% static 'js/base.js' %}"></script>
-            <script>
-                let toastElList = [].slice.call(document.querySelectorAll('.toast'))
-                let toastList = toastElList.map(function (toastEl) {
+    {{ block.super }}
+        <!-- Owl js -->
+        <script src="{% static 'owlcarousel/js/owl.carousel.min.js' %}"></script>
+        <script>
+            // Owl Carousel start function.
+            // Docs: https://owlcarousel2.github.io/OwlCarousel2/docs/started-installation.html
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            })
+        </script>
+         <!-- Toasts JS -->
+        <script scr="{% static 'js/base.js' %}"></script>
+        <script>
+            let toastElList = [].slice.call(document.querySelectorAll('.toast'))
+            let toastList = toastElList.map(function (toastEl) {
                 let option = {
                     animation: true,
                     autohide: true,
@@ -186,8 +208,34 @@
                 }
                 let bsToast = new bootstrap.Toast(toastEl, option)
                 bsToast.show();
-                })
-            </script>
+            })
+
+            // Remove col-2 class for Browse Category navlink dropndown for mobile view
+            jQuery(document).ready(function (e) {
+                classAddRmove();
+
+                $(window).resize(function () {
+                    classAddRmove();
+                });
+
+                function classAddRmove() {
+                    if ($(window).width() <= 991) {
+                        document.getElementById("nav-category").classList.remove("col-2");
+                        document.getElementById("navbar-class-change").classList.add("navbar-nav");
+                    } else {
+                        document.getElementById("nav-category").classList.add("col-2");
+                        document.getElementById("navbar-class-change").classList.remove("navbar-nav");
+                    }
+                }
+            });
+        </script>
+        
+        <!-- Script for back to top button -->
+        <script type="text/javascript">
+            $('.btt-link').click(function(e) {
+                window.scrollTo(0, 0)
+            })
+        </script>
     {% endblock %}
 
 </body>
