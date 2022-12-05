@@ -8,9 +8,11 @@ def index(request):
     """
 
     books = Book.objects.all()
+    carousel_books = books.filter(on_carousel=True)
 
     context = {
         'books': books,
+        'carousel_books': carousel_books,
     }
 
     return render(request, 'home/index.html', context)

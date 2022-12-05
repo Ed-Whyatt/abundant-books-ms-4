@@ -31,6 +31,9 @@ class Book(models.Model):
     isbn = models.DecimalField(max_digits=15, decimal_places=0,
                                null=True, blank=True)
     img_paths = models.ImageField(null=True, blank=True)
+    on_carousel = models.BooleanField(default=False)
+    on_auther = models.BooleanField(default=False)
+    on_deal = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

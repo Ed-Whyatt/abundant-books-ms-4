@@ -16,33 +16,26 @@ body {
     background-color: black;
 }
 
-.book-bg-one {
+.book-bg-colour {
     height: 230px;
-    background-color: #CD6B44;
     width: 100%;
 }
 
-.book-bg-two {
-    height: 230px;
-    background-color: #0092C4;
-    width: 100%;
-}
-
-.book-bg-three {
-    height: 230px;
+.book-bg-colour:nth-of-type(3n+0) {
     background-color: #D58725;
-    width: 100%;
 }
 
-.book-bg-four {
-    height: 230px;
+.book-bg-colour:nth-of-type(3n-0) {
     background-color: #4EBBCE;
-    width: 100%;
+}
+
+.book-bg-colour:nth-of-type(3n+1) {
+    background-color: #CD6B44;
 }
 
 
 .book-bottom {
-    height:70px;
+    height: 70px;
     background-color: #F5F5F5;
     width: 100%;
 }
