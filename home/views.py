@@ -16,7 +16,7 @@ def index(request):
         'books': books,
         'carousel_books': carousel_books,
         'author_of_month': author_of_month,
-        'deal_ofmonth': deal_of_month,
+        'deal_of_month': deal_of_month,
     }
 
     return render(request, 'home/index.html', context)
