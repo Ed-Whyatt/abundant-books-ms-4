@@ -19,7 +19,12 @@
     <div class="book-container item">
         <div class="book-bg-colour">
             <div class="carousel-image">
-                <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                <a href="{% url 'book_info' book.id %}">
+                    <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                </a>
+            </div>
+            <div class="carousel-info">
+                <h2>{{ book.name }}</h2>
             </div>
         </div>
         <div class="book-bottom"></div>
@@ -31,7 +36,7 @@
 <div class="container-fluid home-main">
     <div class="row">
 
-        <div class="col-4">
+        <div class="col-lg-4 col-12">
             <div class="row">
                 <!-- Authers of the month -->
                 <div class="col-12">
@@ -46,7 +51,11 @@
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-4">
-                                    <div class="author-image"></div>
+                                    <div class="author-image">
+                                        <a href="#">
+                                            <img class="img-fluid" src="#" alt="">
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="col-8">
                                     <div class="author-text">
@@ -175,7 +184,7 @@
         </div>
 
         <!-- Popular Genres -->
-        <div class="col-8">
+        <div class="col-lg-8 col-12">
             <div class="row">
                 <div class="col-12">
                     <p>
@@ -208,7 +217,9 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="book-image">
-                                            <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                            <a href="{% url 'book_info' book.id %}">
+                                                <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="col-6">
