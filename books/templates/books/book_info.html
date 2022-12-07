@@ -44,10 +44,11 @@
                         </div>
                         <div class="col-6">
                             <div class="deal-text card-body">
-                                
+
                                 <ul>
                                     <li>
                                         <h3>{{ book.name }}</h3>
+                                        <h2>By: {{ book.author }}</h2>
                                     </li>
                                     {% if book.book_depository_stars == "0.00" %}
                                     <li class="stars">
@@ -118,15 +119,16 @@
                                     {% endif %}
                                     <li>
                                         {% if book.category %}
-                                            <p class="">
-                                                <a class="text-muted" href="{% url 'books' %}?category={{ book.category.name }}">
-                                                    <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                                                </a>
-                                            </p>
+                                        <p class="">
+                                            <a class="text-muted"
+                                                href="{% url 'books' %}?category={{ book.category.name }}">
+                                                <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                                            </a>
+                                        </p>
                                         {% endif %}
                                     </li>
                                 </ul>
-                                <br>  
+                                <br>
                                 <ul>
                                     <li>
                                         <p>RRP: {{ book.old_price }}: </p>
@@ -134,8 +136,9 @@
                                     </li>
                                     <li>
                                         <p><strong>Price: {{ book.price }}</strong></p>
+
                                     </li>
-                                   
+
                                 </ul>
                             </div>
                         </div>
@@ -153,16 +156,15 @@
                                         <div class="form-group w-50">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                    <button class="decrement-qty btn btn-black rounded-0" 
+                                                    <button class="decrement-qty btn btn-black rounded-0"
                                                         data-item_id="{{ book.id }}" id="decrement-qty_{{ book.id }}">
                                                         <span class="icon">
                                                             <i class="fas fa-minus"></i>
                                                         </span>
                                                     </button>
                                                 </div>
-                                                <input class="form-control qty_input" type="number"
-                                                    name="quantity" value="1" min="1" max="99"
-                                                    data-item_id="{{ book.id }}"
+                                                <input class="form-control qty_input" type="number" name="quantity"
+                                                    value="1" min="1" max="99" data-item_id="{{ book.id }}"
                                                     id="id_qty_{{ book.id }}">
                                                 <div class="input-group-append">
                                                     <button class="increment-qty btn btn-black rounded-0"
@@ -174,19 +176,20 @@
                                                 </div>
                                             </div>
 
+                                        </div>
+
+                                        <div class="col-12">
+                                            <a href="{% url 'books' %}" class="btn rounded-0 mt-5">
+                                                <span class="icon">
+                                                    <i class="fas fa-chevron-left"></i>
+                                                </span>
+                                                <span class="text-uppercase">Keep Shopping</span>
+                                            </a>
+                                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5"
+                                                value="Add to Bag">
+                                        </div>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     </div>
-        
-                                    <div class="col-12">
-                                        <a href="{% url 'books' %}" class="btn rounded-0 mt-5">
-                                            <span class="icon">
-                                                <i class="fas fa-chevron-left"></i>
-                                            </span>
-                                            <span class="text-uppercase">Keep Shopping</span>
-                                        </a>
-                                        <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
-                                    </div>
-                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                </div>
                             </form>
                         </div>
 
@@ -203,7 +206,7 @@
 
                             <button class="btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#multiCollapseExample2" aria-expanded="false"
-                                aria-controls="multiCollapseExample2">Auther</button>
+                                aria-controls="multiCollapseExample2">Author</button>
                         </p>
                     </div>
 
@@ -214,15 +217,8 @@
                                 <div class="card card-body">
                                     <div class="row">
                                         <div class="col-12">
-                                            <div class="">
-                                                <h3>Auther Name: Dave Tayler</h3>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="deal-text">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                    eiusmod tempor incididunt ut
-                                                    labore et dolore magna aliqua.</p>
+                                            <div id="Synopsis">
+
                                             </div>
                                         </div>
                                     </div>
@@ -234,7 +230,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="">
-                                                <h3>Auther Name: Dave Tayler</h3>
+                                                <h3>Author Name: </h3>
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -261,28 +257,40 @@
 </div>
 
 </div>
+
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-        {% include 'books/includes/quantity_input_script.html' %}
-        <script>
-        let bookUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
-        let search = '{{ book.isbn }}'
-        console.log(search)
-        
-        $.getJSON(bookUrl + search,
-            function (bookData) {
-                console.log(bookData)
-            },
+{{ block.super }}
+{% include 'books/includes/quantity_input_script.html' %}
+<script>
+    // Get book from Google books useing ISBN number https://developers.google.com/books/docs/v1/using
+    let isbnUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
+    let searchIsbn = '{{ book.isbn }}'
 
-            // If an error occurs then show error response under search bar
-            function error(errorResponse) {
-                if (errorResponse.status === 404) {
-                    console.log(errorResponse)
-                }
+    $.getJSON(isbnUrl + searchIsbn,
+        function (IsbnData) {
+            bookSynopis = IsbnData.items[0].volumeInfo.description;
+            console.log(IsbnData)
+            if (IsbnData.totalItems == 0) {
+                $("#Synopsis").html(
+                    `<div>Nothing</div>`
+                );
+            } else {
+                $("#Synopsis").html(
+                    `<div>${bookSynopis}</div>`
+                );
             }
-        );
+        },
 
-        </script>
+        // If an error occurs then show error response under search bar
+        function error(errorResponse) {
+            if (errorResponse.status === 404) {
+                console.log(errorResponse)
+            }
+        }
+    );
+
+
+</script>
 {% endblock %}
