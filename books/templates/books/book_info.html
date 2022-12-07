@@ -44,8 +44,11 @@
                         </div>
                         <div class="col-6">
                             <div class="deal-text card-body">
-                                <h3>{{ book.name }}</h3>
+                                
                                 <ul>
+                                    <li>
+                                        <h3>{{ book.name }}</h3>
+                                    </li>
                                     {% if book.book_depository_stars == "0.00" %}
                                     <li class="stars">
                                         0<i class="far fa-star"></i><i class="far fa-star"></i><i
@@ -113,17 +116,27 @@
                                             class="fas fa-star"></i>
                                     </li>
                                     {% endif %}
+                                    <li>
+                                        {% if book.category %}
+                                            <p class="">
+                                                <a class="text-muted" href="{% url 'books' %}?category={{ book.category.name }}">
+                                                    <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                                                </a>
+                                            </p>
+                                        {% endif %}
+                                    </li>
                                 </ul>
-                                <br>
-                                <p>RRP: {{ book.old_price }}: </p>
-                                <p><strong>Price: {{ book.price }}</strong></p>
-                                {% if book.category %}
-                                <p class="">
-                                    <a class="text-muted" href="{% url 'books' %}?category={{ book.category.name }}">
-                                        <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                                    </a>
-                                </p>
-                                {% endif %}
+                                <br>  
+                                <ul>
+                                    <li>
+                                        <p>RRP: {{ book.old_price }}: </p>
+                                        <div>{{ book.isbn }}</div>
+                                    </li>
+                                    <li>
+                                        <p><strong>Price: {{ book.price }}</strong></p>
+                                    </li>
+                                   
+                                </ul>
                             </div>
                         </div>
 
@@ -251,6 +264,25 @@
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
-{% include 'books/includes/quantity_input_script.html' %}
+    {{ block.super }}
+        {% include 'books/includes/quantity_input_script.html' %}
+        <script>
+        let bookUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
+        let search = '{{ book.isbn }}'
+        console.log(search)
+        
+        $.getJSON(bookUrl + search,
+            function (bookData) {
+                console.log(bookData)
+            },
+
+            // If an error occurs then show error response under search bar
+            function error(errorResponse) {
+                if (errorResponse.status === 404) {
+                    console.log(errorResponse)
+                }
+            }
+        );
+
+        </script>
 {% endblock %}
