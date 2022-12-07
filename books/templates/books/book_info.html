@@ -291,6 +291,47 @@
         }
     );
 
+    // Get book Author key from openlibary API https://openlibrary.org/dev/docs/api/authors
+    let authorUrl = "https://openlibrary.org/search/authors.json?q=";
+    let searchAuthor = '{{ book.author }}'
+    console.log(searchAuthor)
 
+    $.getJSON(authorUrl + searchAuthor,
+        function (bookData) {
+            authorKey = bookData.docs[0].key;
+            (authorKeySearch(authorKey));
+        },
+
+        // If an error occurs then show error response under search bar
+        function error(errorResponse) {
+            if (errorResponse.status === 404) {
+                console.log(errorResponse)
+            }
+        }
+    );
+
+    function authorKeySearch(authorKey) {
+        console.log(authorKey);
+        let authorUrl = "https://openlibrary.org/authors/";
+        let authorUrlEnd = authorKey + ".json";
+
+        $.getJSON(authorUrl + authorUrlEnd,
+            function (result) {
+                for (results in result) {
+                    if (result.bio) {
+                        console.log(result.bio)
+                    } else {
+                        console.log("None")
+                    };
+                }
+
+                // If an error occurs then show error response under search bar
+                function error(errorResponse) {
+                    if (errorResponse.status === 404) {
+                        console.log(errorResponse)
+                    }
+                }
+            });
+        }
 </script>
 {% endblock %}
