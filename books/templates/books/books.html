@@ -90,7 +90,7 @@
                                             <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
                                         </a>
                                     {% else %}
-                                        <a href="{% url 'book_info' book.id %}"></a>
+                                        <a href="{% url 'book_info' book.id %}">
                                             <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
                                         </a>
                                     {% endif %}
@@ -184,6 +184,13 @@
                                 {% endif %}
 
                                 <p>pk: {{ book.pk }}</p>
+
+                                {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                        <a href="{% url 'edit_book' book.id %}">Edit</a> | 
+                                        <a class="text-danger" href="{% url 'delete_book' book.id %}">Delete</a>
+                                    </small>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

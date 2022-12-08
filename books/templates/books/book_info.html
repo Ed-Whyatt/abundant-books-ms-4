@@ -144,6 +144,13 @@
                                         <p><strong>Price: {{ book.price }}</strong></p>
 
                                     </li>
+                                    {% if request.user.is_superuser %}
+                                    <li>
+                                        <small class="ml-3">
+                                            <a href="{% url 'edit_book' book.id %}">Edit</a>
+                                        </small>
+                                    </li>
+                                    {% endif %}
 
                                 </ul>
                             </div>
