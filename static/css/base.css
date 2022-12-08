@@ -11,6 +11,7 @@ body {
     position: absolute;
     margin-top: 10%;
     margin-left: 10%;
+    box-shadow: 5px 5px 20px #000
 }
 
 .carousel-info {
@@ -18,7 +19,11 @@ body {
     width: 50%;
     position: absolute;
     margin-top: 10%;
-    margin-left: 55%;
+    margin-left: 50%;
+}
+
+.carousel-info ul {
+    list-style-type: none;
 }
 
 .book-bg-colour {
@@ -26,17 +31,25 @@ body {
     width: 100%;
 }
 
-.book-bg-colour {
-    background-color: #D58725;
+.carousel-bg-one {
+    background-color: #DEC4D6;
+
 }
 
-/* .book-bg-colour:nth-of-type(1) {
-    background-color: #4EBBCE;
+.carousel-bg-two {
+    background-color: #A4CCE3;
+    
 }
 
-.book-bg-colour:nth-of-type(2) {
-    background-color: #CD6B44;
-} */
+.carousel-bg-three {
+    background-color: #90CDC3;
+  
+}
+
+.carousel-bg-four {
+    background-color: #7B92AA;
+
+}
 
 
 .book-bottom {
@@ -60,6 +73,11 @@ body {
     border-radius: 50%;
     margin-left: 50px;
     margin-top: 40px;
+}
+
+.book-image {
+    height: 100%;
+    width: 50%;
 }
 
 /* Back to top button */

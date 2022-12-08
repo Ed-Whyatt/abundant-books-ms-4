@@ -16,7 +16,7 @@
 <div class="owl-carousel owl-theme">
 
     {% for book in carousel_books %}
-    <div class="book-container item">
+    <div class="book-container item {% cycle 'carousel-bg-one' 'carousel-bg-two' 'carousel-bg-three' 'carousel-bg-four' %}">
         <div class="book-bg-colour">
             <div class="carousel-image">
                 {% if book.img_paths %}
@@ -282,7 +282,7 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="book-image">
-                                        <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                        <img class="" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
                                     </div>
                                 </div>
                                 <div class="col-6">
