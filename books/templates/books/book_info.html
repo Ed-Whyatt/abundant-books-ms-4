@@ -37,9 +37,15 @@
                     <div class="row">
                         <div class="col-4">
                             <div class="book-image card-body">
-                                <a href="{{ book.img_paths.url }}" target="_blank">
-                                    <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
-                                </a>
+                                {% if book.img_paths %}
+                                        <a href="{{ book.img_paths.url }}" target="_blank">
+                                            <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ MEDIA_URL }}noimage.png" target="_blank">
+                                            <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                                        </a>
+                                    {% endif %}
                             </div>
                         </div>
                         <div class="col-6">
@@ -146,7 +152,7 @@
                         <!-- Add to bag -->
                         <div class="col">
 
-                            <form class="form" action="{% url 'add_to_bag' book.id %}" method="POST">
+                            <form class="form" action="{% url 'add_to_bag' book.id %}" method="POST" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <div class="form-row">
                                     <div class="col-12">

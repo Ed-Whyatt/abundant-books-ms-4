@@ -19,16 +19,31 @@
     <div class="book-container item">
         <div class="book-bg-colour">
             <div class="carousel-image">
+                {% if book.img_paths %}
                 <a href="{% url 'book_info' book.id %}">
-                    {% if book.img_paths %}
-                        <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
-                    {% else %}
-                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
-                    {% endif %}
+                    <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
                 </a>
+                {% else %}
+                <a href="{% url 'book_info' book.id %}">
+                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                </a>
+                {% endif %}
             </div>
             <div class="carousel-info">
-                <h2>{{ book.name }}</h2>
+                <ul>
+                    <li><strong>{{ book.name }}</strong></li>
+                    <li><small>By {{ book.author }}</small></li>
+                    <li>Prie: {{ book.price }}</li>
+                    <li>Short Summary: ysagihdfh icdi fidcj adhijcf i dfjs fdfc s8a0 vd vasc d 8v8d 80d0</li>
+                    {% if request.user.is_superuser %}
+                    <li>
+                        <small class="ml-3">
+                            <a href="{% url 'edit_book' book.id %}">Edit</a>
+                        </small>
+                    </li>
+                    {% endif %}
+
+                </ul>
             </div>
         </div>
         <div class="book-bottom"></div>
@@ -53,25 +68,21 @@
 
                         {% for book in author_of_month %}
                         <div class="col-12">
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="author-image">
-                                        <a href="#">
-                                            <img class="img-fluid" src="#" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-8">
-                                    <div class="author-text">
-                                        <h3>{{ book.author }}</h3>
-                                        ISBN: {{ book.isbn }}
-                                        <br>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut
-                                            labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
+
+                            <div class="author-text">
+                                <h3>{{ book.author }}</h3>
+                                ISBN: {{ book.isbn }}
+                                <br>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                    tempor incididunt ut
+                                    labore et dolore magna aliqua.</p>
+                                {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                        <a href="{% url 'edit_book' book.id %}">Edit</a>
+                                    </small>
+                                {% endif %}
                             </div>
+
                         </div>
                         {% endfor %}
 
@@ -92,9 +103,9 @@
                                     <div class="book-image">
                                         <a href="{% url 'book_info' book.id %}">
                                             {% if book.img_paths %}
-                                                <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                            <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
                                             {% else %}
-                                                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                                            <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
                                             {% endif %}
                                         </a>
                                     </div>
@@ -181,6 +192,13 @@
                                         </p>
                                         {% endif %}
                                         <p><strong>Price: {{ book.price }}</strong></p>
+                                        {% if request.user.is_superuser %}
+                                        <li>
+                                            <small class="ml-3">
+                                                <a href="{% url 'edit_book' book.id %}">Edit</a>
+                                            </small>
+                                        </li>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -227,7 +245,8 @@
                                     <div class="col-4">
                                         <div class="book-image">
                                             <a href="{% url 'book_info' book.id %}">
-                                                <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                                <img class="img-fluid" src="{{ book.img_paths.url }}"
+                                                    alt="{{ book.name }}">
                                             </a>
                                         </div>
                                     </div>
@@ -300,7 +319,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="deal-text">
-                                        <h3>Book Name: {{ book.name }} </h3>
+                                        <p>Book Name: {{ book.name }} </p>
                                         <p>Auther Name: {{ book.author }}</p>
                                         {% if book.category %}
                                         <p class="">
@@ -331,8 +350,8 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="deal-text">
-                                        <h3>Book Name: {{ book.name }} </h3>
-                                        <p>Auther Name: {{ book.author }}</p>
+                                        <p>Book Name: {{ book.name }} </p>
+                                        <p>By: {{ book.author }}</p>
                                         {% if book.category %}
                                         <p class="">
                                             <a class="text-muted"
@@ -342,6 +361,7 @@
                                         </p>
                                         {% endif %}
                                         <br>
+
                                     </div>
                                 </div>
                             </div>
