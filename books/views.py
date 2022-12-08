@@ -97,8 +97,17 @@ def add_book(request):
 def edit_book(request, book_id):
     """ Edit a book or product to the store """
     book = get_object_or_404(Book, pk=book_id)
-    form = BookForm(instance=book)
-    messages.info(request, f'You are editing {book.name}')
+    if request.method == 'POST':
+        form = BookForm(request.POST, request.FILES, instance=book)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product or book!')
+            return redirect(reverse('book_info', args=[book.id]))
+        else:
+            messages.error(request, 'Failed to update product or book. Please ensure the form is valid.')
+    else:
+        form = BookForm(instance=book)
+        messages.info(request, f'You are editing {book.name}')
 
     template = 'books/edit_book.html'
     context = {
