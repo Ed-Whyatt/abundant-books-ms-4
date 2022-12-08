@@ -20,7 +20,11 @@
         <div class="book-bg-colour">
             <div class="carousel-image">
                 <a href="{% url 'book_info' book.id %}">
-                    <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                    {% if book.img_paths %}
+                        <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                    {% else %}
+                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                    {% endif %}
                 </a>
             </div>
             <div class="carousel-info">
@@ -87,7 +91,11 @@
                                 <div class="col-4">
                                     <div class="book-image">
                                         <a href="{% url 'book_info' book.id %}">
-                                            <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                            {% if book.img_paths %}
+                                                <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                            {% else %}
+                                                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                                            {% endif %}
                                         </a>
                                     </div>
                                 </div>
