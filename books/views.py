@@ -74,7 +74,7 @@ def book_info(request, book_id):
 
 
 def add_book(request):
-    """ Add a product to the store """
+    """ Add a book or product to the store """
     if request.method == 'POST':
         form = BookForm(request.POST, request.FILES)
         if form.is_valid():
@@ -89,6 +89,21 @@ def add_book(request):
     template = 'books/add_book.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_book(request, book_id):
+    """ Edit a book or product to the store """
+    book = get_object_or_404(Book, pk=book_id)
+    form = BookForm(instance=book)
+    messages.info(request, f'You are editing {book.name}')
+
+    template = 'books/edit_book.html'
+    context = {
+        'form': form,
+        'book': book,
     }
 
     return render(request, template, context)
