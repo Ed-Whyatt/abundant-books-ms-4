@@ -24,8 +24,8 @@ class Book(models.Model):
     format = models.CharField(max_length=254, null=True, blank=True)
     book_depository_stars = models.DecimalField(max_digits=6, decimal_places=2,
                                                 null=True, blank=True)
-    price = models.CharField(max_length=254)
-    currency = models.TextField(null=True, blank=True)
+    price = models.CharField(max_length=8)
+    currency = models.CharField(max_length=2, null=True, blank=True)
     old_price = models.DecimalField(max_digits=6, decimal_places=2,
                                     null=True, blank=True)
     isbn = models.DecimalField(max_digits=15, decimal_places=0,
