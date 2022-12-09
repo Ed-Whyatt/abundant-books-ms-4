@@ -2,15 +2,6 @@
 {% load static %}
 
 {% block extra_css  %}
-<style>
-    .bg-lite-gray {
-        background-color: #F5F5F5;
-    }
-
-    .stars {
-        display: inline;
-    }
-</style>
 {% endblock %}
 
 {% block extra_js %}
@@ -226,15 +217,29 @@
                     <div class="col-12">
                         <div class="container">
                             <div class="row">
-                                <div class="col-6">
-                                    <div id="Synopsis">
-
-                                    </div>
+                                <div class="col-6">   
+                                        <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                            <div class="card card-body">
+                                                <div class="deal-text">
+                                                    <div id="Synopsis">
+                                                        <!-- Synopis info here -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
                                 </div>
-                                <div class="col-6">
-                                    <div id="author">
-
-                                    </div>
+                                <div class="col-6"> 
+                                        <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                            <div class="card card-body">
+                                                <div class="deal-text">
+                                                    <p>{{ book.author }}</p>
+                                                    <div id="author">
+                                                        
+                                                        <!-- Author info here -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>     
                                 </div>
                             </div>
 
@@ -257,138 +262,5 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'books/includes/quantity_input_script.html' %}
-<script>
-    // Get book from Google books useing ISBN number https://developers.google.com/books/docs/v1/using
-    let isbnUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
-    let isbn = '{{ book.isbn }}';
-    $.getJSON(isbnUrl + isbn,
-        function (bookData) {
-            console.log(bookData)
-            bookSynopis = bookData.items[0].volumeInfo.description;
-            if (typeof(bookData) === undefined) {
-                console.log("no data")
-                $("#Synopsis").html(
-                    `
-                    <div class="collapse multi-collapse" id="multiCollapseExample1">
-                            <div class="card card-body">
-                                <div class="deal-text">
-                                    <p>{{ book.name }}</p>
-                                    <p>For more information call us or get in contact (link)</p>
-                                </div>
-                            </div>
-                        </div> 
-                    `
-                );
-            } else if (bookData.totalItems === 0){
-                console.log("No data 2")
-                $("#Synopsis").html(
-                    `
-                    <div class="collapse multi-collapse" id="multiCollapseExample1">
-                            <div class="card card-body">
-                                <div class="deal-text">
-                                    <p>{{ book.name }}</p>
-                                    <p>For more information call us or get in contact (link)</p>
-                                </div>
-                            </div>
-                        </div> 
-                    `
-                );
-            } else {
-                $("#Synopsis").html(
-                    `
-                    <div class="collapse multi-collapse" id="multiCollapseExample1">
-                        <div class="card card-body">
-                            <div>${bookSynopis}</div>
-                        </div>
-                    </div>
-                    `
-                );
-            }
-        },
-        // If an error occurs then show error response under search bar
-        function error(errorResponse) {
-            if (errorResponse.status === 404) {
-                console.log("errorResopnse", errorResponse);
-            } else {
-                console.log(errorResponse.reponseJSON.message);
-            }
-        }
-    );
-
-        
-
-
-    // Get book Author key from openlibary API https://openlibrary.org/dev/docs/api/authors
-    let authorUrl = "https://openlibrary.org/search/authors.json?q=";
-    let searchAuthor = '{{ book.author }}'
-
-    $.getJSON(authorUrl + searchAuthor,
-        function (bookData) {
-            authorKey = bookData.docs[0].key;
-            (authorKeySearch(authorKey));
-        },
-
-        // If an error occurs then show error response under search bar
-        function error(errorResponse) {
-            if (errorResponse.status === 404) {
-                console.log(errorResponse)
-            }
-        }
-    );
-
-    function authorKeySearch(authorKey) {
-        let authorUrl = "https://openlibrary.org/authors/";
-        let authorUrlEnd = authorKey + ".json";
-        $.getJSON(authorUrl + authorUrlEnd,
-            function (result) {
-                if (result.bio.value != undefined) {
-                    $("#author").html(
-                        `
-                        <div class="collapse multi-collapse" id="multiCollapseExample2">
-                            <div class="card card-body">
-                                <div class="deal-text">
-                                    <div>${result.bio.value}</div>
-                                </div>
-                            </div>
-                        </div>           
-                        `
-                    );
-                } else if (result.bio != undefined) {
-                    $("#author").html(
-                        `
-                        <div class="collapse multi-collapse" id="multiCollapseExample2">
-                            <div class="card card-body">
-                                <div class="deal-text">
-                                    <div>${result.bio}</div>
-                                </div>
-                            </div>
-                        </div>           
-                        `
-                    );
-                } else {
-                    $("#author").html(
-                        `
-                        <div class="collapse multi-collapse" id="multiCollapseExample2">
-                            <div class="card card-body">
-                                <div class="deal-text">
-                                    <p>{{ book.author }}</p>
-                                    <p>For more information call us or get in contact (link)</p>
-                                </div>
-                            </div>
-                        </div>           
-                        `
-                    );
-                }
-            },
-            // If an error occurs then show error response under search bar
-            function error(errorResponse) {
-                if (errorResponse.status === 404) {
-                    console.log(errorResponse)
-                }
-            }
-        )
-    };
-</script>
-
-
+{% include 'books/includes/synopsis_author_script.html' %}
 {% endblock %}
