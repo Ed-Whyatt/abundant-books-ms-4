@@ -17,5 +17,17 @@
             <div class="col-12">
                 <h2>News Letter</h2>
         </div>
+        <div class="row">
+            <div class="col-6">
+                <form method="POST" action="{% url 'news_letter' %}" class="form mb-2">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-right">
+                        <a class="btn" href="{% url 'news_letter' %}">Cancel</a>
+                        <button class="btn" type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 {% endblock %}
