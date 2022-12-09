@@ -177,53 +177,11 @@
 
     {% block postloadjs %}
     {{ block.super }}
-        <!-- Owl js -->
+        <!-- Owl postload js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         <!-- Postload js -->
         <script src="{% static 'js/postload_base.js' %}"></script>
-
-         <!-- Toasts JS -->
-        
-        <script>
-            let toastElList = [].slice.call(document.querySelectorAll('.toast'))
-            let toastList = toastElList.map(function (toastEl) {
-                let option = {
-                    animation: true,
-                    autohide: true,
-                    delay: 10000,
-                }
-                let bsToast = new bootstrap.Toast(toastEl, option)
-                bsToast.show();
-            })
-
-            // Remove col-2 class for Browse Category navlink dropndown for mobile view
-            jQuery(document).ready(function (e) {
-                classAddRmove();
-
-                $(window).resize(function () {
-                    classAddRmove();
-                });
-
-                function classAddRmove() {
-                    if ($(window).width() <= 991) {
-                        document.getElementById("nav-category").classList.remove("col-2");
-                        document.getElementById("navbar-class-change").classList.add("navbar-nav");
-                    } else {
-                        document.getElementById("nav-category").classList.add("col-2");
-                        document.getElementById("navbar-class-change").classList.remove("navbar-nav");
-                    }
-                }
-            });
-        </script>
-        
-        <!-- Script for back to top button -->
-        <script type="text/javascript">
-            $('.btt-link').click(function(e) {
-                window.scrollTo(0, 0)
-            })
-        </script>
-    {% endblock %}
-    
+    {% endblock %}  
 </body>
 
 </html>

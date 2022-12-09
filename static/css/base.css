@@ -7,6 +7,10 @@ body {
     position: relative;
 }
 
+.owl-carousel {
+    background-color: #F5F5F5;
+}
+
 .carousel-image {
     position: absolute;
     margin-top: 10%;
@@ -51,7 +55,6 @@ body {
 
 }
 
-
 .book-bottom {
     height: 80px;
     background-color: #F5F5F5;
@@ -59,10 +62,6 @@ body {
 }
 
 .home-main {
-    background-color: #F5F5F5;
-}
-
-.owl-carousel {
     background-color: #F5F5F5;
 }
 
@@ -78,6 +77,14 @@ body {
 .book-image {
     height: 100%;
     width: 50%;
+}
+
+.bg-lite-gray {
+    background-color: #F5F5F5;
+}
+
+.stars {
+    display: inline;
 }
 
 /* Back to top button */
