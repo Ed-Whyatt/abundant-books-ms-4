@@ -48,6 +48,7 @@
     </script>
     <!-- Stripe js -->
     <script src="https://js.stripe.com/v3/"></script>
+    <!-- Site js -->
     <script src="{% static 'js/base.js' %}"></script>
     {% endblock %}
 
@@ -178,31 +179,9 @@
     {{ block.super }}
         <!-- Owl js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <!-- Postload js -->
+        <script src="{% static 'js/postload_base.js' %}"></script>
 
-
-        <script>
-            // Owl Carousel start function.
-            // Docs: https://owlcarousel2.github.io/OwlCarousel2/docs/started-installation.html
-            $('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 2,
-                nav: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 3
-                    },
-                    1500: {
-                        items: 4
-                    }
-                }
-            })
-        </script>
          <!-- Toasts JS -->
         
         <script>
