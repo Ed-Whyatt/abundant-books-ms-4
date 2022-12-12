@@ -8,27 +8,18 @@ $.getJSON(isbnUrl + isbn,
     function (bookData) {
         console.log(bookData)
         console.log(isbn)
-        bookSynopis = bookData.items[0].volumeInfo.description;
-        if (bookData === undefined) {
-            console.log("no data")
+        if (bookData.hasOwnProperty("items") ){
+            bookSynopis = bookData.items[0].volumeInfo.description;
             $("#Synopsis").html(
                 `
-                <p>{{ book.name }}</p>
-                <p>For more information call us or get in contact (link)</p>
-                `
-            );
-        } else if (bookData.totalItems === 0){
-            console.log("No data 2")
-            $("#Synopsis").html(
-                `
-                <p>{{ book.name }}</p>
-                <p>For more information call us or get in contact (link)</p>
+                <div>${bookSynopis}</div>
                 `
             );
         } else {
             $("#Synopsis").html(
                 `
-                <div>${bookSynopis}</div>
+                <p>{{ book.name }}</p>
+                <p>For more information call us or get in contact (link)</p>
                 `
             );
         }
@@ -66,18 +57,16 @@ function authorKeySearch(authorKey) {
     let authorUrlEnd = authorKey + ".json";
     $.getJSON(authorUrl + authorUrlEnd,
         function (result) {
-            if (result.bio.value != undefined) {
-                $("#author").html(
-                    `
-                    <div>${result.bio.value}</div>       
-                    `
-                );
-            } else if (result.bio != undefined) {
-                $("#author").html(
-                    `                            
-                    <div>${result.bio}</div>
-                    `
-                );
+            console.log(result)
+            if (result.hasOwnProperty("bio") ){ 
+
+                if (result.bio.value != undefined) {
+                    $("#author").html(
+                        `
+                        <div>${result.bio.value}</div>       
+                        `
+                    );     
+                } 
             } else {
                 $("#author").html(
                     `
