@@ -1,0 +1,1 @@
+web: gunicorn abundant_books.wsgi:application
