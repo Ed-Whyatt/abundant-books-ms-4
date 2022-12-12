@@ -32,7 +32,7 @@ development = os.environ.get('DEVELOPMENT')
 
 DEBUG = development
 
-ALLOWED_HOSTS = [os.environ.get("HEROKU_HOSTNAME"), 'localhost']
+ALLOWED_HOSTS = ['abundant-books-ms4.herokuapp.com', 'localhost']
 
 
 # Application definition
