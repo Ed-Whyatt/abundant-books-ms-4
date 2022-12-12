@@ -70,12 +70,9 @@
                         <div class="col-12">
 
                             <div class="author-text">
-                                <h3>{{ book.author }}</h3>
-                                ISBN: {{ book.isbn }}
+                                <h3 id="home_author{{ forloop.counter }}">{{ book.author }}</h3>
                                 <br>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut
-                                    labore et dolore magna aliqua.</p>
+                                <p id="author{{ forloop.counter }}"></p>
                                 {% if request.user.is_superuser %}
                                     <small class="ml-3">
                                         <a href="{% url 'edit_book' book.id %}">Edit</a>
@@ -379,6 +376,61 @@
 </div>
 
 {% endblock %}
+
 {% block postloadjs %}
 {{ block.super }}
+<script>
+    // Get book Author key from openlibary API https://openlibrary.org/dev/docs/api/authors
+let authorUrl = "https://openlibrary.org/search/authors.json?q=";
+let searchAuthor = $("#home_author{{ forloop.counter }}").text();
+$.getJSON(authorUrl + searchAuthor,
+    function (bookData) {
+        authorKey = bookData.docs[0].key;
+        (authorKeySearch(authorKey));
+    },
+
+    // If an error occurs then show error response under search bar
+    function error(errorResponse) {
+        if (errorResponse.status === 404) {
+            console.log(errorResponse)
+        }
+    }
+);
+
+function authorKeySearch(authorKey) {
+    let authorUrl = "https://openlibrary.org/authors/";
+    let authorUrlEnd = authorKey + ".json";
+    $.getJSON(authorUrl + authorUrlEnd,
+        function (result) {
+            if (result.bio.value != undefined) {
+                
+                $("#author{{ forloop.counter }}").html(
+                    `
+                    <div>${result.bio.value}</div>       
+                    `
+                );
+            } else if (result.bio != undefined) {
+                $("#author{{ forloop.counter }}").html(
+                    `                            
+                    <div>${result.bio}</div>
+                    `
+                );
+            } else {
+                $("#author{{ forloop.counter }}").html(
+                    `
+                    <p>For more information call us or get in contact (link)</p>
+                    `
+                );
+            }
+        },
+        // If an error occurs then show error response under search bar
+        function error(errorResponse) {
+            if (errorResponse.status === 404) {
+                console.log(errorResponse)
+            }
+        }
+    )
+};
+
+</script>
 {% endblock %}
