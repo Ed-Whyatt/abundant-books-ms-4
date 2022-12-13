@@ -34,7 +34,8 @@
                     <li><strong>{{ book.name }}</strong></li>
                     <li><small>By {{ book.author }}</small></li>
                     <li>Prie: {{ book.price }}</li>
-                    <li>Short Summary: ysagihdfh icdi fidcj adhijcf i dfjs fdfc s8a0 vd vasc d 8v8d 80d0</li>
+                    <li id="bookIsbn{{ forloop.counter }}">{{ book.isbn }}</li>
+                    <li id="bookInfo{{ forloop.counter }}"></li>
                     {% if request.user.is_superuser %}
                     <li>
                         <small class="ml-3">
@@ -72,7 +73,7 @@
                             <div class="author-text">
                                 <h3 id="home_author{{ forloop.counter }}">{{ book.author }}</h3>
                                 <br>
-                                <p id="author{{ forloop.counter }}"></p>
+                                <div id="author{{ forloop.counter }}"></div>
                                 {% if request.user.is_superuser %}
                                     <small class="ml-3">
                                         <a href="{% url 'edit_book' book.id %}">Edit</a>
@@ -379,45 +380,30 @@
 
 {% block postloadjs %}
 {{ block.super }}
+
 <script>
-    // Get book Author key from openlibary API https://openlibrary.org/dev/docs/api/authors
-let authorUrl = "https://openlibrary.org/search/authors.json?q=";
-let searchAuthor = $("#home_author{{ forloop.counter }}").text();
-$.getJSON(authorUrl + searchAuthor,
-    function (bookData) {
-        authorKey = bookData.docs[0].key;
-        (authorKeySearch(authorKey));
-    },
-
-    // If an error occurs then show error response under search bar
-    function error(errorResponse) {
-        if (errorResponse.status === 404) {
-            console.log(errorResponse)
-        }
-    }
-);
-
-function authorKeySearch(authorKey) {
-    let authorUrl = "https://openlibrary.org/authors/";
-    let authorUrlEnd = authorKey + ".json";
-    $.getJSON(authorUrl + authorUrlEnd,
-        function (result) {
-            if (result.bio.value != undefined) {
-                
-                $("#author{{ forloop.counter }}").html(
+     
+// Get book from Google books useing ISBN number https://developers.google.com/books/docs/v1/using
+let isbn, bookData, bookSynopis, results;
+let = isbnUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
+{% for book in carousel_books %}
+    isbn = $("#bookIsbn{{ forloop.counter }}").text();
+    $.getJSON(isbnUrl + isbn,
+        function (bookData) {
+            if (bookData.hasOwnProperty("items") ){
+                bookSynopis = bookData.items[0].volumeInfo.description;
+                console.log(isbn);
+                console.log(bookSynopis);
+                console.log("#bookInfo{{ forloop.counter }}");
+                $("#bookInfo{{ forloop.counter }}").html(
                     `
-                    <div>${result.bio.value}</div>       
-                    `
-                );
-            } else if (result.bio != undefined) {
-                $("#author{{ forloop.counter }}").html(
-                    `                            
-                    <div>${result.bio}</div>
+                    <div>${bookSynopis}</div>
                     `
                 );
             } else {
-                $("#author{{ forloop.counter }}").html(
+                $("#bookInfo{{ forloop.counter }}").html(
                     `
+                    <p>{{ book.name }}</p>
                     <p>For more information call us or get in contact (link)</p>
                     `
                 );
@@ -426,11 +412,70 @@ function authorKeySearch(authorKey) {
         // If an error occurs then show error response under search bar
         function error(errorResponse) {
             if (errorResponse.status === 404) {
+                console.log("errorResopnse", errorResponse);
+            } else {
+                console.log(errorResponse.reponseJSON.message);
+            }
+        }
+    );
+
+{% endfor %}
+
+// Get book Author key from openlibary API https://openlibrary.org/dev/docs/api/authors
+
+let searchAuthor, authorUrl, authorUrlEnd, result, authorJsonUrl;
+{% for book in author_of_month %}
+    authorJsonUrl = "https://openlibrary.org/search/authors.json?q=";
+    searchAuthor = $("#home_author{{ forloop.counter }}").text();
+    $.getJSON(authorJsonUrl+ searchAuthor,
+        function (bookData) {
+            authorKey = bookData.docs[0].key;
+            (authorKeySearch(authorKey));
+        },
+
+        // If an error occurs then show error response under search bar
+        function error(errorResponse) {
+            if (errorResponse.status === 404) {
                 console.log(errorResponse)
             }
         }
-    )
-};
+    );
 
+    function authorKeySearch(authorKey) {
+
+        authorUrl = "https://openlibrary.org/authors/";
+
+        authorUrlEnd = authorKey + ".json";
+        $.getJSON(authorUrl + authorUrlEnd,
+            function (result) {
+
+                if (result.hasOwnProperty("bio") ){ 
+
+                    if (result.bio.value != undefined) {
+                        $("#author{{ forloop.counter }}").html(
+                            `
+                            <p>${result.bio.value}</p>       
+                            `
+                        );
+                    
+                    } 
+                } else {
+                    $("#author{{ forloop.counter }}").html(
+                        `
+                        <p>For more information call us or get in contact (link)</p>
+                        `
+                    );
+                }
+            },
+            // If an error occurs then show error response under search bar
+            function error(errorResponse) {
+                if (errorResponse.status === 404) {
+                    console.log(errorResponse)
+                }
+            }
+        )
+    };
+{%  endfor %}
 </script>
+
 {% endblock %}
