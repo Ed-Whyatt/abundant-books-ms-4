@@ -38,8 +38,6 @@
                     </li>
                     <br>
                     <li><strong>£ {{ book.price }}</strong></li>
-                    <li id="bookIsbn{{ forloop.counter }}">{{ book.isbn }}</li>
-                    <li id="bookInfo{{ forloop.counter }}"></li> 
                     <br>   
                     <li>
                         <a class="carousel-button ms-3" href="{% url 'book_info' book.id %}" role="button">View The Book</a>
@@ -323,45 +321,6 @@
 {{ block.super }}
 
 <script>
-     
-// Get book from Google books useing ISBN number https://developers.google.com/books/docs/v1/using
-let isbn, bookData, bookSynopis, results;
-let = isbnUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
-{% for book in carousel_books %}
-    isbn = $("#bookIsbn{{ forloop.counter }}").text();
-    $.getJSON(isbnUrl + isbn,
-        function (bookData) {
-            if (bookData.hasOwnProperty("items") ){
-                bookSynopis = bookData.items[0].volumeInfo.description;
-                console.log(isbn);
-                console.log(bookSynopis);
-                console.log("#bookInfo{{ forloop.counter }}");
-                $("#bookInfo{{ forloop.counter }}").html(
-                    `
-                    <p>${bookSynopis}</p>
-                    `
-                );
-            } else {
-                $("#bookInfo{{ forloop.counter }}").html(
-                    `
-                    <p>{{ book.name }}</p>
-                    <p>For more information call us or get in contact (link)</p>
-                    `
-                );
-            }
-        },
-        // If an error occurs then show error response under search bar
-        function error(errorResponse) {
-            if (errorResponse.status === 404) {
-                console.log("errorResopnse", errorResponse);
-            } else {
-                console.log(errorResponse.reponseJSON.message);
-            }
-        }
-    );
-
-{% endfor %}
-
 // Get book Author key from openlibary API https://openlibrary.org/dev/docs/api/authors
 
 let searchAuthor, authorUrl, authorUrlEnd, result, authorJsonUrl;
