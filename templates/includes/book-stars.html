@@ -1,0 +1,58 @@
+<ul>
+    {% if book.book_depository_stars == 0.50 %}
+    <li class="stars">
+        <i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+            class="far fa-star"></i><i class="far fa-star"></i>
+    </li>
+    {% elif book.book_depository_stars == 1.00 %}
+    <li class="stars">
+        <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+            class="far fa-star"></i>
+    </li>
+    {% elif book.book_depository_stars == 1.50 %}
+    <li class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i
+            class="far fa-star"></i><i class="far fa-star"></i>
+    </li>
+    {% elif book.book_depository_stars == 2.00 %}
+    <li class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+            class="far fa-star"></i>
+    </li>
+    {% elif book.book_depository_stars == 2.50 %}
+    <li class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i
+            class="far fa-star"></i><i class="far fa-star"></i>
+    </li>
+    {% elif book.book_depository_stars == 3.00 %}
+    <li class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i
+            class="far fa-star"></i>
+    </li>
+    {% elif book.book_depository_stars == 3.50 %}
+    <li class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+            class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+    </li>
+    {% elif book.book_depository_stars == 4.00 %}
+    <li class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+            class="far fa-star"></i>
+    </li>
+    {% elif book.book_depository_stars == 4.50 %}
+    <li class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+            class="fas fa-star-half-alt"></i>
+    </li>
+    {% elif book.book_depository_stars == 5.00 %}
+    <li class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+            class="fas fa-star"></i>
+    </li>
+    {% else %}
+    <li class="stars">
+        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+            class="far fa-star"></i>
+    </li>
+    {% endif %}
+</ul>

@@ -16,16 +16,16 @@
 <div class="owl-carousel owl-theme">
 
     {% for book in carousel_books %}
-    <div class="book-container item {% cycle 'carousel-bg-one' 'carousel-bg-two' 'carousel-bg-three' 'carousel-bg-four' %}">
-        <div class="book-bg-colour">
+    <div class="carousel-container {% cycle 'carousel-bg-one' 'carousel-bg-two' 'carousel-bg-three' 'carousel-bg-four' %}">
+        <div class="carousel-bg-image">
             <div class="carousel-image">
                 {% if book.img_paths %}
                 <a href="{% url 'book_info' book.id %}">
-                    <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                    <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
                 </a>
                 {% else %}
                 <a href="{% url 'book_info' book.id %}">
-                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
                 </a>
                 {% endif %}
             </div>
@@ -33,18 +33,27 @@
                 <ul>
                     <li><strong>{{ book.name }}</strong></li>
                     <li><small>By {{ book.author }}</small></li>
-                    <li>Prie: {{ book.price }}</li>
+                    <li class="carousel-stars">
+                        {% include 'includes/book-stars.html' %}
+                    </li>
+                    <br>
+                    <li><strong>£ {{ book.price }}</strong></li>
                     <li id="bookIsbn{{ forloop.counter }}">{{ book.isbn }}</li>
-                    <li id="bookInfo{{ forloop.counter }}"></li>
+                    <li id="bookInfo{{ forloop.counter }}"></li> 
+                    <br>   
+                    <li>
+                        <a class="carousel-button ms-3" href="{% url 'book_info' book.id %}" role="button">View The Book</a>
+                    </li>
+                    <br>
                     {% if request.user.is_superuser %}
                     <li>
                         <small class="ml-3">
-                            <a href="{% url 'edit_book' book.id %}">Edit</a>
+                            <a class="btn btn-danger" href="{% url 'edit_book' book.id %}" role="button">Edit</a>
                         </small>
                     </li>
                     {% endif %}
-
                 </ul>
+                
             </div>
         </div>
         <div class="book-bottom"></div>
@@ -112,75 +121,7 @@
                                     <div class="deal-text">
                                         <h3>{{ book.name }}</h3>
                                         <p>Author: {{ book.author }}</p>
-                                        <ul>
-                                            {% if book.book_depository_stars == 0.50 %}
-                                            <li class="stars">
-                                                0.5<i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i
-                                                    class="far fa-star"></i><i class="far fa-star"></i><i
-                                                    class="far fa-star"></i>
-                                            </li>
-                                            {% elif book.book_depository_stars == 1.00 %}
-                                            <li class="stars">
-                                                1 <i class="fas fa-star"></i><i class="far fa-star"></i><i
-                                                    class="far fa-star"></i><i class="far fa-star"></i><i
-                                                    class="far fa-star"></i>
-                                            </li>
-                                            {% elif book.book_depository_stars == 1.50 %}
-                                            <li class="stars">
-                                                1.5 <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i
-                                                    class="far fa-star"></i><i class="far fa-star"></i><i
-                                                    class="far fa-star"></i>
-                                            </li>
-                                            {% elif book.book_depository_stars == 2.00 %}
-                                            <li class="stars">
-                                                2 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="far fa-star"></i><i class="far fa-star"></i><i
-                                                    class="far fa-star"></i>
-                                            </li>
-                                            {% elif book.book_depository_stars == 2.50 %}
-                                            <li class="stars">
-                                                2.5 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i
-                                                    class="far fa-star"></i>
-                                            </li>
-                                            {% elif book.book_depository_stars == 3.00 %}
-                                            <li class="stars">
-                                                3 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="far fa-star"></i><i
-                                                    class="far fa-star"></i>
-                                            </li>
-                                            {% elif book.book_depository_stars == 3.50 %}
-                                            <li class="stars">
-                                                3.5<i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i
-                                                    class="far fa-star"></i>
-                                            </li>
-                                            {% elif book.book_depository_stars == 4.00 %}
-                                            <li class="stars">
-                                                4<i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="far fa-star"></i>
-                                            </li>
-                                            {% elif book.book_depository_stars == 4.50 %}
-                                            <li class="stars">
-                                                4.5<i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star-half-alt"></i>
-                                            </li>
-                                            {% elif book.book_depository_stars == 5.00 %}
-                                            <li class="stars">
-                                                5<i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i>
-                                            </li>
-                                            {% else %}
-                                            <li class="stars">
-                                                0<i class="far fa-star"></i><i class="far fa-star"></i><i
-                                                    class="far fa-star"></i><i class="far fa-star"></i><i
-                                                    class="far fa-star"></i>
-                                            </li>
-                                            {% endif %}
-                                        </ul>
+                                        {% include 'includes/book-stars.html' %}
                                         {% if book.category %}
                                         <p class="">
                                             <a class="text-muted"
@@ -397,7 +338,7 @@ let = isbnUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
                 console.log("#bookInfo{{ forloop.counter }}");
                 $("#bookInfo{{ forloop.counter }}").html(
                     `
-                    <div>${bookSynopis}</div>
+                    <p>${bookSynopis}</p>
                     `
                 );
             } else {
