@@ -63,7 +63,7 @@
     <header class="container-fluid">
 
         <!-- Bootstrap navbar -->
-        <div class="row">
+        <div class="row"> 
             <nav id="nav-category" class="col-2 navbar navbar-expand-lg">
                 <!-- Small screen toggle -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -75,7 +75,7 @@
                 {% include 'includes/category-nav.html' %}
             </nav>
 
-            <div id="topnav" class="col-2 d-none d-lg-flex">
+            <div id="topnav" class="col-2 d-none d-lg-flex mt-4">
                 <!-- Search bar -->
                 <form class="form" method="GET" action="{% url 'books' %}">
                     <div class="input-group w-100">
