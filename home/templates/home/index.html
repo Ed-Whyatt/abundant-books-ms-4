@@ -69,7 +69,28 @@
             <div class="row">
                 <!-- Authers of the month -->
                 <div class="col-12 mt-3">
-
+                    <div class="row">
+                        <div class="col-10 offset-1">
+                            <h4>Authors Of The Month</h4>
+                        </div>   
+                        {% for book in author_of_month %}
+                        <div class="col-10 offset-1">
+                            <div class="row">
+                                <div class="col-4">
+                                        <a href="{% url 'book_info' book.id %}">
+                                            <img class="author-image " src="{{ book.img_paths.url }}"
+                                                alt="{{ book.name }}">
+                                        </a>
+                                </div>
+                                <div class="col-8">
+                                    <h4><strong>{{ book.author }}</strong></h4>
+                                    <p> <small>Known for : {{ book.name }}</small> </p>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        {% endfor %}
+                    </div>
                 </div>
                 <!-- Deals of the month -->
                 <div class="col-12">
