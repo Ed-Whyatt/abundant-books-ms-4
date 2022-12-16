@@ -68,32 +68,8 @@
         <div class="col-lg-4 col-12">
             <div class="row">
                 <!-- Authers of the month -->
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-12 ms-5">
-                            <h3>Authors Of The Month</h3>
-                        </div>
-                    </div>
-                    <div class="row">
+                <div class="col-12 mt-3">
 
-                        {% for book in author_of_month %}
-                        <div class="col-12">
-
-                            <div class="author-text">
-                                <h3 id="home_author{{ forloop.counter }}">{{ book.author }}</h3>
-                                <br>
-                                <div id="author{{ forloop.counter }}"></div>
-                                {% if request.user.is_superuser %}
-                                <small class="ml-3">
-                                    <a href="{% url 'edit_book' book.id %}">Edit</a>
-                                </small>
-                                {% endif %}
-                            </div>
-
-                        </div>
-                        {% endfor %}
-
-                    </div>
                 </div>
                 <!-- Deals of the month -->
                 <div class="col-12">
@@ -156,7 +132,7 @@
                     <div class="row">
 
                         <div class="col-md-3 col-sm-12">
-                            <p class="text-uppercase"><span >Popular Genres</span></p>
+                            <h4 class="text-uppercase"><span>Popular Genres</span></h4>
                         </div>
 
                         <div class="col-2">
@@ -193,7 +169,7 @@
                             <div class="row">
                                 {% for book in books %}
                                     {% if book.category|lower == "biography"|lower %}
-                                    <div class="col-xl-5  col-lg-10 col-sm-12">
+                                    <div class="col-xl-5 col-lg-10 col-sm-12">
                                         <div class="card card-body mt-3 rounded-0 pop-genres-card">
                                             <div class="row">
                                                 <div class="col-4">
@@ -357,64 +333,7 @@
 {{ block.super }}
 
 <script>
-    // Get book Author key from openlibary API https://openlibrary.org/dev/docs/api/authors
 
-    let searchAuthor, authorUrl, authorUrlEnd, result, authorJsonUrl; {
-        %
-        for book in author_of_month %
-    }
-    authorJsonUrl = "https://openlibrary.org/search/authors.json?q=";
-    searchAuthor = $("#home_author{{ forloop.counter }}").text();
-    $.getJSON(authorJsonUrl + searchAuthor,
-        function (bookData) {
-            authorKey = bookData.docs[0].key;
-            (authorKeySearch(authorKey));
-        },
-
-        // If an error occurs then show error response under search bar
-        function error(errorResponse) {
-            if (errorResponse.status === 404) {
-                console.log(errorResponse)
-            }
-        }
-    );
-
-    function authorKeySearch(authorKey) {
-
-        authorUrl = "https://openlibrary.org/authors/";
-
-        authorUrlEnd = authorKey + ".json";
-        $.getJSON(authorUrl + authorUrlEnd,
-            function (result) {
-
-                if (result.hasOwnProperty("bio")) {
-
-                    if (result.bio.value != undefined) {
-                        $("#author{{ forloop.counter }}").html(
-                            `
-                            <p>${result.bio.value}</p>       
-                            `
-                        );
-
-                    }
-                } else {
-                    $("#author{{ forloop.counter }}").html(
-                        `
-                        <p>For more information call us or get in contact (link)</p>
-                        `
-                    );
-                }
-            },
-            // If an error occurs then show error response under search bar
-            function error(errorResponse) {
-                if (errorResponse.status === 404) {
-                    console.log(errorResponse)
-                }
-            }
-        )
-    }; {
-        % endfor %
-    }
 </script>
 
 {% endblock %}

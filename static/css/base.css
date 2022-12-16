@@ -102,6 +102,14 @@ body {
     color: #F5F5F5;
 }
 
+
+.author-image {
+    max-width: 40px;
+    max-height: 80px;
+}
+
+
+
 .home-main {
     background-color: #F5F5F5;
 }
@@ -123,7 +131,6 @@ body {
 .pop-genres-stars {
     margin-left: -31px;
 }
-
 
 .book-image {
     height: 100%;
