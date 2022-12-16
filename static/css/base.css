@@ -75,8 +75,8 @@ body {
     /* background-color: #FFD0B8; */
 }
 
-.book-bottom {
-    height: 70px;
+.carousel-bottom {
+    height: 80px;
     background-color: #F5F5F5;
     width: 100%;
 }
@@ -89,6 +89,12 @@ body {
     box-shadow: 5px 5px 10px #000;
     color: #00004d;
     font-weight: 600;
+    position: absolute;
+}
+
+.carousel-edit-button {
+    position: absolute;
+    margin-top: 20px;
 }
 
 .carousel-button:hover {
@@ -100,14 +106,24 @@ body {
     background-color: #F5F5F5;
 }
 
-.author-image {
-    height: 70px;
-    width: 70px;
-    background-color: black;
-    border-radius: 50%;
-    margin-left: 50px;
-    margin-top: 40px;
+.pop-genres-card {
+    min-height: 250px;
 }
+
+.pop-genres-info {
+    font-family: 'Open Sans', sans-serif;
+    color: #00004d;
+    text-decoration: none;  
+}
+
+.pop-genres-info ul {
+    list-style-type: none;
+}
+
+.pop-genres-stars {
+    margin-left: -31px;
+}
+
 
 .book-image {
     height: 100%;

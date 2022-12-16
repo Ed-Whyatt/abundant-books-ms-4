@@ -16,7 +16,8 @@
 <div class="owl-carousel owl-theme">
 
     {% for book in carousel_books %}
-    <div class="carousel-container {% cycle 'carousel-bg-one' 'carousel-bg-two' 'carousel-bg-three' 'carousel-bg-four' %}">
+    <div
+        class="carousel-container {% cycle 'carousel-bg-one' 'carousel-bg-two' 'carousel-bg-three' 'carousel-bg-four' %}">
         <div class="carousel-bg-image">
             <div class="carousel-image">
                 {% if book.img_paths %}
@@ -38,23 +39,24 @@
                     </li>
                     <br>
                     <li><strong>£ {{ book.price }}</strong></li>
-                    <br>   
+                    <br>
                     <li>
-                        <a class="carousel-button ms-3" href="{% url 'book_info' book.id %}" role="button">View The Book</a>
+                        <a class="carousel-button" href="{% url 'book_info' book.id %}" role="button">View The
+                            Book</a>
                     </li>
                     <br>
                     {% if request.user.is_superuser %}
                     <li>
                         <small class="ml-3">
-                            <a class="btn btn-danger" href="{% url 'edit_book' book.id %}" role="button">Edit</a>
+                            <a class="btn btn-danger carousel-edit-button" href="{% url 'edit_book' book.id %}" role="button">Edit</a>
                         </small>
                     </li>
                     {% endif %}
                 </ul>
-                
+
             </div>
         </div>
-        <div class="book-bottom"></div>
+        <div class="carousel-bottom"></div>
     </div>
     {% endfor %}
 
@@ -82,9 +84,9 @@
                                 <br>
                                 <div id="author{{ forloop.counter }}"></div>
                                 {% if request.user.is_superuser %}
-                                    <small class="ml-3">
-                                        <a href="{% url 'edit_book' book.id %}">Edit</a>
-                                    </small>
+                                <small class="ml-3">
+                                    <a href="{% url 'edit_book' book.id %}">Edit</a>
+                                </small>
                                 {% endif %}
                             </div>
 
@@ -151,160 +153,194 @@
         <div class="col-lg-8 col-12">
             <div class="row">
                 <div class="col-12">
-                    <p>
-                        <span class="text-uppercase">Popular Genres :</span>
+                    <div class="row">
 
-                        <a class="btn" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
-                            aria-expanded="false" aria-controls="multiCollapseExample1">Biography</a>
+                        <div class="col-md-3 col-sm-12">
+                            <p class="text-uppercase"><span >Popular Genres</span></p>
+                        </div>
 
-                        <button class="btn" type="button" data-bs-toggle="collapse"
+                        <div class="col-2">
+                            <button class="btn" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#multiCollapseExample1" aria-expanded="false"
+                            aria-controls="multiCollapseExample1">Biography</button>
+                        </div>
+
+                        <div class="col-2">
+                            <button class="btn" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample2" aria-expanded="false"
                             aria-controls="multiCollapseExample2">Crime & Thriller</button>
+                        </div>
 
-                        <button class="btn" type="button" data-bs-toggle="collapse"
+                        <div class="col-2">
+                            <button class="btn" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample3" aria-expanded="false"
                             aria-controls="multiCollapseExample3">Natural History</button>
+                        </div>
 
-                        <button class="btn" type="button" data-bs-toggle="collapse"
+                        <div class="col-2">
+                            <button class="btn" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample4" aria-expanded="false"
                             aria-controls="multiCollapseExample4">Humer</button>
+                        </div>
+                        
+                    </div>
 
-                    </p>
                 </div>
 
                 <div class="col-12">
                     <div class="container">
                         <div class="collapse show multi-collapse" id="multiCollapseExample1">
-                            {% for book in books %}
-                            {% if book.category|lower == "biography"|lower %}
-                            <div class="card card-body">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <div class="book-image">
-                                            <a href="{% url 'book_info' book.id %}">
-                                                <img class="img-fluid" src="{{ book.img_paths.url }}"
-                                                    alt="{{ book.name }}">
-                                            </a>
+                            <div class="row">
+                                {% for book in books %}
+                                    {% if book.category|lower == "biography"|lower %}
+                                    <div class="col-xl-5  col-lg-10 col-sm-12">
+                                        <div class="card card-body mt-3 rounded-0 pop-genres-card">
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div>
+                                                        <a href="{% url 'book_info' book.id %}">
+                                                            <img class="img-fluid" src="{{ book.img_paths.url }}"
+                                                                alt="{{ book.name }}">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="pop-genres-info">
+                                                        <ul>
+                                                            <li><strong>{{ book.name }}</strong></li>
+                                                            <li><small>By {{ book.author }}</small></li>
+                                                            <li class="pop-genres-stars">
+                                                                {% include 'includes/book-stars.html' %}
+                                                            </li>
+                                                            <br>
+                                                        
+                                                            <br>
+                                                            <li><strong>£ {{ book.price }}</strong></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="deal-text">
-                                            <h3>Book Name: {{ book.name }} </h3>
-                                            <p>Auther Name: {{ book.author }}</p>
-                                            {% if book.category %}
-                                            <p class="">
-                                                <a class="text-muted"
-                                                    href="{% url 'books' %}?category={{ book.category.name }}">
-                                                    <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                                                </a>
-                                            </p>
-                                            {% endif %}
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
-                            {% endif %}
-                            {% endfor %}
-
                         </div>
-
                     </div>
 
                     <div class="collapse multi-collapse" id="multiCollapseExample2">
-
-                        {% for book in books %}
-                        {% if book.category|lower == "crime thriller"|lower %}
-                        <div class="card card-body">
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="book-image">
-                                        <img class="" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                        <div class="row">
+                            {% for book in books %}
+                                {% if book.category|lower == "crime_thriller"|lower %}
+                                <div class="col-xl-5 col-lg-10 col-sm-12">
+                                    <div class="card card-body mt-3 rounded-0 pop-genres-card">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div>
+                                                    <a href="{% url 'book_info' book.id %}">
+                                                        <img class="img-fluid" src="{{ book.img_paths.url }}"
+                                                            alt="{{ book.name }}">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="pop-genres-info">
+                                                    <ul>
+                                                        <li><strong>{{ book.name }}</strong></li>
+                                                        <li><small>By {{ book.author }}</small></li>
+                                                        <li class="pop-genres-stars">
+                                                            {% include 'includes/book-stars.html' %}
+                                                        </li>
+                                                        <br>
+                                                    
+                                                        <br>
+                                                        <li><strong>£ {{ book.price }}</strong></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="deal-text">
-                                        <h3>Book Name: {{ book.name }} </h3>
-                                        <p>Auther Name: {{ book.author }}</p>
-                                        {% if book.category %}
-                                        <p class="">
-                                            <a class="text-muted"
-                                                href="{% url 'books' %}?category={{ book.category.name }}">
-                                                <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                                            </a>
-                                        </p>
-                                        {% endif %}
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
-                        {% endif %}
-                        {% endfor %}
 
                     </div>
-
+                    
                     <div class="collapse multi-collapse" id="multiCollapseExample3">
-                        {% for book in books %}
-                        {% if book.category|lower == "natural history"|lower %}
-                        <div class="card card-body">
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="book-image">
-                                        <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                        <div class="row">
+                            {% for book in books %}
+                                {% if book.category|lower == "natural_history"|lower %}
+                                <div class="col-xl-5 col-lg-10 col-sm-12">
+                                    <div class="card card-body mt-3 rounded-0 pop-genres-card">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div>
+                                                    <a href="{% url 'book_info' book.id %}">
+                                                        <img class="img-fluid" src="{{ book.img_paths.url }}"
+                                                            alt="{{ book.name }}">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="pop-genres-info">
+                                                    <ul>
+                                                        <li><strong>{{ book.name }}</strong></li>
+                                                        <li><small>By {{ book.author }}</small></li>
+                                                        <li class="pop-genres-stars">
+                                                            {% include 'includes/book-stars.html' %}
+                                                        </li>
+                                                        <br>
+                                                    
+                                                        <br>
+                                                        <li><strong>£ {{ book.price }}</strong></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="deal-text">
-                                        <p>Book Name: {{ book.name }} </p>
-                                        <p>Auther Name: {{ book.author }}</p>
-                                        {% if book.category %}
-                                        <p class="">
-                                            <a class="text-muted"
-                                                href="{% url 'books' %}?category={{ book.category.name }}">
-                                                <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                                            </a>
-                                        </p>
-                                        {% endif %}
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
-                        {% endif %}
-                        {% endfor %}
                     </div>
-
+                    
                     <div class="collapse multi-collapse" id="multiCollapseExample4">
-                        {% for book in books %}
-                        {% if book.category|lower == "humour"|lower %}
-                        <div class="card card-body">
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="book-image">
-                                        <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                        <div class="row">
+                            {% for book in books %}
+                                {% if book.category|lower == "humour"|lower %}
+                                    <div class="col-xl-5 col-lg-10 col-sm-12">
+                                        <div class="card card-body mt-3 rounded-0 pop-genres-card">
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div>
+                                                        <a href="{% url 'book_info' book.id %}">
+                                                            <img class="img-fluid" src="{{ book.img_paths.url }}"
+                                                                alt="{{ book.name }}">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="pop-genres-info">
+                                                        <ul>
+                                                            <li><strong>{{ book.name }}</strong></li>
+                                                            <li><small>By {{ book.author }}</small></li>
+                                                            <li class="pop-genres-stars">
+                                                                {% include 'includes/book-stars.html' %}
+                                                            </li>
+                                                            <br>
+                                                        
+                                                            <br>
+                                                            <li><strong>£ {{ book.price }}</strong></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="deal-text">
-                                        <p>Book Name: {{ book.name }} </p>
-                                        <p>By: {{ book.author }}</p>
-                                        {% if book.category %}
-                                        <p class="">
-                                            <a class="text-muted"
-                                                href="{% url 'books' %}?category={{ book.category.name }}">
-                                                <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                                            </a>
-                                        </p>
-                                        {% endif %}
-                                        <br>
-
-                                    </div>
-                                </div>
-                            </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
-                        {% endif %}
-                        {% endfor %}
                     </div>
                 </div>
 
@@ -321,13 +357,15 @@
 {{ block.super }}
 
 <script>
-// Get book Author key from openlibary API https://openlibrary.org/dev/docs/api/authors
+    // Get book Author key from openlibary API https://openlibrary.org/dev/docs/api/authors
 
-let searchAuthor, authorUrl, authorUrlEnd, result, authorJsonUrl;
-{% for book in author_of_month %}
+    let searchAuthor, authorUrl, authorUrlEnd, result, authorJsonUrl; {
+        %
+        for book in author_of_month %
+    }
     authorJsonUrl = "https://openlibrary.org/search/authors.json?q=";
     searchAuthor = $("#home_author{{ forloop.counter }}").text();
-    $.getJSON(authorJsonUrl+ searchAuthor,
+    $.getJSON(authorJsonUrl + searchAuthor,
         function (bookData) {
             authorKey = bookData.docs[0].key;
             (authorKeySearch(authorKey));
@@ -349,7 +387,7 @@ let searchAuthor, authorUrl, authorUrlEnd, result, authorJsonUrl;
         $.getJSON(authorUrl + authorUrlEnd,
             function (result) {
 
-                if (result.hasOwnProperty("bio") ){ 
+                if (result.hasOwnProperty("bio")) {
 
                     if (result.bio.value != undefined) {
                         $("#author{{ forloop.counter }}").html(
@@ -357,8 +395,8 @@ let searchAuthor, authorUrl, authorUrlEnd, result, authorJsonUrl;
                             <p>${result.bio.value}</p>       
                             `
                         );
-                    
-                    } 
+
+                    }
                 } else {
                     $("#author{{ forloop.counter }}").html(
                         `
@@ -374,8 +412,9 @@ let searchAuthor, authorUrl, authorUrlEnd, result, authorJsonUrl;
                 }
             }
         )
-    };
-{%  endfor %}
+    }; {
+        % endfor %
+    }
 </script>
 
 {% endblock %}
