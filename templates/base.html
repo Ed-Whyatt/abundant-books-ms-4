@@ -64,9 +64,9 @@
 
         <!-- Bootstrap navbar -->
         <div class="row"> 
-            <nav id="nav-category" class="col-2 navbar navbar-expand-lg">
+            <nav id="nav-category" class="col-2 navbar navbar-expand-lg books-blue-text">
                 <!-- Small screen toggle -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -78,11 +78,11 @@
             <div id="topnav" class="col-2 d-none d-lg-flex mt-4">
                 <!-- Search bar -->
                 <form class="form" method="GET" action="{% url 'books' %}">
-                    <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q"
-                            placeholder="Search our site">
+                    <div class="input-group">
+                        <input class="form-control rounded-0" type="text" name="q"
+                            placeholder="Search site">
                         <div class="input-group-append">
-                            <button class="form-control form-control btn btn-black border border-black rounded-0"
+                            <button class="form-control btn books-blue-text rounded-0"
                                 type="submit">
                                 <span>
                                     <i class="fas fa-search"></i>
@@ -95,7 +95,7 @@
 
             <!-- Main title logo -->
             <div id="topnav" class="col-lg-4 mt-2 text-center"><a class="navbar-brand" href="{% url 'home' %}">
-                    <h2><span class="abundent-logo">Abundent</span><strong class="books-logo">Books</strong></h2>
+                    <h2 class="books-blue-text"><span class="abundent-logo">Abundent <i class="fas fa-quran"></i></span<strong class="books-logo">Books</strong></h2>
                 </a>
             </div>
 
@@ -106,7 +106,7 @@
                     <div class="col-6 py-1 py-lg-0">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                <a class="nav-link dropdown-toggle books-blue-text" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     My Account
                                     <i class="fas fa-user fa-lg"></i>
@@ -131,7 +131,7 @@
                     <div class="col-6 py-1 py-lg-0">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                             href="{% url 'view_bag' %}">
-                            <div class="text-center mt-2">
+                            <div class="text-center mt-2 books-blue-text">
                                 <p><i class="fas fa-shopping-bag fa-lg"></i> Check Out</p>
 
                                 <p class="my-0">

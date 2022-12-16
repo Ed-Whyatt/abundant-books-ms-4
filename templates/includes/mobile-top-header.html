@@ -34,7 +34,7 @@
 
 <li class="dropdown list-group-item">
     <a class="nav-link d-block d-lg-none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <div class="text-center text-black">
+        <div class="text-center books-blue-text">
             <div><i class="fas fa-user fa-lg"></i></div>
             <p class="my-0">My Account</p>
         </div>
@@ -56,7 +56,7 @@
 <li class="list-group-item">
     <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none"
         href="{% url 'view_bag' %}">
-        <div class="text-center">
+        <div class="text-center books-blue-text me-3">
             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
             <p class="my-0">
                 {% if grand_total %}
