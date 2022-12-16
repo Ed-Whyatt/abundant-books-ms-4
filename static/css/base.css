@@ -96,14 +96,14 @@ body {
     position: absolute;
 }
 
-.carousel-edit-button {
-    position: absolute;
-    margin-top: 40px;
-}
-
 .carousel-button:hover {
     background-color: #00004d;
     color: #F5F5F5;
+}
+
+.carousel-edit-button {
+    position: absolute;
+    margin-top: 40px;
 }
 
 .author-image {
@@ -191,4 +191,36 @@ body {
 
 .toast-capper {
     height: 2px;
+}
+
+/* Books page */
+.books-card {
+    font-family: 'Open Sans', sans-serif;
+    color: #00004d;
+    text-decoration: none;
+    min-height: 300px;
+}
+
+.books-img {
+    min-width: 130px;
+}
+
+.books-card ul {
+    list-style-type: none;
+}
+
+.books-button {
+    background-color: #00004d;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 4px 18px;
+    box-shadow: 5px 5px 10px #000;
+    color: #F5F5F5;
+    font-weight: 600;
+}
+
+.books-button:hover {
+    background-color: #F5F5F5;
+    color: #00004d;
+    box-shadow: 5px 5px 10px #00004d;
 }

@@ -20,7 +20,7 @@
 <div class="container-fluid bg-lite-gray">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font">Books</h2>
+            <h2 class="books-blue-text">Books</h2>
             {% for c in current_categories %}
             <a class="category-badge text-decoration-none" href="{% url 'books' %}?category={{ c.name }}">
                 <span
@@ -31,7 +31,7 @@
     </div>
 
     <div class="row mt-1 mb-2">
-        <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+        <div class="col-12 col-md-6 my-auto d-flex justify-content-center justify-content-md-end">
             <div class="sort-select-wrapper w-50">
                 <select id="sort-selector"
                     class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
@@ -72,116 +72,52 @@
 
             {% for book in books %}
             <div class="col-12 col-md-6 col-lg-4 mt-3">
-                <div class="card">
+                <div class="card rounded-0">
+
                     <div class="row">
                         <div class="col-4">
-                            <div class="book-image card-body">
+                            <div class="card-body books-card">
                                     {% if book.img_paths %}
                                         <a href="{% url 'book_info' book.id %}">
-                                            <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                            <img class="img-fluid books-img" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
                                         </a>
                                     {% else %}
                                         <a href="{% url 'book_info' book.id %}">
-                                            <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                                            <img class="img-fluid books-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
                                         </a>
+                                    {% endif %}
+                                    {% if request.user.is_superuser %}
+                                            <small class="ml-3">
+                                                <a class="btn btn-danger mt-1" href="{% url 'edit_book' book.id %}" role="button">Edit</a>
+                                                <a class="btn btn-danger mt-1" href="{% url 'delete_book' book.id %}" role="button">Delete</a>
+                                            </small>
                                     {% endif %}
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="deal-text card-body">
-                                <h3>{{ book.name }}</h3>
-                                <p>Author: {{ book.author }}</p>
+                        <div class="col-8">
+                            <div class="card-body books-card">
                                 <ul>
-                                    {% if book.book_depository_stars == 0.50 %}
-                                    <li class="stars">
-                                        0.5<i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
+                                    <li><h4>{{ book.name }}</h4></li>
+                                    <li><small>By {{ book.author }}</small></li>
+                                    <li class="pop-genres-stars">
+                                        {% include 'includes/book-stars.html' %}
                                     </li>
-                                    {% elif book.book_depository_stars == 1.00 %}
-                                    <li class="stars">
-                                        1 <i class="fas fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
+                                    <li>
+                                        {% if book.category %}
+                                            <a class="books-blue-text"
+                                                href="{% url 'books' %}?category={{ book.category.name }}">
+                                                <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                                            </a>
+                                        {% endif %}
                                     </li>
-                                    {% elif book.book_depository_stars == 1.50 %}
-                                    <li class="stars">
-                                        1.5 <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i
-                                            class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
+                                    <li><small>RRP: {{ book.old_price }}</small></li>
+                                    <li><strong>£ {{ book.price }}</strong></li>
+                                    <br>
+                                    <li>
+                                        <a class="books-button" href="{% url 'book_info' book.id %}" role="button">View The
+                                            Book</a>
                                     </li>
-                                    {% elif book.book_depository_stars == 2.00 %}
-                                    <li class="stars">
-                                        2 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 2.50 %}
-                                    <li class="stars">
-                                        2.5 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 3.00 %}
-                                    <li class="stars">
-                                        3 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 3.50 %}
-                                    <li class="stars">
-                                        3.5<i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 4.00 %}
-                                    <li class="stars">
-                                        4<i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 4.50 %}
-                                    <li class="stars">
-                                        4.5<i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star-half-alt"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 5.00 %}
-                                    <li class="stars">
-                                        5<i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i>
-                                    </li>
-                                    {% else %}
-                                    <li class="stars">
-                                        0<i class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% endif %}
                                 </ul>
-                                <br>
-                                <p>RRP: {{ book.old_price }} </p>
-                                <p><strong>Price: {{ book.price }}</strong></p>
-
-                                <p>Cat: {{ book.category }}</p>
-
-                                {% if book.category %}
-                                <p class="">
-                                    <a class="text-muted" href="{% url 'books' %}?category={{ book.category.name }}">
-                                        <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                                    </a>
-                                </p>
-                                {% endif %}
-
-                                <p>pk: {{ book.pk }}</p>
-
-                                {% if request.user.is_superuser %}
-                                    <small class="ml-3">
-                                        <a href="{% url 'edit_book' book.id %}">Edit</a> | 
-                                        <a class="text-danger" href="{% url 'delete_book' book.id %}">Delete</a>
-                                    </small>
-                                {% endif %}
                             </div>
                         </div>
                     </div>
