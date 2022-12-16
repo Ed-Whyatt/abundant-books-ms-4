@@ -71,20 +71,25 @@
                 <div class="col-12 mt-3">
                     <div class="row">
                         <div class="col-10 offset-1">
-                            <h4>Authors Of The Month</h4>
+                            <h4 class="books-blue-text">Authors Of The Month</h4>
                         </div>   
                         {% for book in author_of_month %}
-                        <div class="col-10 offset-1">
+                        <div class="col-lg-10 offset-1 col-md-5 col-sm-5">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-2 col-sm-3">
                                         <a href="{% url 'book_info' book.id %}">
                                             <img class="author-image " src="{{ book.img_paths.url }}"
                                                 alt="{{ book.name }}">
                                         </a>
                                 </div>
-                                <div class="col-8">
-                                    <h4><strong>{{ book.author }}</strong></h4>
+                                <div class="col-10 col-sm-9 author-text">
+                                    <h4>{{ book.author }}</h4>
                                     <p> <small>Known for : {{ book.name }}</small> </p>
+                                    {% if request.user.is_superuser %}
+                                        <small class="ml-3">
+                                            <a class="btn btn-danger" href="{% url 'edit_book' book.id %}" role="button">Edit</a>
+                                        </small>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -95,16 +100,16 @@
                 <!-- Deals of the month -->
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-12 ms-5">
-                            <h3>Deals Of The Month</h3>
+                        <div class="col-12 col-md-10 col-sm-9 ms-5">
+                            <h4 class="books-blue-text">Deals Of The Month</h4>
                         </div>
                     </div>
                     <div class="row">
                         {% for book in deal_of_month %}
-                        <div class="col-12 mt-3">
+                        <div class="col-lg-10 offset-md-1 col-md-5 col-sm-8 offset-sm-3 mt-3">
                             <div class="row">
-                                <div class="col-4">
-                                    <div class="book-image">
+                                <div class="col-2">
+                                    <div class="deal-image">
                                         <a href="{% url 'book_info' book.id %}">
                                             {% if book.img_paths %}
                                             <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
@@ -114,27 +119,32 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-10">
                                     <div class="deal-text">
-                                        <h3>{{ book.name }}</h3>
-                                        <p>Author: {{ book.author }}</p>
-                                        {% include 'includes/book-stars.html' %}
-                                        {% if book.category %}
-                                        <p class="">
-                                            <a class="text-muted"
-                                                href="{% url 'books' %}?category={{ book.category.name }}">
-                                                <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                                            </a>
-                                        </p>
-                                        {% endif %}
-                                        <p><strong>Price: {{ book.price }}</strong></p>
-                                        {% if request.user.is_superuser %}
-                                        <li>
-                                            <small class="ml-3">
-                                                <a href="{% url 'edit_book' book.id %}">Edit</a>
-                                            </small>
-                                        </li>
-                                        {% endif %}
+                                        <ul>
+                                            <li><h4>{{ book.name }}</h4></li>
+                                            <li><small>By {{ book.author }}</small></li>
+                                            <li class="pop-genres-stars">
+                                                {% include 'includes/book-stars.html' %}
+                                            </li>
+                                            <li>
+                                                {% if book.category %}
+                                                    <a class="books-blue-text"
+                                                        href="{% url 'books' %}?category={{ book.category.name }}">
+                                                        <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                                                    </a>
+                                                {% endif %}
+                                            </li>
+                                            <li><small>RRP: {{ book.old_price }}</small></li>
+                                            <li><strong>£ {{ book.price }}</strong></li>
+                                            {% if request.user.is_superuser %}
+                                            <li>
+                                                <small class="ml-3">
+                                                    <a class="btn btn-danger" href="{% url 'edit_book' book.id %}" role="button">Edit</a>
+                                                </small>
+                                            </li>
+                                            {% endif %}
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -153,29 +163,29 @@
                     <div class="row">
 
                         <div class="col-md-3 col-sm-12">
-                            <h4 class="text-uppercase"><span>Popular Genres</span></h4>
+                            <h4 class="text-uppercase books-blue-text"><span>Popular Genres</span></h4>
                         </div>
 
                         <div class="col-2">
-                            <button class="btn" type="button" data-bs-toggle="collapse"
+                            <button class="btn books-blue-text" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample1" aria-expanded="false"
                             aria-controls="multiCollapseExample1">Biography</button>
                         </div>
 
                         <div class="col-2">
-                            <button class="btn" type="button" data-bs-toggle="collapse"
+                            <button class="btn books-blue-text" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample2" aria-expanded="false"
                             aria-controls="multiCollapseExample2">Crime & Thriller</button>
                         </div>
 
                         <div class="col-2">
-                            <button class="btn" type="button" data-bs-toggle="collapse"
+                            <button class="btn books-blue-text" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample3" aria-expanded="false"
                             aria-controls="multiCollapseExample3">Natural History</button>
                         </div>
 
                         <div class="col-2">
-                            <button class="btn" type="button" data-bs-toggle="collapse"
+                            <button class="btn books-blue-text" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample4" aria-expanded="false"
                             aria-controls="multiCollapseExample4">Humer</button>
                         </div>

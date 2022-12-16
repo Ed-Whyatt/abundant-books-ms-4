@@ -9,6 +9,10 @@ body {
     position: relative;
 }
 
+.books-blue-text {
+    color: #00004d;
+}
+
 .owl-carousel {
     background-color: #F5F5F5;
 }
@@ -94,7 +98,7 @@ body {
 
 .carousel-edit-button {
     position: absolute;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .carousel-button:hover {
@@ -102,13 +106,14 @@ body {
     color: #F5F5F5;
 }
 
-
 .author-image {
     max-width: 40px;
     max-height: 80px;
 }
 
-
+.author-text {
+    color: #00004d;
+}
 
 .home-main {
     background-color: #F5F5F5;
@@ -132,9 +137,19 @@ body {
     margin-left: -31px;
 }
 
-.book-image {
-    height: 100%;
-    width: 50%;
+.deal-image {
+    height: 100px;
+    width: 80px;
+}
+
+.deal-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #00004d;
+    text-decoration: none; 
+}
+
+.deal-text ul {
+    list-style-type: none;
 }
 
 .bg-lite-gray {

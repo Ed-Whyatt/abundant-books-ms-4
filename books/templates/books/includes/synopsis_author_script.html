@@ -6,8 +6,6 @@ let isbnUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
 isbn = '{{ book.isbn }}';
 $.getJSON(isbnUrl + isbn,
     function (bookData) {
-        console.log(bookData)
-        console.log(isbn)
         if (bookData.hasOwnProperty("items") ){
             bookSynopis = bookData.items[0].volumeInfo.description;
             $("#Synopsis").html(
@@ -29,7 +27,7 @@ $.getJSON(isbnUrl + isbn,
         if (errorResponse.status === 404) {
             console.log("errorResopnse", errorResponse);
         } else {
-            console.log(errorResponse.reponseJSON.message);
+            console.log(errorResponse.responseJSON.message);
         }
     }
 );
@@ -57,7 +55,6 @@ function authorKeySearch(authorKey) {
     let authorUrlEnd = authorKey + ".json";
     $.getJSON(authorUrl + authorUrlEnd,
         function (result) {
-            console.log(result)
             if (result.hasOwnProperty("bio") ){ 
 
                 if (result.bio.value != undefined) {
@@ -66,7 +63,13 @@ function authorKeySearch(authorKey) {
                         <div>${result.bio.value}</div>       
                         `
                     );     
-                } 
+                } else {
+                    $("#author").html(
+                        `
+                        <div>${result.bio}</div>       
+                        `
+                    ); 
+                }
             } else {
                 $("#author").html(
                     `
