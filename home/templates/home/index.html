@@ -70,19 +70,19 @@
                 <!-- Authers of the month -->
                 <div class="col-12 mt-3 mb-5">
                     <div class="row">
-                        <div class="col-10 offset-1 mb-3">
+                        <div class="col-lg-10 offset-lg-1">
                             <h4 class="books-blue-text">Authors Of The Month</h4>
                         </div>   
                         {% for book in author_of_month %}
-                        <div class="col-lg-10 offset-1 col-md-5 col-sm-5">
+                        <div class="col-lg-10 offset-lg-1 col-md-5">
                             <div class="row">
-                                <div class="col-2 col-sm-3">
+                                <div class="col-2">
                                         <a href="{% url 'book_info' book.id %}">
                                             <img class="author-image " src="{{ book.img_paths.url }}"
                                                 alt="{{ book.name }}">
                                         </a>
                                 </div>
-                                <div class="col-10 col-sm-9 author-text">
+                                <div class="col-8 author-text">
                                     <h4>{{ book.author }}</h4>
                                     <p> <small>Known for : {{ book.name }}</small> </p>
                                     {% if request.user.is_superuser %}
@@ -100,7 +100,7 @@
                 <!-- Deals of the month -->
                 <div class="col-12 mb-3">
                     <div class="row">
-                        <div class="col-12 col-md-10 col-sm-9 ms-4">
+                        <div class="col-12 col-md-10 col-sm-9">
                             <h4 class="books-blue-text">Deals Of The Month</h4>
                         </div>
                     </div>
