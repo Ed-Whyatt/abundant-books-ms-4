@@ -22,130 +22,69 @@
     <div class="container">
         <div class="row">
 
-            <div class="col">
+            <div class="col-12">
                 <h2 class="text-center books-blue-text mt-3">Book Information</h2>
             </div>
 
-            <div class="col-8 offset-2 mt-3">
-                <div class="card">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+                <div class="card rounded-0">
                     <div class="row">
                         <div class="col-4">
-                            <div class="book-image card-body">
+                            <div class="card-body">
                                 {% if book.img_paths %}
-                                        <a href="{{ book.img_paths.url }}" target="_blank">
-                                            <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
-                                        </a>
-                                    {% else %}
-                                        <a href="{{ MEDIA_URL }}noimage.png" target="_blank">
-                                            <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
-                                        </a>
-                                    {% endif %}
+                                <a href="{{ book.img_paths.url }}" target="_blank">
+                                    <img class="img-fluid info-book-img" src="{{ book.img_paths.url }}"
+                                        alt="{{ book.name }}">
+                                </a>
+                                {% else %}
+                                <a href="{{ MEDIA_URL }}noimage.png" target="_blank">
+                                    <img class="img-fluid info-book-img" src="{{ MEDIA_URL }}noimage.png"
+                                        alt="{{ book.name }}">
+                                </a>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="deal-text card-body">
-
                                 <ul>
                                     <li>
                                         <h3>{{ book.name }}</h3>
-                                        <h2>By: {{ book.author }}</h2>
+                                        <h4>By: {{ book.author }}</h4>
+                                        <p>ISBN no. {{ book.isbn }}</p>
                                     </li>
-                                    {% if book.book_depository_stars == "0.00" %}
-                                    <li class="stars">
-                                        0<i class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
+                                    <li class="pop-genres-stars">
+                                        {% include 'includes/book-stars.html' %}
                                     </li>
-                                    {% elif book.book_depository_stars == 0.50 %}
-                                    <li class="stars">
-                                        0.5<i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 1.00 %}
-                                    <li class="stars">
-                                        1 <i class="fas fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 1.50 %}
-                                    <li class="stars">
-                                        1.5 <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i
-                                            class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 2.00 %}
-                                    <li class="stars">
-                                        2 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="far fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 2.50 %}
-                                    <li class="stars">
-                                        2.5 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 3.00 %}
-                                    <li class="stars">
-                                        3 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="far fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 3.50 %}
-                                    <li class="stars">
-                                        3.5<i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 4.00 %}
-                                    <li class="stars">
-                                        4<i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="far fa-star"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 4.50 %}
-                                    <li class="stars">
-                                        4.5<i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star-half-alt"></i>
-                                    </li>
-                                    {% elif book.book_depository_stars == 5.00 %}
-                                    <li class="stars">
-                                        5<i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i>
-                                    </li>
-                                    {% endif %}
                                     <li>
                                         {% if book.category %}
-                                        <p class="">
-                                            <a class="text-muted"
+                                        <p class="mt-3">
+                                            <a class="books-blue-text"
                                                 href="{% url 'books' %}?category={{ book.category.name }}">
                                                 <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
                                             </a>
                                         </p>
                                         {% endif %}
                                     </li>
-                                </ul>
-                                <br>
-                                <ul>
+                                    <li>
+                                        <p>
+                                            {{ book.format }}
+                                        </p>
+                                    </li>
                                     <li>
                                         <p>RRP: {{ book.old_price }}: </p>
-                                        <div>{{ book.isbn }}</div>
                                     </li>
                                     <li>
                                         <p><strong>Price: {{ book.price }}</strong></p>
 
                                     </li>
                                     {% if request.user.is_superuser %}
-                                    <li>
-                                        <small class="ml-3">
-                                            <a href="{% url 'edit_book' book.id %}">Edit</a>
-                                        </small>
-                                    </li>
+                                    <small class="ml-3">
+                                        <a class="btn btn-danger mt-1" href="{% url 'edit_book' book.id %}"
+                                            role="button">Edit</a>
+                                        <a class="btn btn-danger mt-1" href="{% url 'delete_book' book.id %}"
+                                            role="button">Delete</a>
+                                    </small>
                                     {% endif %}
-
                                 </ul>
                             </div>
                         </div>
@@ -153,30 +92,31 @@
                         <!-- Add to bag -->
                         <div class="col">
 
-                            <form class="form" action="{% url 'add_to_bag' book.id %}" method="POST" enctype="multipart/form-data">
+                            <form class="form" action="{% url 'add_to_bag' book.id %}" method="POST"
+                                enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <div class="form-row">
                                     <div class="col-12">
-                                        <p class="mt-3"><strong>Quantity:</strong></p>
+                                        <p class="ms-3 mt-3 books-blue-text"><strong>Quantity:</strong></p>
 
                                         <!-- Bootstrap quantitly buttons -->
-                                        <div class="form-group w-50">
+                                        <div class="form-group w-50 ms-3 books-blue-text">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                    <button class="decrement-qty btn btn-black rounded-0"
+                                                    <button class="decrement-qty btn button-blue rounded-0"
                                                         data-item_id="{{ book.id }}" id="decrement-qty_{{ book.id }}">
                                                         <span class="icon">
                                                             <i class="fas fa-minus"></i>
                                                         </span>
                                                     </button>
                                                 </div>
-                                                <input class="form-control qty_input" type="number" name="quantity"
-                                                    value="1" min="1" max="99" data-item_id="{{ book.id }}"
-                                                    id="id_qty_{{ book.id }}">
+                                                <input class="form-control qty_input books-blue-text border-blue"
+                                                    type="number" name="quantity" value="1" min="1" max="99"
+                                                    data-item_id="{{ book.id }}" id="id_qty_{{ book.id }}">
                                                 <div class="input-group-append">
-                                                    <button class="increment-qty btn btn-black rounded-0"
+                                                    <button class="increment-qty btn button-blue rounded-0"
                                                         data-item_id="{{ book.id }}" id="increment-qty_{{ book.id }}">
-                                                        <span class="icon">
+                                                        <span>
                                                             <i class="fas fa-plus"></i>
                                                         </span>
                                                     </button>
@@ -186,13 +126,13 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <a href="{% url 'books' %}" class="btn rounded-0 mt-5">
+                                            <a href="{% url 'books' %}" class="btn books-button ms-3 mt-5 mb-3">
                                                 <span class="icon">
                                                     <i class="fas fa-chevron-left"></i>
                                                 </span>
                                                 <span class="text-uppercase">Keep Shopping</span>
                                             </a>
-                                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5"
+                                            <input type="submit" class="btn books-button text-uppercase ms-3 mt-5 mb-3"
                                                 value="Add to Bag">
                                         </div>
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -204,55 +144,40 @@
                 </div>
             </div>
 
-            <div class="col-8 offset-2 mt-3">
-                <div class="row">
-                    <div class="col-12">
-                        <p>
-                            <a class="btn" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
-                                aria-expanded="false" aria-controls="multiCollapseExample1">Synopsis</a>
+            <div class="col-12 mt-3">
 
-                            <button class="btn" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#multiCollapseExample2" aria-expanded="false"
-                                aria-controls="multiCollapseExample2">Author</button>
-                        </p>
-                    </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button class="btn synopsis-author-button active" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#multiCollapseExample5" aria-expanded="false"
+                        aria-controls="multiCollapseExample5"><strong>Synopsis</strong></button>
 
-                    <div class="col-12">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">   
-                                        <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                            <div class="card card-body">
-                                                <div class="deal-text">
-                                                    <div id="Synopsis">
-                                                        <!-- Synopis info here -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                </div>
-                                <div class="col-6"> 
-                                        <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                            <div class="card card-body">
-                                                <div class="deal-text">
-                                                    <p>{{ book.author }}</p>
-                                                    <div id="author">
-                                                        
-                                                        <!-- Author info here -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>     
+                    <button class="btn synopsis-author-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#multiCollapseExample6" aria-expanded="false"
+                        aria-controls="multiCollapseExample6"><strong>Author</strong></button>
+                </div>
+               
+                <div class="collapse multi-collapse mt-3" id="multiCollapseExample5">
+                        <div class="card card-body rounded-0">
+                            <div class="deal-text">
+                                <div id="Synopsis">
+                                    <!-- Synopis info here -->
                                 </div>
                             </div>
-
-                        </div>
-
-                    </div>
-
+                        </div>  
                 </div>
-
+                <div class="collapse multi-collapse mt-3" id="multiCollapseExample6">
+                    <div class="card card-body rounded-0">
+                        <div class="deal-text">
+                            <p>{{ book.author }}</p>
+                            <div id="author">
+                                <!-- Author info here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                       
             </div>
+            
         </div>
 
     </div>
