@@ -155,25 +155,25 @@
                         </div>
 
                         <div class="col-2">
-                            <button class="btn books-blue-text" type="button" data-bs-toggle="collapse"
+                            <button id="buttonOne" class="btn books-blue-text" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample1" aria-expanded="false"
                             aria-controls="multiCollapseExample1">Biography</button>
                         </div>
 
                         <div class="col-2">
-                            <button class="btn books-blue-text" type="button" data-bs-toggle="collapse"
+                            <button id="buttonTwo" class="btn books-blue-text" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample2" aria-expanded="false"
                             aria-controls="multiCollapseExample2">Crime & Thriller</button>
                         </div>
 
                         <div class="col-2">
-                            <button class="btn books-blue-text" type="button" data-bs-toggle="collapse"
+                            <button id="buttonThree" class="btn books-blue-text" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample3" aria-expanded="false"
                             aria-controls="multiCollapseExample3">Natural History</button>
                         </div>
 
                         <div class="col-2">
-                            <button class="btn books-blue-text" type="button" data-bs-toggle="collapse"
+                            <button id="buttonFour" class="btn books-blue-text" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample4" aria-expanded="false"
                             aria-controls="multiCollapseExample4">Humer</button>
                         </div>
@@ -226,7 +226,7 @@
                         </div>
                     </div>
 
-                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                    <div id="multiCollapseExample2" class="collapse multi-collapse crime-thriller-two">
                         <div class="row">
                             {% for book in books %}
                                 {% if book.category|lower == "crime_thriller"|lower %}
@@ -362,9 +362,4 @@
 
 {% block postloadjs %}
 {{ block.super }}
-
-<script>
-
-</script>
-
 {% endblock %}
