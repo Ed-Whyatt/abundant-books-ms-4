@@ -75,6 +75,7 @@
                 <div class="card rounded-0">
 
                     <div class="row">
+
                         <div class="col-4">
                             <div class="card-body books-card">
                                     {% if book.img_paths %}
@@ -111,14 +112,16 @@
                                         {% endif %}
                                     </li>
                                     <li><small>RRP: {{ book.old_price }}</small></li>
-                                    <li><strong>£ {{ book.price }}</strong></li>
                                     <br>
-                                    <li>
-                                        <a class="books-button" href="{% url 'book_info' book.id %}" role="button">View The
-                                            Book</a>
-                                    </li>
-                                </ul>
+                                    <li><strong>£ {{ book.price }}</strong></li>
+                                    <br>  
+                                </ul>  
                             </div>
+                        </div>
+                        <div class="mb-4 text-center">
+                            <a class="books-button" href="{% url 'book_info' book.id %}" role="button">
+                                View The Book
+                            </a>
                         </div>
                     </div>
                 </div>

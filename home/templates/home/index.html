@@ -68,9 +68,9 @@
         <div class="col-lg-4 col-12">
             <div class="row">
                 <!-- Authers of the month -->
-                <div class="col-12 mt-3">
+                <div class="col-12 mt-3 mb-5">
                     <div class="row">
-                        <div class="col-10 offset-1">
+                        <div class="col-10 offset-1 mb-3">
                             <h4 class="books-blue-text">Authors Of The Month</h4>
                         </div>   
                         {% for book in author_of_month %}
@@ -98,9 +98,9 @@
                     </div>
                 </div>
                 <!-- Deals of the month -->
-                <div class="col-12">
+                <div class="col-12 mb-3">
                     <div class="row">
-                        <div class="col-12 col-md-10 col-sm-9 ms-5">
+                        <div class="col-12 col-md-10 col-sm-9 ms-4">
                             <h4 class="books-blue-text">Deals Of The Month</h4>
                         </div>
                     </div>
@@ -124,22 +124,10 @@
                                         <ul>
                                             <li><h4>{{ book.name }}</h4></li>
                                             <li><small>By {{ book.author }}</small></li>
-                                            <li class="pop-genres-stars">
-                                                {% include 'includes/book-stars.html' %}
-                                            </li>
-                                            <li>
-                                                {% if book.category %}
-                                                    <a class="books-blue-text"
-                                                        href="{% url 'books' %}?category={{ book.category.name }}">
-                                                        <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                                                    </a>
-                                                {% endif %}
-                                            </li>
-                                            <li><small>RRP: {{ book.old_price }}</small></li>
                                             <li><strong>£ {{ book.price }}</strong></li>
                                             {% if request.user.is_superuser %}
                                             <li>
-                                                <small class="ml-3">
+                                                <small>
                                                     <a class="btn btn-danger" href="{% url 'edit_book' book.id %}" role="button">Edit</a>
                                                 </small>
                                             </li>
@@ -219,11 +207,14 @@
                                                             <li class="pop-genres-stars">
                                                                 {% include 'includes/book-stars.html' %}
                                                             </li>
+                                                            <li><small>RRP: {{ book.old_price }}</small></li>
                                                             <br>
-                                                        
-                                                            <br>
-                                                            <li><strong>£ {{ book.price }}</strong></li>
+                                                            <li><strong>£ {{ book.price }}</strong></li>   
                                                         </ul>
+                                                        <div>
+                                                            <a class="pop-genres-button" href="{% url 'book_info' book.id %}" role="button">View The
+                                                                Book</a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -258,11 +249,14 @@
                                                         <li class="pop-genres-stars">
                                                             {% include 'includes/book-stars.html' %}
                                                         </li>
+                                                        <li><small>RRP: {{ book.old_price }}</small></li>
                                                         <br>
-                                                    
-                                                        <br>
-                                                        <li><strong>£ {{ book.price }}</strong></li>
+                                                        <li><strong>£ {{ book.price }}</strong></li>   
                                                     </ul>
+                                                    <div>
+                                                        <a class="pop-genres-button" href="{% url 'book_info' book.id %}" role="button">View The
+                                                            Book</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -297,11 +291,14 @@
                                                         <li class="pop-genres-stars">
                                                             {% include 'includes/book-stars.html' %}
                                                         </li>
+                                                        <li><small>RRP: {{ book.old_price }}</small></li>
                                                         <br>
-                                                    
-                                                        <br>
-                                                        <li><strong>£ {{ book.price }}</strong></li>
+                                                        <li><strong>£ {{ book.price }}</strong></li>   
                                                     </ul>
+                                                    <div>
+                                                        <a class="pop-genres-button" href="{% url 'book_info' book.id %}" role="button">View The
+                                                            Book</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -335,11 +332,14 @@
                                                             <li class="pop-genres-stars">
                                                                 {% include 'includes/book-stars.html' %}
                                                             </li>
+                                                            <li><small>RRP: {{ book.old_price }}</small></li>
                                                             <br>
-                                                        
-                                                            <br>
-                                                            <li><strong>£ {{ book.price }}</strong></li>
+                                                            <li><strong>£ {{ book.price }}</strong></li>   
                                                         </ul>
+                                                        <div>
+                                                            <a class="pop-genres-button" href="{% url 'book_info' book.id %}" role="button">View The
+                                                                Book</a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

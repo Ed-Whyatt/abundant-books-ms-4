@@ -14,7 +14,7 @@ body {
 }
 
 .owl-carousel {
-    background-color: #F5F5F5;
+    background-color: #f0f0f0;
 }
 
 .carousel-image {
@@ -81,12 +81,12 @@ body {
 
 .carousel-bottom {
     height: 80px;
-    background-color: #F5F5F5;
+    background-color: #f0f0f0;
     width: 100%;
 }
 
 .carousel-button {
-    background-color: #F5F5F5;
+    background-color: #f0f0f0;
     text-decoration: none;
     border-radius: 12px;
     padding: 4px 18px;
@@ -98,7 +98,7 @@ body {
 
 .carousel-button:hover {
     background-color: #00004d;
-    color: #F5F5F5;
+    color: #f0f0f0;
 }
 
 .carousel-edit-button {
@@ -116,7 +116,7 @@ body {
 }
 
 .home-main {
-    background-color: #F5F5F5;
+    background-color: #f0f0f0;
 }
 
 .pop-genres-card {
@@ -137,6 +137,22 @@ body {
     margin-left: -31px;
 }
 
+.pop-genres-button {
+    background-color: #00004d;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 4px 18px;
+    box-shadow: 5px 5px 10px #000;
+    color: #f0f0f0;
+    font-weight: 600;
+}
+
+.pop-genres-button:hover {
+    background-color: #f0f0f0;
+    color: #00004d;
+    box-shadow: 5px 5px 10px #00004d;
+}
+
 .deal-image {
     height: 100px;
     width: 80px;
@@ -153,7 +169,7 @@ body {
 }
 
 .bg-lite-gray {
-    background-color: #F5F5F5;
+    background-color: #f0f0f0;
 }
 
 .stars {
@@ -194,11 +210,12 @@ body {
 }
 
 /* Books page */
+
 .books-card {
     font-family: 'Open Sans', sans-serif;
     color: #00004d;
     text-decoration: none;
-    min-height: 300px;
+    min-height: 310px;
 }
 
 .books-img {
