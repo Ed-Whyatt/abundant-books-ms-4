@@ -17,7 +17,7 @@ jQuery(document).ready(function (e) {
     }; 
 
 
-    // Popular genres hide show class for othe genres html when each button is clicked
+    // Popular genres hide show class for author genres html when each button is clicked
     $( "#buttonOne" ).click(function() {
         document.getElementById("multiCollapseExample2").classList.remove("show");
         document.getElementById("multiCollapseExample3").classList.remove("show");
@@ -38,8 +38,28 @@ jQuery(document).ready(function (e) {
         document.getElementById("multiCollapseExample2").classList.remove("show");
         document.getElementById("multiCollapseExample3").classList.remove("show");
     });
+
+
+    // Book information hide and show synopisis and author info independintly javascript
+    $( "#synopisButton" ).click(function() {
+        document.getElementById("multiCollapseExample6").classList.remove("show");
+        document.getElementById("authorButton").classList.remove("active");
+        containActive = document.getElementById("synopisButton").classList.contains("active");
+        if (containActive) {
+            document.getElementById("synopisButton").classList.remove("active")
+        } else {
+            document.getElementById("synopisButton").classList.add("active")
+        };
+    });
+    $( "#authorButton" ).click(function() {
+        document.getElementById("multiCollapseExample5").classList.remove("show");
+        document.getElementById("synopisButton").classList.remove("active"); 
+        containActive = document.getElementById("authorButton").classList.contains("active");
+        if (containActive) {
+            document.getElementById("authorButton").classList.remove("active")
+        } else {
+            document.getElementById("authorButton").classList.add("active")
+        };
+           
+    });
 });
-
-
-
-
