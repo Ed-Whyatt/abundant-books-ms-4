@@ -66,9 +66,11 @@ def book_info(request, book_id):
     A view to return individuel product information
     """
     book = get_object_or_404(Book, pk=book_id)
+    all_books = Book.objects.all()
 
     context = {
         'book': book,
+        'all_books': all_books,
     }
 
     return render(request, 'books/book_info.html', context)

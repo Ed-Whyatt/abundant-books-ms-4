@@ -183,6 +183,48 @@
     </div>
 </div>
 
+
+
+<div class="owl-carousel owl-theme mt-5">
+    {% for all_book in all_books %}
+        {% if book.category == all_book.category %}
+            <div
+                class="carousel-container">
+
+                <div class="carousel-bg-info">
+                    <div class="carousel-image">
+                        {% if all_book.img_paths %}
+                        <a href="{% url 'book_info' book.id %}">
+                            <img class="img-fluid" src="{{ all_book.img_paths.url }}" alt="{{ all_book.name }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'book_info' book.id %}">
+                            <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ all_book.name }}">
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="carousel-info">
+                        <ul>
+                            <li><strong>{{ all_book.name }}</strong></li>
+                            <li><small>By {{ all_book.author }}</small></li>
+                            <br>
+                            <li><strong>£ {{ all_book.price }}</strong></li>
+                            <br>
+                            <li>
+                                <a class="carousel-button" href="{% url 'book_info' all_book.id %}" role="button">View The
+                                    Book</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="carousel-bottom"></div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+</div>
+
 </div>
 
 {% endblock %}

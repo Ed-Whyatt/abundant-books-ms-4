@@ -284,5 +284,11 @@ body {
     border-radius: 3px;
 }
 
+/* Book info carousel */
+.carousel-bg-info {
+    height: 250px;
+    width: 100%;
+    background-color: #fff;
+}
 
 
