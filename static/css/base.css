@@ -218,6 +218,14 @@ body {
 
 /* Books page */
 
+.all-books-button {
+    border-radius: 12px;
+    padding: 4px 18px;
+    color: #F5F5F5;
+    background-color: #00004d;
+    
+}
+
 .books-card {
     font-family: 'Open Sans', sans-serif;
     color: #00004d;

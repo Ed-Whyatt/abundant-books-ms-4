@@ -21,12 +21,6 @@
     <div class="row">
         <div class="col text-center mt-3">
             <h2 class="books-blue-text">Books</h2>
-            {% for c in current_categories %}
-            <a class="category-badge text-decoration-none" href="{% url 'books' %}?category={{ c.name }}">
-                <span
-                    class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
-            </a>
-            {% endfor %}
         </div>
     </div>
 
@@ -34,17 +28,17 @@
         <div class="col-12 col-md-6 my-auto d-flex justify-content-center justify-content-md-end">
             <div class="sort-select-wrapper w-50">
                 <select id="sort-selector"
-                    class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                    class="books-blue-text custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                     <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to
-                        high)</option>
-                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high
+                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (Low
+                        to high)</option>
+                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (High
                         to low)</option>
                     <option value="book_depository_stars_asc"
-                        {% if current_sorting == 'book_depository_stars' %}selected{% endif %}>Rating (low to high)
+                        {% if current_sorting == 'book_depository_stars' %}selected{% endif %}>Rating (high to low)
                     </option>
                     <option value="book_depository_stars_desc"
-                        {% if current_sorting == 'book_depository_stars' %}selected{% endif %}>Rating (high to low)
+                        {% if current_sorting == 'book_depository_stars' %}selected{% endif %}>Rating (low to high)
                     </option>
                     <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)
                     </option>
@@ -58,9 +52,9 @@
             </div>
         </div>
         <div class="col-12 col-md-6 order-md-first">
-            <p class="text-muted mt-3 text-center text-md-left">
+            <p class="mt-3 text-center text-md-left">
                 {% if search_term or current_categories or current_sorting != 'None_None' %}
-                <span class="small"><a href="{% url 'books' %}">Books Home</a> | </span>
+                <a class="all-books-button" href="{% url 'books' %}">Books Home</a>
                 {% endif %}
                 {{ books|length }} Books{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
             </p>
@@ -145,4 +139,44 @@
 
 {% block postloadjs %}
 {{ block.super }}
+    <script>
+        // <!-- Script for book category, price, rating, and name order select -->
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        console.log(selectedVal)
+        if (selectedVal == "book_depository_stars_asc") {
+            var sort = "book_depository_stars";
+            var direction = "desc";
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else if (selectedVal == "book_depository_stars_desc") {
+            var sort = "book_depository_stars";
+            var direction = "asc";
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+    </script>
 {% endblock %}
