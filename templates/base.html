@@ -129,16 +129,16 @@
 
                     <!-- Shopping Bag -->
                     <div class="col-6 py-1 py-lg-0">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}books-blue-text{% endif %} nav-link"
                             href="{% url 'view_bag' %}">
                             <div class="text-center mt-2 books-blue-text">
                                 <p><i class="fas fa-shopping-bag fa-lg"></i> Check Out</p>
 
                                 <p class="my-0">
                                     {% if grand_total %}
-                                    ${{ grand_total|floatformat:2 }}
+                                    £{{ grand_total|floatformat:2 }}
                                     {% else %}
-                                    $0.00
+                                    £0.00
                                     {% endif %}
                                 </p>
                             </div>
