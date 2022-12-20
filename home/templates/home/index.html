@@ -41,7 +41,7 @@
                     <li><strong>£ {{ book.price }}</strong></li>
                     <br>
                     <li>
-                        <a class="carousel-button" href="{% url 'book_info' book.id %}" role="button">View The
+                        <a class="carousel-button me-2" href="{% url 'book_info' book.id %}" role="button">View The
                             Book</a>
                     </li>
                     <br>
@@ -74,15 +74,15 @@
                             <h4 class="books-blue-text">Authors Of The Month</h4>
                         </div>   
                         {% for book in author_of_month %}
-                        <div class="col-lg-10 offset-lg-1 col-md-5">
+                        <div class="col-lg-10 offset-lg-1 col-sm-6">
                             <div class="row">
-                                <div class="col-2">
+                                <div class="col-md-2 col-4">
                                         <a href="{% url 'book_info' book.id %}">
                                             <img class="author-image " src="{{ book.img_paths.url }}"
                                                 alt="{{ book.name }}">
                                         </a>
                                 </div>
-                                <div class="col-8 author-text">
+                                <div class="col-md-10 col-8 author-text">
                                     <h4>{{ book.author }}</h4>
                                     <p> <small>Known for : {{ book.name }}</small> </p>
                                     {% if request.user.is_superuser %}
@@ -100,13 +100,13 @@
                 <!-- Deals of the month -->
                 <div class="col-12 mb-3">
                     <div class="row">
-                        <div class="col-12 col-md-10 col-sm-9">
+                        <div class="col-lg-10 offset-lg-1">
                             <h4 class="books-blue-text">Deals Of The Month</h4>
                         </div>
                     </div>
                     <div class="row">
                         {% for book in deal_of_month %}
-                        <div class="col-lg-10 offset-md-1 col-md-5 col-sm-8 offset-sm-3 mt-3">
+                        <div class="col-lg-10 offset-lg-1 col-sm-6 mt-3">
                             <div class="row">
                                 <div class="col-2">
                                     <div class="deal-image">

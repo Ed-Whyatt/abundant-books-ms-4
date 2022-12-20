@@ -10,7 +10,7 @@ body {
 }
 
 .books-blue-text {
-    color: #00004d;
+    color: #00004d !important;
 }
 
 .border-blue {
@@ -233,6 +233,24 @@ body {
     list-style-type: none;
 }
 
+.books-button-white {
+    background-color: #F5F5F5;
+    text-decoration: none;
+    border: #00004d;
+    border-style: solid;
+    border-radius: 12px;
+    padding: 4px 18px;
+    box-shadow: 5px 5px 10px #000;
+    color: #00004d;
+    font-weight: 600;
+}
+
+.books-button-white:hover {
+    background-color: #00004d;
+    color: #F5F5F5;
+}
+
+
 .books-button {
     background-color: #00004d;
     text-decoration: none;
@@ -245,8 +263,9 @@ body {
 
 .books-button:hover {
     background-color: #F5F5F5;
+    border: #00004d;
+    border-style: solid;
     color: #00004d;
-    box-shadow: 5px 5px 10px #00004d;
 }
 
 .button-blue {
@@ -291,4 +310,13 @@ body {
     background-color: #fff;
 }
 
+/* Shopping Bag */
+.bag-container {
+    height: 100vh;
+}
+
+.bag-button {
+    border-radius: 12px;
+    padding: 4px 18px;
+}
 
