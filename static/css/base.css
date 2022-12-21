@@ -9,6 +9,11 @@ body {
     position: relative;
 }
 
+/* Genral container Bag */
+.books-container {
+    height: 100vh;
+}
+
 .books-blue-text {
     color: #00004d !important;
 }
@@ -318,13 +323,7 @@ body {
     background-color: #fff;
 }
 
-/* Shopping Bag */
-.bag-container {
-    height: 100vh;
-}
-
 .bag-button {
     border-radius: 12px;
     padding: 4px 18px;
 }
-
