@@ -17,9 +17,9 @@
 
 {% block content %}
 
-<div class="container-fluid bg-lite-gray books-container">
+<div class="container-fluid bg-lite-gray">
 
-    <div class="container bg-lite-gray">
+    <div class="container">
         <div class="row">
             <div class="col">
                 <hr>
@@ -41,7 +41,7 @@
                 </div>
                 {% for item in bag_items %}
                 <div class="row">
-                    <div class="col-2 mb-1">
+                    <div class="col-2 mt-1 mb-1">
                         <a href="{% url 'book_info' item.book.id %}">
                             {% if item.book.img_paths %}
                             <img class="w-100" src="{{ item.book.img_paths.url }}" alt="{{ item.book.name }}">
@@ -117,19 +117,19 @@
 
                     <div class="submit-button text-right mt-5 mb-2">
                         <a href="{% url 'view_bag' %}" class="btn books-button">
-                            <span class="icon">
+                            <span>
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="font-weight-bold">Adjust Bag</span>
                         </a>
                         <button id="submit-button" class="btn books-button-white">
                             <span class="font-weight-bold">Complete Order</span>
-                            <span class="icon">
+                            <span>
                                 <i class="fas fa-lock"></i>
                             </span>
                         </button>
-                        <p class="small text-danger my-0">
-                            <span class="icon">
+                        <p class="small text-danger my-0 mt-2">
+                            <span>
                                 <i class="fas fa-exclamation-circle"></i>
                             </span>
                             <span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
