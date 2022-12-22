@@ -190,7 +190,9 @@ body {
 
 /* Back to top button */
 
-.btt-button {
+.back-to-top-button {
+    background-color: #00004d;
+    border-radius: 12px;
     height: 42px;
     width: 42px;
     position: fixed;
@@ -198,7 +200,13 @@ body {
     right: 10px;
 }
 
-.btt-link,
+.back-to-top-button span {
+color: #f0f0f0;
+font-size: 38px;
+margin-top: -10px;
+}
+
+.back-to-top-link,
 .update-link,
 .remove-item {
     cursor: pointer;

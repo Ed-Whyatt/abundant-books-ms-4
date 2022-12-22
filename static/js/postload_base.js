@@ -33,6 +33,6 @@ let toastList = toastElList.map(function (toastEl) {
 })
 
 // <!-- Script for back to top button -->
-$('.btt-link').click(function(e) {
+$('.back-to-top-link').click(function(e) {
     window.scrollTo(0, 0)
 })
