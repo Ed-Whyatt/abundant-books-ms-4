@@ -268,17 +268,18 @@ body {
     background-color: #00004d;
     text-decoration: none;
     border-radius: 12px;
+    border: 3px solid #00004d;
     padding: 4px 18px;
     box-shadow: 5px 5px 10px #000;
     color: #F5F5F5;
     font-weight: 600;
+    
 }
 
 .books-button:hover {
     background-color: #F5F5F5;
-    border: #00004d;
-    border-style: solid;
     color: #00004d;
+    border: 3px solid #00004d;
 }
 
 .button-blue {
@@ -359,7 +360,6 @@ body {
 .allauth-form-inner-content input[type='submit'] {
 	/* btn */
 	display: inline-block;
-    font-weight: 400;
     color: #fff;
     text-align: center;
     vertical-align: middle;
