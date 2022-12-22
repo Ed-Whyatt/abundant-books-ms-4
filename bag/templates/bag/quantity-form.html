@@ -27,5 +27,27 @@
 </form>
 <div class="btn-group mt-1" role="group" aria-label="Basic example">
     <a class="btn update-link button-blue bag-button text-info"><small>Update</small></a>
-    <a class="btn remove-item button-blue bag-button text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+    <!-- Modal Button -->
+    <button type="button" class="btn button-blue bag-button text-danger float-right" data-bs-toggle="modal" data-bs-target="#removeBagItem">
+        <small>Remove</small>
+      </button>
 </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="removeBagItem" tabindex="-1" aria-labelledby="RemoveItemFromBag" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content rounded-0">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="books-blue-text">Are you sure you want to remove this item from your bag !</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn books-button" data-bs-dismiss="modal">Cancel</button>
+              <a class="btn remove-item books-button-white text-danger float-right" id="remove_{{ item.item_id }}">Yes</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
