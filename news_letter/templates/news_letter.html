@@ -15,19 +15,19 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2>News Letter</h2>
-                <p>News letter example
-                    
+                <h2 class="books-blue-text">News Letter</h2>
+                <p class="books-blue-text">
+                    Join our News Letter, and recive the latest book deals and New arrivials.
                 </p>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 allauth-form-inner-content">
                 <form method="POST" action="{% url 'news_letter' %}" class="form mb-2">
                     {% csrf_token %}
                     {{ form | crispy }}
                     <div class="text-right">
-                        <a class="btn" href="{% url 'news_letter' %}">Cancel</a>
                         <button class="btn" type="submit">Subscribe</button>
+                        <a class="btn books-button-white" href="{% url 'news_letter' %}">Cancel</a>
                     </div>
                 </form>
             </div>
