@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container-fluid">
+    <div class="container-fluid bg-lite-gray books-container">
         <div class="row">
-            <div class="col-6">
-                {% block inner_content %}
-                {% endblock %}
+            <div class="col-6 offset-lg-2">
+                <div class="allauth-form-inner-content mt-3">
+                    {% block inner_content %}
+                    {% endblock %}
+                </div>  
             </div>
         </div>
     </div>

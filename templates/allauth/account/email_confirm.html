@@ -8,7 +8,7 @@
 
 {% block inner_content %}
 
-<h1>{% trans "Confirm E-mail Address" %}</h1>
+<h2 class="header-title">{% trans "Confirm E-mail Address" %}</h1>
 
 {% if confirmation %}
 
@@ -18,7 +18,8 @@
 
 <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
 {% csrf_token %}
-    <button type="submit">{% trans 'Confirm' %}</button>
+{% form|crispy %}
+    <button class="books-button" type="submit">{% trans 'Confirm' %}</button>
 </form>
 
 {% else %}

@@ -5,12 +5,13 @@
 {% block head_title %}{% trans "Account" %}{% endblock %}
 
 {% block inner_content %}
-    <h1>{% trans "E-mail Addresses" %}</h1>
+    <h2 class="header-title">{% trans "E-mail Addresses" %}</h1>
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
 
 <form action="{% url 'account_email' %}" class="email_list" method="post">
 {% csrf_token %}
+{% form|crispy %}
 <fieldset class="blockLabels">
 
   {% for emailaddress in user.emailaddress_set.all %}
@@ -34,6 +35,7 @@
       <button class="secondaryAction" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
       <button class="secondaryAction" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
       <button class="primaryAction" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
+      <a class="btn books-button-white" href="{% url 'home' %}">Home</a>
 </div>
 
 </fieldset>

@@ -181,7 +181,7 @@ body {
 }
 
 .bg-lite-gray {
-    background-color: #f0f0f0;
+    background-color: #b8b8b8;
 }
 
 .stars {
@@ -326,4 +326,71 @@ body {
 .bag-button {
     border-radius: 12px;
     padding: 4px 18px;
+}
+
+/* Allauth */
+
+.header-title {
+    color: #00004d;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Allauth form formatting */
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #00004d; /* text-secondary */
+}
+
+.allauth-form-inner-content input {
+    border-color: #00004d;
+    border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+	/* btn */
+	display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #00004d;
+    border: 3px solid #00004d;
+    border-radius: 12px;
+    padding: 4px 18px;
+    box-shadow: 5px 5px 10px #000;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 600;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {	
+	color: #00004d;
+    background-color: #f0f0f0;
+    border-color: #00004d;
+}
+
+.allauth-form-inner-content a {
+	color: #1e1e88; /* text-info */
+}
+
+.allauth-form-inner-content .form-check-label {
+    color: #00004d;
 }

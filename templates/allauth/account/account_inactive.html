@@ -6,7 +6,8 @@
 
 
 {% block inner_content %}
-<h1>{% trans "Account Inactive" %}</h1>
+<h2 class="header-title">{% trans "Account Inactive" %}</h2>
 
 <p>{% trans "This account is inactive." %}</p>
+<a class="btn books-button" href="{% url 'home' %}">Home</a>
 {% endblock %}
