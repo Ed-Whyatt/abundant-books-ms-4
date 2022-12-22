@@ -13,7 +13,7 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-lg-8 offset-lg-2 col-md-6">
                 <hr>
                 <h2 class="mb-4">Book and Products Management</h2>
                 <h5 class="text-muted">Edit a Product</h5>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-lg-8 offset-lg-2 col-md-6">
                 <form method="POST" action="{% url 'edit_book' book.id %}" class="form mb-3" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | crispy }}
