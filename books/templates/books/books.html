@@ -84,7 +84,7 @@
                                     {% if request.user.is_superuser %}
                                             <small class="ml-3">
                                                 <a class="btn btn-danger mt-1" href="{% url 'edit_book' book.id %}" role="button">Edit</a>
-                                                <a class="btn btn-danger mt-1" href="{% url 'delete_book' book.id %}" role="button">Delete</a>
+                                                
                                             </small>
                                     {% endif %}
                             </div>

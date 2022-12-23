@@ -80,10 +80,33 @@
                                     {% if request.user.is_superuser %}
                                     <small class="ml-3">
                                         <a class="btn btn-danger mt-1" href="{% url 'edit_book' book.id %}"
-                                            role="button">Edit</a>
-                                        <a class="btn btn-danger mt-1" href="{% url 'delete_book' book.id %}"
-                                            role="button">Delete</a>
+                                            role="button">Edit</a> 
+                                        <button type="button" class="btn btn-danger mt-1" data-bs-toggle="modal"
+                                            data-bs-target="#BookInfoAdminDelete">
+                                            Delete
+                                          </button>
                                     </small>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="BookInfoAdminDelete" tabindex="-1" aria-labelledby="DeleteBook" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                        <div class="modal-content rounded-0">
+                                            <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                            <p class="books-blue-text"><strong>Are you sure you want to do that! This item will be Deleted this permanently and can not be restored. </strong></p>
+                                            </div>
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn books-button" data-bs-dismiss="modal">Cancel</button>
+                                            <a class="btn books-button-white text-danger" href="{% url 'delete_book' book.id %}"
+                                            role="button">Delete</a>
+                                    
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
                                     {% endif %}
                                 </ul>
                             </div>

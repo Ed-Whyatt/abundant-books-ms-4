@@ -29,6 +29,7 @@
                     <div class="text-right">
                         <a class="btn books-button" href="{% url 'books' %}">Cancel</a>
                         <button class="btn books-button-white" type="submit">Update Product</button>
+                        <a class="btn btn-danger mt-1 float-end" href="{% url 'delete_book' book.id %}" role="button">Delete</a>
                     </div>
                 </form>
             </div>            
