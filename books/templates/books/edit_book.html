@@ -2,37 +2,64 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-md-6">
-                <hr>
-                <h2 class="mb-4">Book and Products Management</h2>
-                <h5 class="text-muted">Edit a Product</h5>
-                <hr>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-md-6">
-                <form method="POST" action="{% url 'edit_book' book.id %}" class="form mb-3" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <div class="text-right">
-                        <a class="btn books-button" href="{% url 'books' %}">Cancel</a>
-                        <button class="btn books-button-white" type="submit">Update Product</button>
-                        <a class="btn btn-danger mt-1 float-end" href="{% url 'delete_book' book.id %}" role="button">Delete</a>
-                    </div>
-                </form>
-            </div>            
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-6">
+            <hr>
+            <h2 class="mb-4">Book and Products Management</h2>
+            <h5 class="text-muted">Edit a Product</h5>
+            <hr>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-6">
+            <form method="POST" action="{% url 'edit_book' book.id %}" class="form mb-3" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-right">
+                    <a class="btn books-button" href="{% url 'books' %}">Cancel</a>
+                    <button class="btn books-button-white" type="submit">Update Product</button>
+                    <button type="button" class="btn btn-danger mt-1 float-end" data-bs-toggle="modal"
+                        data-bs-target="#EditBookAdminDelete">
+                        Delete
+                    </button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="EditBookAdminDelete" tabindex="-1" aria-labelledby="DeleteBook"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content rounded-0">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="books-blue-text"><strong>Are you sure you want to do that! This item will be
+                                        Deleted this permanently and can not be restored. </strong></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn books-button" data-bs-dismiss="modal">Cancel</button>
+                                <a class="btn books-button-white text-danger" href="{% url 'delete_book' book.id %}"
+                                    role="button">Delete</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
