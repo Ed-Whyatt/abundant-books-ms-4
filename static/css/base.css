@@ -23,7 +23,7 @@ body {
 }
 
 .owl-carousel {
-    background-color: #f0f0f0;
+    background-color: #e0e0e0;
 }
 
 .carousel-image {
@@ -89,7 +89,7 @@ body {
 
 .carousel-bottom {
     height: 80px;
-    background-color: #f0f0f0;
+    background-color: #e0e0e0;
     width: 100%;
 }
 
@@ -124,7 +124,7 @@ body {
 }
 
 .home-main {
-    background-color: #f0f0f0;
+    background-color: #e0e0e0;
 }
 
 .pop-genres-main {
@@ -181,7 +181,7 @@ body {
 }
 
 .bg-lite-gray {
-    background-color: #b8b8b8;
+    background-color: #e0e0e0;
 }
 
 .stars {
@@ -329,7 +329,7 @@ margin-top: -10px;
 .carousel-bg-info {
     height: 250px;
     width: 100%;
-    background-color: #fff;
+    background-color: #e0e0e0;
 }
 
 .bag-button {
