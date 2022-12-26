@@ -22,7 +22,7 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- Font awesome css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+
     <!-- Owl Carousel css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
@@ -63,7 +63,7 @@
     <header class="container-fluid">
 
         <!-- Bootstrap navbar -->
-        <div class="row"> 
+        <div class="row">
             <nav id="nav-category" class="col-2 navbar navbar-expand-lg books-blue-text">
                 <!-- Small screen toggle -->
                 <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
@@ -79,11 +79,9 @@
                 <!-- Search bar -->
                 <form class="form" method="GET" action="{% url 'books' %}">
                     <div class="input-group">
-                        <input class="form-control rounded-0" type="text" name="q"
-                            placeholder="Search site">
+                        <input class="form-control rounded-0" type="text" name="q" placeholder="Search site">
                         <div class="input-group-append">
-                            <button class="form-control btn books-blue-text rounded-0"
-                                type="submit">
+                            <button class="form-control btn books-blue-text rounded-0" type="submit">
                                 <span>
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -95,7 +93,8 @@
 
             <!-- Main title logo -->
             <div id="topnav" class="col-lg-4 mt-2 text-center"><a class="navbar-brand" href="{% url 'home' %}">
-                    <h2 class="books-blue-text"><span class="abundent-logo">Abundent <i class="fas fa-quran"></i></span<strong class="books-logo">Books</strong></h2>
+                    <h2 class="books-blue-text"><span class="abundent-logo">Abundent <i class="fas fa-quran"></i>
+                            </span<strong class="books-logo">Books</strong></h2>
                 </a>
             </div>
 
@@ -106,22 +105,22 @@
                     <div class="col-6 py-1 py-lg-0">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle books-blue-text" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link dropdown-toggle books-blue-text" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     My Account
                                     <i class="fas fa-user fa-lg"></i>
                                 </a>
                                 <ul class="dropdown-menu rounded-0" aria-labelledby="user-options">
                                     {% if request.user.is_authenticated %}
-                                        {% if request.user.is_superuser %}
-                                            <a href="{% url 'add_book' %}" class="dropdown-item">Product Management</a>
-                                        {% endif %}
-                                        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                                    {% else %}
-                                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    {% if request.user.is_superuser %}
+                                    <a href="{% url 'add_book' %}" class="dropdown-item">Product Management</a>
                                     {% endif %}
+                                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                    {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    {% endif %}                                    
                                 </ul>
                             </li>
                         </ul>
@@ -133,7 +132,6 @@
                             href="{% url 'view_bag' %}">
                             <div class="text-center mt-2 books-blue-text">
                                 <p><i class="fas fa-shopping-bag fa-lg"></i> Check Out</p>
-
                                 <p class="my-0">
                                     {% if grand_total %}
                                     £{{ grand_total|floatformat:2 }}
@@ -175,13 +173,71 @@
     {% block content %}
     {% endblock %}
 
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="footer-container">
+                        
+                        <div class="row">
+
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="col-12">
+                                        
+                                        <h5 id="contact" class="book-text-blue footer-header">Contact Us</h5>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <ul class="contact-list">
+                                            <li>
+                                                <p><strong>Customer Services Phone No.</strong></p>
+                                            </li>
+                                            <li>
+                                                <p>0500 555 5555 </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <ul class="contact-list">
+                                            <li>
+                                                <p><strong>Customer Services Email</strong></p>
+                                            </li>
+                                            <li>abundentbooks@info.com</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4 float-end">
+                                <div class="row">
+                                    <div class="col-lg-4 offset-lg-2 col-4 offset-6">
+
+                                        <div class="social"><a target="_blank" href="https://www.facebook.com/"><i
+                                                    class="fab fa-facebook-square"></i></a></div>
+
+                                    </div>
+                                    <div class="col-lg-4 offset-lg-2 col-4 offset-6">
+                                        <div class="social"><a target="_blank" href="https://www.instagram.com/"><i
+                                                    class="fab fa-instagram-square"></i></a></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
     {% block postloadjs %}
     {{ block.super }}
-        <!-- Owl postload js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-        <!-- Postload js -->
-        <script src="{% static 'js/postload_base.js' %}"></script>
-    {% endblock %}  
+    <!-- Owl postload js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Postload js -->
+    <script src="{% static 'js/postload_base.js' %}"></script>
+    {% endblock %}
 </body>
 
 </html>
