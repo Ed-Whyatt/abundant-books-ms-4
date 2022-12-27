@@ -12,16 +12,16 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid bg-lite-gray books-container news-letter">
+    <div class="container-fluid bg-lite-gray books-container mt-3">
         <div class="row">
-            <div class="col-12">
+            <div class="col-8 offset-2">
                 <h2 class="books-blue-text">News Letter</h2>
                 <p class="books-blue-text">
                     Join our News Letter, and recive the latest book deals and New arrivials.
                 </p>
         </div>
         <div class="row">
-            <div class="col-6 allauth-form-inner-content">
+            <div class="col-8 offset-2 allauth-form-inner-content news-letter">
                 <form method="POST" action="{% url 'news_letter' %}" class="form mb-2">
                     {% csrf_token %}
                     {{ form | crispy }}
