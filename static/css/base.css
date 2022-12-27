@@ -54,7 +54,8 @@ body {
 .carousel-bg-image{
     height: 250px;
     width: 100%;
-    background-image: url(/media/grey-smoke-png-9-transparent.png);
+    /* background-image: url(/media/grey-smoke-png-9-transparent.png); */
+    background-image: url("{{ MEDIA_URL }}grey-smoke-png-9-transparent.png");
     background-position: center;
 }
 

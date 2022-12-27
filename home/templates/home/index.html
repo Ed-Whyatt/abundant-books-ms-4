@@ -277,10 +277,15 @@
                                         <div class="row">
                                             <div class="col-4">
                                                 <div>
-                                                    <a href="{% url 'book_info' book.id %}">
-                                                        <img class="img-fluid" src="{{ book.img_paths.url }}"
-                                                            alt="{{ book.name }}">
-                                                    </a>
+                                                    {% if book.img_paths %}
+                                                        <a href="{% url 'book_info' book.id %}">
+                                                            <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                                        </a>
+                                                    {% else %}
+                                                        <a href="{% url 'book_info' book.id %}">
+                                                            <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                                                        </a>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                             <div class="col-8">
@@ -318,10 +323,15 @@
                                             <div class="row">
                                                 <div class="col-4">
                                                     <div>
-                                                        <a href="{% url 'book_info' book.id %}">
-                                                            <img class="img-fluid" src="{{ book.img_paths.url }}"
-                                                                alt="{{ book.name }}">
-                                                        </a>
+                                                        {% if book.img_paths %}
+                                                            <a href="{% url 'book_info' book.id %}">
+                                                                <img class="img-fluid books-img" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                                            </a>
+                                                        {% else %}
+                                                            <a href="{% url 'book_info' book.id %}">
+                                                                <img class="img-fluid books-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                                                            </a>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                                 <div class="col-8">
