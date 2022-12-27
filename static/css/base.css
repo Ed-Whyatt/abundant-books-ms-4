@@ -100,8 +100,10 @@ body {
     padding: 4px 18px;
     box-shadow: 5px 5px 10px #000;
     color: #00004d;
+    border : 2px solid #00004d;
     font-weight: 600;
     position: absolute;
+    margin-right: 3px;
 }
 
 .carousel-button:hover {
@@ -426,4 +428,20 @@ margin-top: -10px;
     text-decoration: none;
     color: #00004d;
 
+}
+
+
+@media screen and (max-width: 400px) {
+    .carousel-button {
+        padding: 4px 10px;
+        box-shadow: 4px 4px 8px #000;
+    }
+    .carousel-image {
+        margin-left: 3%;
+        box-shadow: 5px 5px 10px #000;
+    }
+
+    .carousel-info {
+        width: 60%;
+    }
 }

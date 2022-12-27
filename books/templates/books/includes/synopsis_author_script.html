@@ -10,14 +10,15 @@ $.getJSON(isbnUrl + isbn,
             bookSynopis = bookData.items[0].volumeInfo.description;
             $("#Synopsis").html(
                 `
-                <div>${bookSynopis}</div>
+                <div class="books-blue-text">${bookSynopis}</div>
                 `
             );
         } else {
             $("#Synopsis").html(
                 `
-                <p>{{ book.name }}</p>
-                <p>For more information call us or get in contact </p>
+                <p class="books-blue-text"><strong>{{ book.name }}</strong></p>
+                <p class="books-blue-text">For more information get in touch!</p>
+                <a class="books-button" href="{% url 'book_info' book.id %}#contact" aria-label="Contact Us Section">Contact Us</a>
                 `
             );
         }
@@ -60,20 +61,22 @@ function authorKeySearch(authorKey) {
                 if (result.bio.value != undefined) {
                     $("#author").html(
                         `
-                        <div>${result.bio.value}</div>       
+                        <div class="books-blue-text">${result.bio.value}</div>       
                         `
                     );     
                 } else {
                     $("#author").html(
                         `
-                        <div>${result.bio}</div>       
+                        <div class="books-blue-text">${result.bio}</div>       
                         `
                     ); 
                 }
             } else {
                 $("#author").html(
                     `
-                    <p>For more information call us or get in contact (link)</p>
+                    <p class="books-blue-text"><strong>{{ book.author }}</strong></p>
+                    <p class="books-blue-text">For more information get in touch!</p>
+                    <a class="books-button" href="{% url 'book_info' book.id %}#contact" aria-label="Contact Us Section">Contact Us</a>
                     `
                 );
             }

@@ -191,7 +191,6 @@
                 <div class="collapse multi-collapse mt-3" id="multiCollapseExample6">
                     <div class="card card-body rounded-0">
                         <div class="deal-text">
-                            <p>{{ book.author }}</p>
                             <div id="author">
                                 <!-- Author info here -->
                             </div>
@@ -233,15 +232,16 @@
                             <br>
                             <li><strong>£ {{ all_book.price }}</strong></li>
                             <br>
-                            <li>
-                                <a class="carousel-button" href="{% url 'book_info' all_book.id %}" role="button">View The
-                                    Book</a>
-                            </li>
+                            <a class="carousel-button" href="{% url 'book_info' all_book.id %}" role="button" aria-label="Book Information">View The
+                                Book</a>
                         </ul>
 
                     </div>
                 </div>
-                <div class="carousel-bottom"></div>
+                
+                <div class="carousel-bottom">
+                    
+                </div>
             </div>
         {% endif %}
     {% endfor %}
