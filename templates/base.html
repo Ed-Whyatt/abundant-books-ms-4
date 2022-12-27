@@ -172,15 +172,13 @@
 
     {% block content %}
     {% endblock %}
-<div class="container-fluid g-0">
-    <footer>
+
+    <footer class="container-fluid footer-container fixed-md-bottom">
         
             <div class="row">
                 <div class="col">
-                    <div class="footer-container">
                         
                         <div class="row">
-
                             <div class="col-8">
                                 <div class="row">
                                     <div class="col-12">
@@ -224,13 +222,12 @@
 
                             </div>
                         </div>
-                    </div>
+           
                 </div>
             </div>
-        </div>
-        
+        </div>   
     </footer>
-</div>
+
     {% block postloadjs %}
     {{ block.super }}
     <!-- Owl postload js -->
