@@ -172,9 +172,9 @@
 
     {% block content %}
     {% endblock %}
-
+<div class="container-fluid g-0">
     <footer>
-        <div class="container-fluid">
+        
             <div class="row">
                 <div class="col">
                     <div class="footer-container">
@@ -185,7 +185,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         
-                                        <h5 id="contact" class="book-text-blue footer-header">Contact Us</h5>
+                                        <h5 id="contact" class="book-text-blue footer-header mt-3">Contact Us</h5>
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <ul class="contact-list">
@@ -210,13 +210,13 @@
 
                             <div class="col-4 float-end">
                                 <div class="row">
-                                    <div class="col-lg-4 offset-lg-2 col-4 offset-6">
+                                    <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-6">
 
                                         <div class="social"><a target="_blank" href="https://www.facebook.com/"><i
                                                     class="fab fa-facebook-square"></i></a></div>
 
                                     </div>
-                                    <div class="col-lg-4 offset-lg-2 col-4 offset-6">
+                                    <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-6">
                                         <div class="social"><a target="_blank" href="https://www.instagram.com/"><i
                                                     class="fab fa-instagram-square"></i></a></div>
                                     </div>
@@ -228,9 +228,9 @@
                 </div>
             </div>
         </div>
-        </div>
+        
     </footer>
-
+</div>
     {% block postloadjs %}
     {{ block.super }}
     <!-- Owl postload js -->
