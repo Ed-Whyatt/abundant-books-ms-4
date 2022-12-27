@@ -10,20 +10,18 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
-<div class="container">
+<div class="container-fluid bg-lite-gray">
     <div class="row">
-        <div class="col-lg-8 offset-lg-2 col-md-6">
-            <hr>
-            <h2 class="mb-4">Book and Products Management</h2>
+        <div class="col-8 offset-2">
+            <h2 class="mb-4 books-blue-text">Book and Products Management</h2>
             <h5 class="text-muted">Edit a Product</h5>
             <hr>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-lg-8 offset-lg-2 col-md-6">
-            <form method="POST" action="{% url 'edit_book' book.id %}" class="form mb-3" enctype="multipart/form-data">
+        <div class="col-8 offset-2">
+            <form method="POST" action="{% url 'edit_book' book.id %}" class="form mb-3 books-blue-text" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="text-right">
