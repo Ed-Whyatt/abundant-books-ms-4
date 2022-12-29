@@ -92,7 +92,7 @@
                         <div class="col-8">
                             <div class="card-body books-card">
                                 <ul>
-                                    <li><h4>{{ book.name }}</h4></li>
+                                    <li><h3>{{ book.name }}</h3></li>
                                     <li><small>By {{ book.author }}</small></li>
                                     <li class="pop-genres-stars">
                                         {% include 'includes/book-stars.html' %}
@@ -105,10 +105,13 @@
                                             </a>
                                         {% endif %}
                                     </li>
-                                    <li><small>RRP: {{ book.old_price }}</small></li>
-                                    <br>
-                                    <li><strong>£ {{ book.price }}</strong></li>
-                                    <br>  
+                                    <li>
+                                        <small>RRP: {{ book.old_price }}</small>
+                                    </li>
+                                    <li>
+                                        <br>
+                                        <strong>£ {{ book.price }}</strong>
+                                    </li>
                                 </ul>  
                             </div>
                         </div>
