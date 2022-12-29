@@ -297,9 +297,8 @@ margin-top: -10px;
 
 /* Book info page */
 .info-book-img {
-    margin-top: 20%;
+    margin-top: 5%;
     margin-left: 20%;
-    width: 80%;
 }
 
 .synopsis-author-button {
@@ -455,3 +454,11 @@ margin-top: -10px;
         width: 60%;
     }
 }
+
+/* @media screen and (max-width: 763px) {
+    .info-book-img {
+        margin-top: 0;
+        margin-left: 0;
+        width: 80%;
+    }
+} */
