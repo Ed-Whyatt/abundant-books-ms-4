@@ -71,10 +71,10 @@
                                         </p>
                                     </li>
                                     <li>
-                                        <p>RRP: {{ book.old_price }}: </p>
+                                        <p>RRP: £{{ book.old_price }}: </p>
                                     </li>
                                     <li>
-                                        <p><strong>Price: {{ book.price }}</strong></p>
+                                        <p><strong>Price: £{{ book.price }}</strong></p>
 
                                     </li>
                                     {% if request.user.is_superuser %}

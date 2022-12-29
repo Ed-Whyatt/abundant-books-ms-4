@@ -111,7 +111,7 @@
                         <div class="col-lg-10 offset-lg-1 col-sm-6 mt-3">
                             <div class="row">
                                 <div class="col-2">
-                                    <div class="deal-image">
+                                    <div class="deal-image mt-3 me-2">
                                         <a href="{% url 'book_info' book.id %}">
                                             {% if book.img_paths %}
                                             <img class="w-100" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
@@ -147,42 +147,41 @@
         </div>
 
         <!-- Popular Genres -->
-        <div class="col-lg-8 col-12 pop-genres-main mb-3">
-            <div class="row">
-                <div class="col-12">
+        <div class="col-lg-8 col-12 pop-genres-main mb-3 mt-3">
+           
                     <div class="row">
 
                         <div class="col-md-3 col-sm-12">
                             <h4 class="text-uppercase books-blue-text"><span>Popular Genres</span></h4>
                         </div>
 
-                        <div class="col-2">
-                            <button id="buttonOne" class="btn books-blue-text" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#multiCollapseExample1" aria-expanded="false"
-                            aria-controls="multiCollapseExample1">Biography</button>
+                        <div class="btn-group">
+                            <div class="col-md-2 col-3">
+                                <button id="buttonOne" class="btn pop-genres-select-button-active" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#multiCollapseExample1" aria-expanded="false"
+                                aria-controls="multiCollapseExample1">Biography</button>
+                            </div>
+    
+                            <div class="col-md-2 col-3">
+                                <button id="buttonTwo" class="btn pop-genres-select-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#multiCollapseExample2" aria-expanded="false"
+                                aria-controls="multiCollapseExample2">Crime & Thriller</button>
+                            </div>
+    
+                            <div class="col-md-2 col-3">
+                                <button id="buttonThree" class="btn pop-genres-select-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#multiCollapseExample3" aria-expanded="false"
+                                aria-controls="multiCollapseExample3">Natural History</button>
+                            </div>
+    
+                            <div class="col-md-2 col-3">
+                                <button id="buttonFour" class="btn pop-genres-select-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#multiCollapseExample4" aria-expanded="false"
+                                aria-controls="multiCollapseExample4">Humer</button>
+                            </div>
                         </div>
-
-                        <div class="col-2">
-                            <button id="buttonTwo" class="btn books-blue-text" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#multiCollapseExample2" aria-expanded="false"
-                            aria-controls="multiCollapseExample2">Crime & Thriller</button>
-                        </div>
-
-                        <div class="col-2">
-                            <button id="buttonThree" class="btn books-blue-text" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#multiCollapseExample3" aria-expanded="false"
-                            aria-controls="multiCollapseExample3">Natural History</button>
-                        </div>
-
-                        <div class="col-2">
-                            <button id="buttonFour" class="btn books-blue-text" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#multiCollapseExample4" aria-expanded="false"
-                            aria-controls="multiCollapseExample4">Humer</button>
-                        </div>
+                       
                         
-                    </div>
-
-                </div>
 
                 <div class="col-12">
                     <div class="container">

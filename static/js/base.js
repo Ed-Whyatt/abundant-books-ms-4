@@ -17,26 +17,90 @@ jQuery(document).ready(function (e) {
     }; 
 
 
-    // Popular genres hide show class for author genres html when each button is clicked
+    // Popular genres hide show class for genres html when each button is clicked
     $( "#buttonOne" ).click(function() {
         document.getElementById("multiCollapseExample2").classList.remove("show");
         document.getElementById("multiCollapseExample3").classList.remove("show");
         document.getElementById("multiCollapseExample4").classList.remove("show");
+
+        document.getElementById("buttonTwo").classList.remove("pop-genres-select-button-active");
+        document.getElementById("buttonThree").classList.remove("pop-genres-select-button-active");
+        document.getElementById("buttonFour").classList.remove("pop-genres-select-button-active");
+
+        document.getElementById("buttonTwo").classList.add("pop-genres-select-button");
+        document.getElementById("buttonThree").classList.add("pop-genres-select-button");
+        document.getElementById("buttonFour").classList.add("pop-genres-select-button");
+
+        let containShowOne = document.getElementById("buttonOne").classList.contains("pop-genres-select-button-active");
+        if (containShowOne) {
+            document.getElementById("buttonOne").classList.remove("pop-genres-select-button-active")
+            document.getElementById("buttonOne").classList.add("pop-genres-select-button")
+        } else {
+            document.getElementById("buttonOne").classList.add("pop-genres-select-button-active")
+        };
     });
     $( "#buttonTwo" ).click(function() {
         document.getElementById("multiCollapseExample1").classList.remove("show");
         document.getElementById("multiCollapseExample3").classList.remove("show");
         document.getElementById("multiCollapseExample4").classList.remove("show");
+
+        document.getElementById("buttonOne").classList.remove("pop-genres-select-button-active");
+        document.getElementById("buttonThree").classList.remove("pop-genres-select-button-active");
+        document.getElementById("buttonFour").classList.remove("pop-genres-select-button-active");
+
+        document.getElementById("buttonOne").classList.add("pop-genres-select-button");
+        document.getElementById("buttonThree").classList.add("pop-genres-select-button");
+        document.getElementById("buttonFour").classList.add("pop-genres-select-button");
+
+        let containShowTwo = document.getElementById("buttonTwo").classList.contains("pop-genres-select-button-active");
+        if (containShowTwo) {
+            document.getElementById("buttonTwo").classList.remove("pop-genres-select-button-active")
+            document.getElementById("buttonTwo").classList.add("pop-genres-select-button")
+        } else {
+            document.getElementById("buttonTwo").classList.add("pop-genres-select-button-active")
+        };
     });
     $( "#buttonThree" ).click(function() {
         document.getElementById("multiCollapseExample1").classList.remove("show");
         document.getElementById("multiCollapseExample2").classList.remove("show");
         document.getElementById("multiCollapseExample4").classList.remove("show");
+
+        document.getElementById("buttonOne").classList.remove("pop-genres-select-button-active");
+        document.getElementById("buttonTwo").classList.remove("pop-genres-select-button-active");
+        document.getElementById("buttonFour").classList.remove("pop-genres-select-button-active");
+
+        document.getElementById("buttonOne").classList.add("pop-genres-select-button");
+        document.getElementById("buttonTwo").classList.add("pop-genres-select-button");
+        document.getElementById("buttonFour").classList.add("pop-genres-select-button");
+
+        let containShowThree = document.getElementById("buttonThree").classList.contains("pop-genres-select-button-active");
+        if (containShowThree) {
+            document.getElementById("buttonThree").classList.remove("pop-genres-select-button-active")
+            document.getElementById("buttonThree").classList.add("pop-genres-select-button")
+        } else {
+            document.getElementById("buttonThree").classList.add("pop-genres-select-button-active")
+        };
     });
     $( "#buttonFour" ).click(function() {
         document.getElementById("multiCollapseExample1").classList.remove("show");
         document.getElementById("multiCollapseExample2").classList.remove("show");
         document.getElementById("multiCollapseExample3").classList.remove("show");
+
+        document.getElementById("buttonOne").classList.remove("pop-genres-select-button-active");
+        document.getElementById("buttonTwo").classList.remove("pop-genres-select-button-active");
+        document.getElementById("buttonThree").classList.remove("pop-genres-select-button-active");
+
+        document.getElementById("buttonOne").classList.add("pop-genres-select-button");
+        document.getElementById("buttonTwo").classList.add("pop-genres-select-button");
+        document.getElementById("buttonThree").classList.add("pop-genres-select-button");
+
+        let containShowFour = document.getElementById("buttonFour").classList.contains("pop-genres-select-button-active");
+        if (containShowFour) {
+            document.getElementById("buttonFour").classList.remove("pop-genres-select-button-active")
+            document.getElementById("buttonFour").classList.add("pop-genres-select-button")
+        } else {
+            document.getElementById("buttonFour").classList.add("pop-genres-select-button-active")
+        };
     });
 
 

@@ -236,6 +236,26 @@ margin-top: -10px;
     margin-left: -31px;
 }
 
+.pop-genres-select-button {
+    background-color: #f0f0f0;
+    color: #00004d;
+    border-radius: 50% / 50%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 5px 5px 10px #000;
+    border: 1px solid #00004d;
+}
+
+.pop-genres-select-button-active {
+    background-color: #00004d;
+    color: #f0f0f0;
+    border-radius: 50% / 50%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 5px 5px 10px #000;
+    border: 1px solid #00004d;
+}
+
 .pop-genres-button {
     background-color: #00004d;
     text-decoration: none;
