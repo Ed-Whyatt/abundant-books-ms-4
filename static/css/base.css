@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
+/* general site styles */
 html {
     height: 100%;
 }
@@ -9,7 +10,6 @@ body {
     position: relative;
 }
 
-/* Genral container Bag */
 .books-container {
     height: 100vh;
 }
@@ -18,9 +18,81 @@ body {
     color: #00004d !important;
 }
 
+.bg-lite-gray {
+    background-color: #e0e0e0;
+}
+
 .border-blue {
     border: 1px solid #00004d !important;
 }
+
+/* Books stars */
+
+.stars {
+    display: inline;
+}
+
+/* Site wide buttons */
+.books-button-white {
+    background-color: #F5F5F5;
+    text-decoration: none;
+    border: #00004d;
+    border-style: solid;
+    border-radius: 12px;
+    padding: 4px 18px;
+    box-shadow: 5px 5px 10px #000;
+    color: #00004d;
+    font-weight: 600;
+}
+
+.books-button-white:hover {
+    background-color: #00004d;
+    color: #F5F5F5;
+}
+
+.books-button {
+    background-color: #00004d;
+    text-decoration: none;
+    border-radius: 12px;
+    border: 3px solid #00004d;
+    padding: 4px 18px;
+    box-shadow: 5px 5px 10px #000;
+    color: #F5F5F5;
+    font-weight: 600; 
+}
+
+.books-button:hover {
+    background-color: #F5F5F5;
+    color: #00004d;
+    border: 3px solid #00004d;
+}
+
+.button-blue {
+    background: #00004d;
+    color: #F5F5F5;
+}
+
+.button-blue:hover,
+.button-blue:active,
+.button-blue:focus {
+    background: #1e1e88;
+    color: #F5F5F5;
+}
+
+/* Bag button */
+
+.bag-button {
+    border-radius: 12px;
+    padding: 4px 18px;
+}
+
+/* Home page */
+
+.home-main {
+    background-color: #e0e0e0;
+}
+
+/* Home carousel */
 
 .owl-carousel {
     background-color: #e0e0e0;
@@ -54,38 +126,24 @@ body {
 .carousel-bg-image{
     height: 250px;
     width: 100%;
-    /* background-image: url(/media/grey-smoke-png-9-transparent.png); */
     background-image: url("{{ MEDIA_URL }}grey-smoke-png-9-transparent.png");
     background-position: center;
 }
 
 .carousel-bg-one {
-    /* background-color: #DEC4D6; */
-    /* background-color: #e751a0; */
-    /* background-color: #F278B8; */
     background-color: #FAB5D9;
 }
 
 .carousel-bg-two {
-    /* background-color: #A4CCE3; */
-    /* background-color: #bdf696; */
     background-color: #FF7D3B;
-    /* background-color: #B4F9BC; */
-    
 }
 
 .carousel-bg-three {
-    /* background-color: #90CDC3; */
-    /* background-color: #ff9159; */
     background-color: #CDFA7C;
-    /* background-color: #E4FDB7; */
 }
 
 .carousel-bg-four {
-    /* background-color: #7B92AA; */
-    /* background-color: #4ad3a6; */
     background-color: #73E8C2;
-    /* background-color: #FFD0B8; */
 }
 
 .carousel-bottom {
@@ -117,6 +175,7 @@ body {
     margin-top: 40px;
 }
 
+/* Home page author section */
 .author-image {
     max-width: 40px;
     max-height: 80px;
@@ -126,9 +185,7 @@ body {
     color: #00004d;
 }
 
-.home-main {
-    background-color: #e0e0e0;
-}
+/* Home page pop genres section */
 
 .pop-genres-main {
     min-height: 400px;
@@ -168,6 +225,8 @@ body {
     box-shadow: 5px 5px 10px #00004d;
 }
 
+/* Home page deals section */
+
 .deal-image {
     height: 100px;
     width: 80px;
@@ -181,14 +240,6 @@ body {
 
 .deal-text ul {
     list-style-type: none;
-}
-
-.bg-lite-gray {
-    background-color: #e0e0e0;
-}
-
-.stars {
-    display: inline;
 }
 
 /* Back to top button */
@@ -216,23 +267,6 @@ margin-top: -10px;
     cursor: pointer;
 }
 
-/* ------------------------------- bootstrap toasts */
-
-.message-container {
-    position: fixed;
-    top: 72px;
-    right: 15px;
-    z-index: 99999999999;
-}
-
-.custom-toast {
-    overflow: visible;
-}
-
-.toast-capper {
-    height: 2px;
-}
-
 /* Books page */
 
 .all-books-button {
@@ -258,54 +292,6 @@ margin-top: -10px;
     list-style-type: none;
 }
 
-.books-button-white {
-    background-color: #F5F5F5;
-    text-decoration: none;
-    border: #00004d;
-    border-style: solid;
-    border-radius: 12px;
-    padding: 4px 18px;
-    box-shadow: 5px 5px 10px #000;
-    color: #00004d;
-    font-weight: 600;
-}
-
-.books-button-white:hover {
-    background-color: #00004d;
-    color: #F5F5F5;
-}
-
-
-.books-button {
-    background-color: #00004d;
-    text-decoration: none;
-    border-radius: 12px;
-    border: 3px solid #00004d;
-    padding: 4px 18px;
-    box-shadow: 5px 5px 10px #000;
-    color: #F5F5F5;
-    font-weight: 600;
-    
-}
-
-.books-button:hover {
-    background-color: #F5F5F5;
-    color: #00004d;
-    border: 3px solid #00004d;
-}
-
-.button-blue {
-    background: #00004d;
-    color: #F5F5F5;
-}
-
-.button-blue:hover,
-.button-blue:active,
-.button-blue:focus {
-    background: #1e1e88;
-    color: #F5F5F5;
-}
-
 /* Book info page */
 .info-book-img {
     margin-top: 20%;
@@ -329,16 +315,11 @@ margin-top: -10px;
     border-radius: 3px;
 }
 
-/* Book info carousel */
+/* Books info carousel */
 .carousel-bg-info {
     height: 250px;
     width: 100%;
     background-color: #e0e0e0;
-}
-
-.bag-button {
-    border-radius: 12px;
-    padding: 4px 18px;
 }
 
 /* Allauth */
@@ -352,7 +333,7 @@ margin-top: -10px;
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
-    color: #00004d; /* text-secondary */
+    color: #00004d;
 }
 
 .allauth-form-inner-content input {
@@ -438,6 +419,24 @@ margin-top: -10px;
 
 }
 
+/* Bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/* Media quries */
 
 @media screen and (max-width: 400px) {
     .carousel-button {
