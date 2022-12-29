@@ -126,7 +126,7 @@ body {
 .carousel-bg-image{
     height: 250px;
     width: 100%;
-    background-image: url('/media/grey-smoke-png-9-transparent.png');
+    background-image: url(https://abundant-books-ms4.s3.eu-west-2.amazonaws.com/media/grey-smoke-png-9-transparent.png);
     background-position: center;
 }
 
