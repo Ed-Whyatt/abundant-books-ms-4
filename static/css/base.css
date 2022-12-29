@@ -33,6 +33,7 @@ body {
 }
 
 /* Site wide buttons */
+
 .books-button-white {
     background-color: #F5F5F5;
     text-decoration: none;
@@ -77,6 +78,32 @@ body {
 .button-blue:focus {
     background: #1e1e88;
     color: #F5F5F5;
+}
+
+/* Back to top button */
+
+.back-to-top-button {
+    background-color: #00004d;
+    border-radius: 12px;
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
+}
+
+.back-to-top-button span {
+color: #f0f0f0;
+font-size: 38px;
+margin-top: -10px;
+}
+
+/* Remove pointer on button hover */
+.back-to-top-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
 }
 
 /* Bag button */
@@ -242,30 +269,6 @@ body {
     list-style-type: none;
 }
 
-/* Back to top button */
-
-.back-to-top-button {
-    background-color: #00004d;
-    border-radius: 12px;
-    height: 42px;
-    width: 42px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-
-}
-
-.back-to-top-button span {
-color: #f0f0f0;
-font-size: 38px;
-margin-top: -10px;
-}
-
-.back-to-top-link,
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
 
 /* Books page */
 

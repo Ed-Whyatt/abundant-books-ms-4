@@ -3,10 +3,11 @@
 $('.owl-carousel').owlCarousel({
     loop: true,
     margin: 2,
-    nav: true,
+    nav: false,
     autoplay: true,
     autoplayTimeout:4000,
     autoplayHoverPause: true,
+    dots: false,
     responsive: {
         0: {
             items: 1

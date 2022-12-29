@@ -36,15 +36,17 @@
                     <li><small>By {{ book.author }}</small></li>
                     <li class="carousel-stars">
                         {% include 'includes/book-stars.html' %}
+                        <br>
                     </li>
-                    <br>
-                    <li><strong>£ {{ book.price }}</strong></li>
-                    <br>
+                    <li>
+                        <strong>£ {{ book.price }}</strong>
+                        <br>
+                    </li>
                     <li>
                         <a class="carousel-button me-sm-4" href="{% url 'book_info' book.id %}" role="button">View The
                             Book</a>
+                        <br>
                     </li>
-                    <br>
                     {% if request.user.is_superuser %}
                     <li>
                         <small class="ml-3">
@@ -71,7 +73,7 @@
                 <div class="col-12 mt-3 mb-5">
                     <div class="row">
                         <div class="col-lg-10 offset-lg-1">
-                            <h4 class="books-blue-text">Authors Of The Month</h4>
+                            <h3 class="books-blue-text">Authors Of The Month</h3>
                         </div>   
                         {% for book in author_of_month %}
                         <div class="col-lg-10 offset-lg-1 col-sm-6">
@@ -83,7 +85,7 @@
                                         </a>
                                 </div>
                                 <div class="col-md-10 col-8 author-text">
-                                    <h4>{{ book.author }}</h4>
+                                    <h4>{{ book.author }}</h3>
                                     <p> <small>Known for : {{ book.name }}</small> </p>
                                     {% if request.user.is_superuser %}
                                         <small class="ml-3">
@@ -101,7 +103,7 @@
                 <div class="col-12 mb-3">
                     <div class="row">
                         <div class="col-lg-10 offset-lg-1">
-                            <h4 class="books-blue-text">Deals Of The Month</h4>
+                            <h3 class="books-blue-text">Deals Of The Month</h3>
                         </div>
                     </div>
                     <div class="row">
@@ -207,8 +209,10 @@
                                                             <li class="pop-genres-stars">
                                                                 {% include 'includes/book-stars.html' %}
                                                             </li>
-                                                            <li><small>RRP: {{ book.old_price }}</small></li>
-                                                            <br>
+                                                            <li>
+                                                                <small>RRP: {{ book.old_price }}</small>
+                                                                <br>
+                                                            </li>
                                                             <li><strong>£ {{ book.price }}</strong></li>   
                                                         </ul>
                                                         <div>
@@ -249,8 +253,10 @@
                                                         <li class="pop-genres-stars">
                                                             {% include 'includes/book-stars.html' %}
                                                         </li>
-                                                        <li><small>RRP: {{ book.old_price }}</small></li>
-                                                        <br>
+                                                        <li>
+                                                            <small>RRP: {{ book.old_price }}</small>
+                                                            <br>
+                                                        </li>
                                                         <li><strong>£ {{ book.price }}</strong></li>   
                                                     </ul>
                                                     <div>
@@ -296,8 +302,10 @@
                                                         <li class="pop-genres-stars">
                                                             {% include 'includes/book-stars.html' %}
                                                         </li>
-                                                        <li><small>RRP: {{ book.old_price }}</small></li>
-                                                        <br>
+                                                        <li>
+                                                            <small>RRP: {{ book.old_price }}</small>
+                                                            <br>
+                                                        </li>
                                                         <li><strong>£ {{ book.price }}</strong></li>   
                                                     </ul>
                                                     <div>
@@ -342,8 +350,10 @@
                                                             <li class="pop-genres-stars">
                                                                 {% include 'includes/book-stars.html' %}
                                                             </li>
-                                                            <li><small>RRP: {{ book.old_price }}</small></li>
-                                                            <br>
+                                                            <li>
+                                                                <small>RRP: {{ book.old_price }}</small>
+                                                                <br>
+                                                            </li>
                                                             <li><strong>£ {{ book.price }}</strong></li>   
                                                         </ul>
                                                         <div>
