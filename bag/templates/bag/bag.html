@@ -20,7 +20,7 @@
                                 <th scope="col"><p class="books-blue-text">Product Info</p></th>
                                 <th scope="col"></th>
                                 <th scope="col"><p class="books-blue-text">Price</p></th>
-                                <th scope="col"><p class="books-blue-text">Price</p></th>
+                                <th scope="col"></th>
                                 <th scope="col"><p class="books-blue-text">Subtotal</p></th>
                             </tr>
                         </thead>
@@ -29,9 +29,9 @@
                             <tr>
                                 <td class="p-3 w-25">
                                     {% if item.book.img_paths.url %}
-                                        <img class="img-fluid books-img" src="{{ item.book.img_paths.url }}" alt="{{ book.name }}">
+                                        <img class="img-fluid" src="{{ item.book.img_paths.url }}" alt="{{ book.name }}">
                                     {% else %}
-                                        <img class="img-fluid books-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                                        <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
                                     {% endif %}
                                 </td>
                                 <td class="py-3">
@@ -51,13 +51,13 @@
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="text-right">
-                                    <a href="{% url 'books' %}" class="btn books-button btn-lg">
+                                    <a href="{% url 'books' %}" class="btn books-button btn-lg ms-2">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn books-button-white btn-lg ms-3">
+                                    <a href="{% url 'checkout' %}" class="btn books-button-white btn-lg ms-2 mt-2">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>

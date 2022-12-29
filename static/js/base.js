@@ -106,23 +106,35 @@ jQuery(document).ready(function (e) {
 
     // Book information hide and show synopisis and author info independintly javascript
     $( "#synopisButton" ).click(function() {
+
         document.getElementById("multiCollapseExample6").classList.remove("show");
-        document.getElementById("authorButton").classList.remove("active");
-        containActive = document.getElementById("synopisButton").classList.contains("active");
+        document.getElementById("authorButton").classList.remove("synopsis-author-button-active");
+        document.getElementById("authorButton").classList.add("synopsis-author-button");
+
+        containActive = document.getElementById("synopisButton").classList.contains("synopsis-author-button-active");
         if (containActive) {
-            document.getElementById("synopisButton").classList.remove("active")
+            document.getElementById("synopisButton").classList.remove("synopsis-author-button-active")
+            document.getElementById("synopisButton").classList.add("synopsis-author-button")
+            
         } else {
-            document.getElementById("synopisButton").classList.add("active")
+            document.getElementById("synopisButton").classList.add("synopsis-author-button-active")
+            document.getElementById("synopisButton").classList.remove("synopsis-author-button")
         };
     });
     $( "#authorButton" ).click(function() {
+        
         document.getElementById("multiCollapseExample5").classList.remove("show");
-        document.getElementById("synopisButton").classList.remove("active"); 
-        containActive = document.getElementById("authorButton").classList.contains("active");
+        document.getElementById("synopisButton").classList.remove("synopsis-author-button-active");
+        document.getElementById("synopisButton").classList.add("synopsis-author-button");
+
+        containActive = document.getElementById("authorButton").classList.contains("synopsis-author-button-active");
         if (containActive) {
-            document.getElementById("authorButton").classList.remove("active")
+            document.getElementById("authorButton").classList.remove("synopsis-author-button-active")
+            document.getElementById("authorButton").classList.add("synopsis-author-button")
         } else {
-            document.getElementById("authorButton").classList.add("active")
+            document.getElementById("authorButton").classList.remove("synopsis-author-button")
+            document.getElementById("authorButton").classList.add("synopsis-author-button-active")
+            
         };
            
     });

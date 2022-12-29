@@ -73,6 +73,8 @@ body {
     color: #F5F5F5;
 }
 
+.pop-genres-select-button:hover,
+.pop-genres-select-button-active:hover,
 .button-blue:hover,
 .button-blue:active,
 .button-blue:focus {
@@ -322,19 +324,19 @@ margin-top: -10px;
 }
 
 .synopsis-author-button {
-    background: #00004d;
-    color: #F5F5F5;
+    background-color: #00004d !important;
+    border-radius: 12px;
+    border: 3px solid #00004d;
+    padding: 4px 18px;
+    color: #F5F5F5 !important;
 }
 
-.synopsis-author-button:hover {
-    background: #1e1e88;
-    color: #F5F5F5;
-}
-
-.synopsis-author-button:active {
-    background-color: #F5F5F5;
-    border: #00004d;
-    border-radius: 3px;
+.synopsis-author-button-active {
+    background-color: #F5F5F5 !important;
+    border-radius: 12px;
+    border: 3px solid #00004d !important;
+    padding: 4px 18px;
+    color: #00004d !important;
 }
 
 /* Books info carousel */
@@ -474,11 +476,3 @@ margin-top: -10px;
         width: 60%;
     }
 }
-
-/* @media screen and (max-width: 763px) {
-    .info-book-img {
-        margin-top: 0;
-        margin-left: 0;
-        width: 80%;
-    }
-} */
