@@ -66,7 +66,7 @@ body {
     border: 3px solid #00004d;
     padding: 4px 18px;
     box-shadow: 5px 5px 10px #000;
-    color: #F5F5F5;
+    color: #F5F5F5 !important;
     font-weight: 600; 
 }
 
