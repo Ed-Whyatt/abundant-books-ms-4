@@ -12,7 +12,7 @@ var elements = stripe.elements();
 var style = {
 base: {
     color: '#000',
-    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+    fontFamily: '"Open Sans", sans-serif',
     fontSmoothing: 'antialiased',
     fontSize: '16px',
     '::placeholder': {
@@ -94,7 +94,7 @@ form.addEventListener('submit', function(ev) {
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
                 var html = `
-                    <span class="icon" role="alert">
+                    <span role="alert">
                     <i class="fas fa-times"></i>
                     </span>
                     <span>${result.error.message}</span>`;
