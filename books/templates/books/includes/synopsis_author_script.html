@@ -23,12 +23,28 @@ $.getJSON(isbnUrl + isbn,
             );
         }
     },
-    // If an error occurs then show error response under search bar
+    // If an error occurs then show error response
     function error(errorResponse) {
         if (errorResponse.status === 404) {
-            console.log("errorResopnse", errorResponse);
+            let message = "errorResopnse", errorResponse;
+            $("#Synopsis").html(
+                `
+                <p class="books-blue-text">Opps an error has accrued!</p>
+                <p class="books-blue-text">Error: ${message}</p>
+                <p class="books-blue-text">For more information get in touch!</p>
+                <a class="books-button" href="{% url 'book_info' book.id %}#contact" aria-label="Contact Us Section">Contact Us</a>
+                `
+            );
         } else {
-            console.log(errorResponse.responseJSON.message);
+            message = errorResponse.responseJSON.message;
+            $("#Synopsis").html(
+                `
+                <p class="books-blue-text">Opps an error has accrued!</p>
+                <p class="books-blue-text">Error: ${message}</p>
+                <p class="books-blue-text">For more information get in touch!</p>
+                <a class="books-button" href="{% url 'book_info' book.id %}#contact" aria-label="Contact Us Section">Contact Us</a>
+                `
+            );
         }
     }
 );
@@ -46,7 +62,15 @@ $.getJSON(authorUrl + searchAuthor,
     // If an error occurs then show error response under search bar
     function error(errorResponse) {
         if (errorResponse.status === 404) {
-            console.log(errorResponse)
+            let message = errorResponse;
+            $("#author").html(
+                `
+                <p class="books-blue-text">Opps an error has accrued!</p>
+                <p class="books-blue-text">Error: ${message}</p>
+                <p class="books-blue-text">For more information get in touch!</p>
+                <a class="books-button" href="{% url 'book_info' book.id %}#contact" aria-label="Contact Us Section">Contact Us</a>
+                `
+            );
         }
     }
 );
@@ -84,7 +108,15 @@ function authorKeySearch(authorKey) {
         // If an error occurs then show error response under search bar
         function error(errorResponse) {
             if (errorResponse.status === 404) {
-                console.log(errorResponse)
+                let message = errorResponse;
+                $("#author").html(
+                    `
+                    <p class="books-blue-text">Opps an error has accrued!</p>
+                    <p class="books-blue-text">Error: ${message}</p>
+                    <p class="books-blue-text">For more information get in touch!</p>
+                    <a class="books-button" href="{% url 'book_info' book.id %}#contact" aria-label="Contact Us Section">Contact Us</a>
+                    `
+                );
             }
         }
     )
