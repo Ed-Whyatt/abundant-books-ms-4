@@ -51,13 +51,13 @@
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="text-right">
-                                    <a href="{% url 'books' %}" class="btn books-button btn-lg ms-2">
+                                    <a href="{% url 'books' %}" class="btn books-button btn-lg ms-2" aria-label="Keep Shoping">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn books-button-white btn-lg ms-2 mt-2">
+                                    <a href="{% url 'checkout' %}" class="btn books-button-white btn-lg ms-2 mt-2" aria-label="Go to checkout">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
@@ -71,7 +71,7 @@
                 </div>
                 {% else %}
                 <p class="books-blue-text">Your bag is empty</p>
-                <a href="{% url 'books' %}" class="btn books-button btn-lg"><i class="fas fa-chevron-left"></i> Back To Books In Stock</a>
+                <a href="{% url 'books' %}" class="btn books-button btn-lg" aria-label="Bock to books home page"><i class="fas fa-chevron-left"></i> Back To Books In Stock</a>
                 {% endif %}
             </div>
         </div>

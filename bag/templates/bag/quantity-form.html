@@ -4,17 +4,19 @@
     <div class="input-group">
       <div class="input-group-prepend">
         <button class="decrement-qty btn btn-sm button-blue rounded-0" data-item_id="{{ item.item_id }}"
-          id="decrement-qty_{{ item.item_id }}">
+          id="decrement-qty_{{ item.item_id }}" aria-label="Decrement quantiy">
           <span>
             <i class="fas fa-minus fa-sm"></i>
           </span>
         </button>
       </div>
+
       <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.quantity }}"
         min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+
       <div class="input-group-append">
         <button class="increment-qty btn btn-sm button-blue rounded-0" data-item_id="{{ item.item_id }}"
-          id="increment-qty_{{ item.item_id }}">
+          id="increment-qty_{{ item.item_id }}" aria-label="increment quantiy">
           <span>
             <i class="fas fa-plus fa-sm"></i>
           </span>
@@ -24,10 +26,10 @@
   </div>
 </form>
 
-<a class="btn button-blue bag-button update-link text-info mt-1"><small>Update</small></a>
+<a class="btn bag-button update-link bag-update mt-1" aria-label="Update button"><small>Update</small></a>
 <!-- Modal Button -->
-<button type="button" class="btn button-blue bag-button text-danger float-right mt-1" data-bs-toggle="modal"
-  data-bs-target="#removeBagItem">
+<button type="button" class="btn bag-button bag-remove float-right mt-1" data-bs-toggle="modal"
+  data-bs-target="#removeBagItem" aria-label="Remove item">
   <small>Remove</small>
 </button>
 
@@ -42,8 +44,8 @@
         <p class="books-blue-text"><strong> Are you sure you want to remove this item from your bag !</strong></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn books-button" data-bs-dismiss="modal">Cancel</button>
-        <a class="btn remove-item books-button-white text-danger float-right" id="remove_{{ item.item_id }}">Yes</a>
+        <button type="button" class="btn books-button" data-bs-dismiss="modal" aria-label="Cancel">Cancel</button>
+        <a class="btn remove-item books-button-white text-danger float-right" id="remove_{{ item.item_id }}" aria-label="Yes remove item">Yes</a>
 
       </div>
     </div>
