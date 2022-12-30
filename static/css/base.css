@@ -370,6 +370,10 @@ margin-top: -10px;
     background-color: #e0e0e0;
 }
 
+.info-carousel-image {
+    max-width: 150px;
+}
+
 /* Allauth */
 
 .header-title {

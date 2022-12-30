@@ -8,11 +8,21 @@ $.getJSON(isbnUrl + isbn,
     function (bookData) {
         if (bookData.hasOwnProperty("items") ){
             bookSynopis = bookData.items[0].volumeInfo.description;
-            $("#Synopsis").html(
+            if (bookSynopis != undefined) {
+                $("#Synopsis").html(
                 `
                 <div class="books-blue-text">${bookSynopis}</div>
                 `
+            )
+            } else {
+                $("#Synopsis").html(
+                `
+                <p class="books-blue-text"><strong>{{ book.name }}</strong></p>
+                <p class="books-blue-text">For more information get in touch!</p>
+                <a class="books-button" href="{% url 'book_info' book.id %}#contact" aria-label="Contact Us Section">Contact Us</a>
+                `
             );
+            }            
         } else {
             $("#Synopsis").html(
                 `

@@ -217,11 +217,11 @@
                     <div class="carousel-image">
                         {% if all_book.img_paths %}
                         <a href="{% url 'book_info' book.id %}">
-                            <img class="img-fluid" src="{{ all_book.img_paths.url }}" alt="{{ all_book.name }}">
+                            <img class="img-fluid info-carousel-image" src="{{ all_book.img_paths.url }}" alt="{{ all_book.name }}">
                         </a>
                         {% else %}
                         <a href="{% url 'book_info' book.id %}">
-                            <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ all_book.name }}">
+                            <img class="img-fluid info-carousel-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ all_book.name }}">
                         </a>
                         {% endif %}
                     </div>
