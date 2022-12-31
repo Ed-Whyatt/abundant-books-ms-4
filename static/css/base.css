@@ -284,6 +284,7 @@ margin-top: -10px;
 
 .pop-genres-button {
     background-color: #00004d;
+    border: 3px solid #00004d;
     text-decoration: none;
     border-radius: 12px;
     padding: 4px 18px;
