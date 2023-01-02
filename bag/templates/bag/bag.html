@@ -86,7 +86,7 @@
     {{ block.super }}
         {% include 'books/includes/quantity_input_script.html' %}        
         <!-- Js for update remove items from bag -->
-        <script type="text/javascript">
+        <script>
             // Update quantity on click
             $('.update-link').click(function(e) {
                 var form = $(this).prev('.update-form');
