@@ -7,13 +7,13 @@ isbn = '{{ book.isbn }}';
 $.getJSON(isbnUrl + isbn,
     function (bookData) {
         if (bookData.hasOwnProperty("items") ){
-            bookSynopis = bookData.items[0].volumeInfo.description;
+            let bookSynopis = bookData.items[0].volumeInfo.description;
             if (bookSynopis != undefined) {
                 $("#Synopsis").html(
                 `
                 <div class="books-blue-text">${bookSynopis}</div>
                 `
-            )
+            );
             } else {
                 $("#Synopsis").html(
                 `
@@ -36,7 +36,7 @@ $.getJSON(isbnUrl + isbn,
     // If an error occurs then show error response
     function error(errorResponse) {
         if (errorResponse.status === 404) {
-            let message = "errorResopnse", errorResponse;
+            let message = errorResponse;
             $("#Synopsis").html(
                 `
                 <p class="books-blue-text">Opps an error has accrued!</p>
@@ -46,7 +46,7 @@ $.getJSON(isbnUrl + isbn,
                 `
             );
         } else {
-            message = errorResponse.responseJSON.message;
+            let message = errorResponse.responseJSON.message;
             $("#Synopsis").html(
                 `
                 <p class="books-blue-text">Opps an error has accrued!</p>
@@ -61,11 +61,11 @@ $.getJSON(isbnUrl + isbn,
 
 // Get book Author key from openlibary API https://openlibrary.org/dev/docs/api/authors
 let authorUrl = "https://openlibrary.org/search/authors.json?q=";
-let searchAuthor = '{{ book.author }}'
+let searchAuthor = '{{ book.author }}';
 
 $.getJSON(authorUrl + searchAuthor,
     function (bookData) {
-        authorKey = bookData.docs[0].key;
+        let authorKey = bookData.docs[0].key;
         (authorKeySearch(authorKey));
     },
 
@@ -129,6 +129,6 @@ function authorKeySearch(authorKey) {
                 );
             }
         }
-    )
-};
+    );
+}
 </script>
