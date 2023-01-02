@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="An ecomrence website aplication for Abundent Books" />
+    <meta name="Description" content="An ecomrence website aplication for Abundent Books">
     {% endblock %}
 
     {% block extra_meta %}
@@ -64,7 +64,7 @@
 
         <!-- Bootstrap navbar -->
         <div class="row">
-            <nav id="nav-category" class="col-2 navbar navbar-expand-lg books-blue-text">
+            <nav id="nav-category" class="navbar navbar-expand-lg books-blue-text">
                 <!-- Small screen toggle -->
                 <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -74,8 +74,13 @@
                 {% include 'includes/mobile-top-header.html' %}
                 {% include 'includes/category-nav.html' %}
             </nav>
+            
+            <!-- <div id="topnav" class="col-8">
 
-            <div id="topnav" class="col-2 d-none d-lg-flex mt-4">
+
+            </div> -->
+
+            <div class="col-2 d-none d-lg-flex mt-4">
                 <!-- Search bar -->
                 <form class="form" method="GET" action="{% url 'books' %}">
                     <div class="input-group">
@@ -92,13 +97,13 @@
             </div>
 
             <!-- Main title logo -->
-            <div id="topnav" class="col-lg-4 mt-2 text-center"><a class="navbar-brand" href="{% url 'home' %}">
+            <div class="col-lg-4 mt-2 text-center"><a class="navbar-brand" href="{% url 'home' %}">
                     <h2 class="books-blue-text"><span class="abundent-logo">Abundent <i class="fas fa-quran"></i>
-                            </span<strong class="books-logo">Books</strong></h2>
+                            </span><strong>Books</strong></h2>
                 </a>
             </div>
 
-            <div id="topnav" class="d-none d-lg-flex col-4 mt-4 justify-content-end">
+            <div class="d-none d-lg-flex col-4 mt-4 justify-content-end">
                 <div class="row">
 
                     <!-- User dropdown -->
@@ -110,16 +115,26 @@
                                     My Account
                                     <i class="fas fa-user fa-lg"></i>
                                 </a>
-                                <ul class="dropdown-menu rounded-0" aria-labelledby="user-options">
+                                <ul class="dropdown-menu rounded-0">
                                     {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_book' %}" class="dropdown-item">Product Management</a>
-                                    {% endif %}
-                                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                        {% if request.user.is_superuser %}
+                                            <li>
+                                                <a href="{% url 'add_book' %}" class="dropdown-item">Product Management</a>
+                                            </li>
+                                        {% endif %}
+                                        <li>
+                                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                        </li>
                                     {% else %}
-                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                        <li>
+                                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                        </li>
                                     {% endif %}                                    
                                 </ul>
                             </li>
@@ -237,7 +252,7 @@
                 </div>
                 
             </div>
-        </div>   
+   
     </footer>
 
     {% block postloadjs %}
