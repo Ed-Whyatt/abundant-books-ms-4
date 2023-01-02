@@ -77,41 +77,45 @@
                                         <p><strong>Price: £{{ book.price }}</strong></p>
 
                                     </li>
-                                    {% if request.user.is_superuser %}
-                                    <small class="ml-3">
-                                        <a class="btn btn-danger mt-1" href="{% url 'edit_book' book.id %}"
-                                            role="button">Edit</a> 
-                                        <button type="button" class="btn btn-danger mt-1" data-bs-toggle="modal"
-                                            data-bs-target="#BookInfoAdminDelete">
-                                            Delete
-                                          </button>
-                                    </small>
+                                </ul>
+                                {% if request.user.is_superuser %}
+                                <small class="ml-3">
+                                    <a class="btn btn-danger mt-1" href="{% url 'edit_book' book.id %}"
+                                        role="button">Edit</a>
+                                    <button type="button" class="btn btn-danger mt-1" data-bs-toggle="modal"
+                                        data-bs-target="#BookInfoAdminDelete">
+                                        Delete
+                                    </button>
+                                </small>
 
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="BookInfoAdminDelete" tabindex="-1" aria-labelledby="DeleteBook" aria-hidden="true">
-                                        <div class="modal-dialog">
+                                <!-- Modal -->
+                                <div class="modal fade" id="BookInfoAdminDelete" tabindex="-1"
+                                    aria-labelledby="DeleteBook" aria-hidden="true">
+                                    <div class="modal-dialog">
                                         <div class="modal-content rounded-0">
                                             <div class="modal-header">
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                            <p class="books-blue-text"><strong>Are you sure you want to do that! This item will be Deleted this permanently and can not be restored. </strong></p>
+                                                <p class="books-blue-text"><strong>Are you sure you want to do that!
+                                                        This item will be Deleted this permanently and can not be
+                                                        restored. </strong></p>
                                             </div>
                                             <div class="modal-footer">
-                                            <button type="button" class="btn books-button" data-bs-dismiss="modal">Cancel</button>
-                                            <a class="btn books-button-white text-danger" href="{% url 'delete_book' book.id %}"
-                                            role="button">Delete</a>
-                                    
+                                                <button type="button" class="btn books-button"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                                <a class="btn books-button-white text-danger"
+                                                    href="{% url 'delete_book' book.id %}" role="button">Delete</a>
+
                                             </div>
                                         </div>
-                                        </div>
                                     </div>
+                                </div>
 
-                                    {% endif %}
-                                </ul>
+                                {% endif %}
                             </div>
                         </div>
-
                         <!-- Add to bag -->
                         <div class="col">
 
@@ -127,7 +131,8 @@
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <button class="decrement-qty btn button-blue rounded-0"
-                                                        data-item_id="{{ book.id }}" id="decrement-qty_{{ book.id }}" aria-label="Decrement number of books wanted">
+                                                        data-item_id="{{ book.id }}" id="decrement-qty_{{ book.id }}"
+                                                        aria-label="Decrement number of books wanted">
                                                         <span class="icon">
                                                             <i class="fas fa-minus"></i>
                                                         </span>
@@ -138,7 +143,8 @@
                                                     data-item_id="{{ book.id }}" id="id_qty_{{ book.id }}">
                                                 <div class="input-group-append">
                                                     <button class="increment-qty btn button-blue rounded-0"
-                                                        data-item_id="{{ book.id }}" id="increment-qty_{{ book.id }}" aria-label="Increment number of books wanted">
+                                                        data-item_id="{{ book.id }}" id="increment-qty_{{ book.id }}"
+                                                        aria-label="Increment number of books wanted">
                                                         <span>
                                                             <i class="fas fa-plus"></i>
                                                         </span>
@@ -155,7 +161,8 @@
                                                 </span>
                                                 <span class="text-uppercase">Keep Shopping</span>
                                             </a>
-                                            <input type="submit" class="btn books-button-white text-uppercase ms-3 mt-5 mb-3"
+                                            <input type="submit"
+                                                class="btn books-button-white text-uppercase ms-3 mt-5 mb-3"
                                                 value="Add to Bag">
                                         </div>
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -170,23 +177,23 @@
             <div class="col-12 mt-3">
 
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button id="synopisButton" class="btn synopsis-author-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#multiCollapseExample5" aria-expanded="false"
+                    <button id="synopisButton" class="btn synopsis-author-button" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#multiCollapseExample5" aria-expanded="false"
                         aria-controls="multiCollapseExample5"><strong>Synopsis</strong></button>
 
                     <button id="authorButton" class="btn synopsis-author-button" type="button" data-bs-toggle="collapse"
                         data-bs-target="#multiCollapseExample6" aria-expanded="false"
                         aria-controls="multiCollapseExample6"><strong>Author</strong></button>
                 </div>
-               
+
                 <div class="collapse multi-collapse mt-3" id="multiCollapseExample5">
-                        <div class="card card-body rounded-0">
-                            <div class="deal-text">
-                                <div id="Synopsis">
-                                    <!-- Synopis info here -->
-                                </div>
+                    <div class="card card-body rounded-0">
+                        <div class="deal-text">
+                            <div id="Synopsis">
+                                <!-- Synopis info here -->
                             </div>
-                        </div>  
+                        </div>
+                    </div>
                 </div>
                 <div class="collapse multi-collapse mt-3" id="multiCollapseExample6">
                     <div class="card card-body rounded-0">
@@ -197,9 +204,9 @@
                         </div>
                     </div>
                 </div>
-                                       
+
             </div>
-            
+
         </div>
 
     </div>
@@ -208,41 +215,49 @@
 <!-- Owl carousel https://owlcarousel2.github.io/OwlCarousel2/index.html -->
 <div class="owl-carousel owl-theme mt-5">
     {% for all_book in all_books %}
-        {% if book.category == all_book.category %}
-            <div
-                class="carousel-container">
+    {% if book.category == all_book.category %}
+    <div class="carousel-container">
 
-                <div class="carousel-bg-info">
-                    <div class="carousel-image">
-                        {% if all_book.img_paths %}
-                        <a href="{% url 'book_info' book.id %}">
-                            <img class="img-fluid info-carousel-image" src="{{ all_book.img_paths.url }}" alt="{{ all_book.name }}">
-                        </a>
-                        {% else %}
-                        <a href="{% url 'book_info' book.id %}">
-                            <img class="img-fluid info-carousel-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ all_book.name }}">
-                        </a>
-                        {% endif %}
-                    </div>
-                    <div class="carousel-info">
-                        <ul>
-                            <li><strong>{{ all_book.name }}</strong></li>
-                            <li><small>By {{ all_book.author }}</small></li>
-                            <br>
-                            <li><strong>£ {{ all_book.price }}</strong></li>
-                            <br>
-                            <a class="carousel-button" href="{% url 'book_info' all_book.id %}" role="button" aria-label="Book Information">View The
-                                Book</a>
-                        </ul>
-
-                    </div>
-                </div>
-                
-                <div class="carousel-bottom">
-                    
-                </div>
+        <div class="carousel-bg-info">
+            <div class="carousel-image">
+                {% if all_book.img_paths %}
+                <a href="{% url 'book_info' book.id %}">
+                    <img class="img-fluid info-carousel-image" src="{{ all_book.img_paths.url }}"
+                        alt="{{ all_book.name }}">
+                </a>
+                {% else %}
+                <a href="{% url 'book_info' book.id %}">
+                    <img class="img-fluid info-carousel-image" src="{{ MEDIA_URL }}noimage.png"
+                        alt="{{ all_book.name }}">
+                </a>
+                {% endif %}
             </div>
-        {% endif %}
+            <div class="carousel-info">
+                <ul>
+                    <li><strong>{{ all_book.name }}</strong></li>
+                    <li>
+                        <small>By {{ all_book.author }}</small>
+                    </li>
+                    <li>
+                        <br>
+                        <strong>£ {{ all_book.price }}</strong>
+                    </li>
+                    <li>
+                        <br>
+                    <a class="carousel-button" href="{% url 'book_info' all_book.id %}" role="button"
+                        aria-label="Book Information">View The
+                        Book</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="carousel-bottom">
+
+        </div>
+    </div>
+    {% endif %}
     {% endfor %}
 
 </div>
