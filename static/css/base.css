@@ -72,7 +72,7 @@ body {
 
 .books-button:hover {
     background-color: #F5F5F5;
-    color: #00004d;
+    color: #00004d !important;
     border: 3px solid #00004d;
 }
 
