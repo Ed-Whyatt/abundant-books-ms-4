@@ -90,7 +90,7 @@
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="BookInfoAdminDelete" tabindex="-1"
-                                    aria-labelledby="DeleteBook" aria-hidden="true">
+                                    aria-labelledby="BookInfoAdminDelete" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content rounded-0">
                                             <div class="modal-header">
@@ -167,6 +167,7 @@
                                         </div>
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     </div>
+                                </div>
                             </form>
                         </div>
 
@@ -213,7 +214,7 @@
 </div>
 
 <!-- Owl carousel https://owlcarousel2.github.io/OwlCarousel2/index.html -->
-<div class="owl-carousel owl-theme mt-5">
+<div class="owl-carousel owl-theme">
     {% for all_book in all_books %}
     {% if book.category == all_book.category %}
     <div class="carousel-container">
@@ -244,9 +245,9 @@
                     </li>
                     <li>
                         <br>
-                    <a class="carousel-button" href="{% url 'book_info' all_book.id %}" role="button"
-                        aria-label="Book Information">View The
-                        Book</a>
+                        <a class="carousel-button" href="{% url 'book_info' all_book.id %}" role="button"
+                            aria-label="Book Information">View The
+                            Book</a>
                     </li>
                 </ul>
 
@@ -259,8 +260,6 @@
     </div>
     {% endif %}
     {% endfor %}
-
-</div>
 
 </div>
 
