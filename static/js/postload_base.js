@@ -22,21 +22,21 @@ $('.owl-carousel').owlCarousel({
             items: 4
         }
     }
-})
+});
 
 // <!-- Toasts JS -->
-let toastElList = [].slice.call(document.querySelectorAll('.toast'))
+let toastElList = [].slice.call(document.querySelectorAll('.toast'));
 let toastList = toastElList.map(function (toastEl) {
     let option = {
          animation: true,
          autohide: true,
          delay: 10000,
-    }
-    let bsToast = new bootstrap.Toast(toastEl, option)
+    };
+    let bsToast = new bootstrap.Toast(toastEl, option);
     bsToast.show();
-})
+});
 
 // <!-- Script for back to top button -->
 $('.back-to-top-link').click(function(e) {
-    window.scrollTo(0, 0)
-})
+    window.scrollTo(0, 0);
+});
