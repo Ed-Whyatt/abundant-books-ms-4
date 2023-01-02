@@ -12,7 +12,8 @@ def news_letter(request):
             messages.success(request, 'Succesfully added to the News Letter!')
             return redirect(reverse('home'))
         else:
-            messages.error(request, 'Failed to submit the Nes Letter form please ensure the formm is valid.')
+            messages.error(request, 'Failed to submit the Nes Letter form'
+                           ' please ensure the formm is valid.')
     else:
         form = NewsLetterForm()
 
