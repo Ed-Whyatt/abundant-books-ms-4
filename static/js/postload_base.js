@@ -1,3 +1,4 @@
+/* jshint esversion: 11, jquery: true */
 // Owl Carousel start function.
 // Docs: https://owlcarousel2.github.io/OwlCarousel2/docs/started-installation.html
 $('.owl-carousel').owlCarousel({

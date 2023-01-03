@@ -1,3 +1,4 @@
+/* jshint esversion: 11, jquery: true */
 // Remove col-2 class for Browse Category navlink dropndown for mobile view
 jQuery(document).ready(function (e) {
     classAddRmove();

@@ -110,7 +110,7 @@
                                     </li>
                                     <li>
                                         <br>
-                                        <strong>£ {{ book.price }}</strong>
+                                        <strong>£ {{ book.price|floatformat:2 }}</strong>
                                     </li>
                                 </ul>  
                             </div>
@@ -135,6 +135,7 @@
 {% block postloadjs %}
 {{ block.super }}
     <script>
+        /* jshint esversion: 11, jquery: true */
         // <!-- Script for book category, price, rating, and name order select -->
     $('#sort-selector').change(function () {
         var selector = $(this);
