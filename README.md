@@ -263,6 +263,10 @@
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 1. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
+1. [Gitpod](https://gitpod.io)
+    Gitpod used as a cloud-based IDE for development.
+1. [Tim Nelson](https://traveltimn.github.io/readme-builder) 
+     Tim Nelsons traveltimn has been used to help generate the Markdown files.
 1. [Balsamiq:](https://balsamiq.com/)
     - Balsamiq was used to create the wireframes.
 1. [Am I Responsive Design:](http://ami.responsivedesign.is/)
@@ -271,12 +275,20 @@
     - Templating language for Python, to simplify displaying data from the backend of this project smoothly and effectively in HTML.
 1. [SQLAlchemy](https://www.sqlalchemy.org/)
     - Used to filter and search through the database.
+1. [PostgreSQL](https://www.postgresql.org) 
+    - Used as the relational database management.
+1. [ElephantSQL](https://www.elephantsql.com)
+    - Used as the Postgres database.
 1. [Heroku](https://id.heroku.com/login)
-    - A cloud based platform for that is used for hosting this python web based application. 
+    - A cloud based platform for that is used for hosting this python web based application.
+1. [Stripe](https://stripe.com) 
+    - Used for online secure payments of ecommerce products/services.
+1. [AWS S3](https://aws.amazon.com/s3)
+    - Used for online static file storage.
 1. [SmartDraw](https://cloud.smartdraw.com/)
     - SmartDraw helps us create compelling visual content - including Org Charts, Business Processes and Work Flowcharts and has been used for the Data Modal image.
-
-    ADD STRIPE
+1. [owlcarousel2](https://owlcarousel2.github.io/OwlCarousel2/index.html)
+    - Used for the carousels for the home and book info page.
 
 ***
 ## Testing
@@ -285,7 +297,9 @@
 ***
 
 ## Deployment
-***
+The live deployed application can be found deployed on [Heroku](https://abundant-books-ms4.herokuapp.com).
+
+
 
 ## Setting up 
 
