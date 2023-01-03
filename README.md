@@ -168,8 +168,6 @@
 
 
 # Features
-Am I Responsive has been used for the responsive image at the top of README.md you can view there website below and interact with this project on each device.
--   ### Responsive on all devices - [view](#)
 
 ## Interactive elements.
 - Navigation
