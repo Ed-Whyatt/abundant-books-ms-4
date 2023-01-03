@@ -290,9 +290,16 @@
 1. [owlcarousel2](https://owlcarousel2.github.io/OwlCarousel2/index.html)
     - Used for the carousels for the home and book info page.
 
-***
-## Testing
+### API Application Programming Interfaces Used
 
+1. [Google Books API](https://developers.google.com/books)
+    - Google Books API is used for the book Synopsis information in the books information Synopsis tab.
+
+1. [openlibrary.org](https://openlibrary.org/dev/docs/api/authors)
+    - Open Libary is used for the Authors information in the books information Author tab.
+
+## Testing
+***
 ### Testing is in TESTING.md - [Link to TESTING.md](/TESTING.md)
 ***
 
@@ -593,6 +600,15 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 Please note that in order to directly open the project in Gitpod, you need to have the browser extension installed.
 A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
 
+#### Forking
+
+By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
+You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/Ed-Whyatt/abundant-books-ms-4)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
 
 
 ## Credits
@@ -604,9 +620,11 @@ A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/conf
 
    -   [Code Institute Sample README.md](https://github.com/Code-Institute-Solutions/SampleREADME): Code Institute Sample README.md has been used to help with readme layout.
 
-   -   [Bootstrap5](https://getbootstrap.com/docs/5.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
+   -   [Bootstrap5](https://getbootstrap.com/docs/5.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the    Bootstrap Grid System.
 
    -   [W3 Schools](https://www.w3schools.com/): W3 Schools has been used with some elements in this project.
+
+   -   [owlcarousel2](https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html) Owl Carousel 2 has been used for the carousels on the home and books information pages.
 
 ### Content
    -   All content was written by the developer.
