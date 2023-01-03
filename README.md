@@ -161,35 +161,81 @@
 
 ## Interactive elements.
 - Navigation
-    - Navigation on large screens
-    ### ![text](#)
-    - Navigation on small screens
-    ### ![text](#)
-    - Navigation small screens open
-    ### ![text](#)
+    - Browse Categories navigation on large screens
+    ### ![text](/documentation/features/large-cat-nav.png)
+    - Browse Categories navigation on small screens
+    ### ![text](/documentation/features/nav-small.png)
+    - My account navgation for general users with login, register, or logout and My profile
+    ### ![text](/documentation/features/my-pro-logout.png)
+    ### ![text](/documentation/features/large-account-nav.png)
+    - My account admin product managment opens to add book page
+    ### ![text](/documentation/features/large-account-admin.png)
+- Log in page form.
+   ### ![text](/documentation/features/sign-in.png)
+- Register page form.
+   ### ![text](/documentation/features/sign-up.png)
+- Log out page.
+    ### ![text](/documentation/features/sign-out-button.png)
+    
+- Books page
+    - Books page view the book button takes user to book information page
+    ### ![text](/documentation/features/books-view-book-button.png)
+    - Books page sort dropdown menu
+    ### ![text](/documentation/features/books-sort.png)
 - Footer
-    - Links to social media
-    ### ![text](#)
-- Home screen
-    - Movie edit and delete user movies
-    ### ![text](#)
-    - Movie view more information
-    ### ![text](#)
-    - Movie edit page
-    ### ![text](#)
-    - Movie delete modal
-    ### ![text](#)
-
-
-- Log in
-   ### ![text](#)
-- Register
-   ### ![text](#)
-- User logged in display name
-    - User logged in
-    ### ![text](#)
-    - User not logged in
-    ### ![text](#)
+    - Links to social media.
+    ### ![text](/documentation/features/social-buttons.png)
+- Back to top button on all pages.
+    ### ![text](/documentation/features/back-to-top.png)
+- Home page
+    - Carousel view the book button opens book information page for selected book.
+    ### ![text](/documentation/features/car-view-book.png)
+    - Popular genres tabs buttons to select each tab.
+    ### ![text](/documentation/features/pop-gen-tabs.png)
+    - Popular genres view the book button opens book information page selected book.
+    ### ![text](/documentation/features/pop-gen-button.png)
+- Book information page
+    - Add book to bag or keep shoping buttons.
+    ### ![text](/documentation/features/add-to-bag.png)
+    - Synopsis and Author tabs to view more information.
+    ### ![text](/documentation/features/syno-aut-buttons.png)
+- Profile page
+    - Profile order history button  open orer in new page
+    ### ![text](/documentation/features/profile-order-history-button.png)
+    - Profile update form and button.
+    ### ![text](/documentation/features/profile-update-button.png)
+- News letter form to sucribe to the news letter.
+### ![text](/documentation/features/news-letter.png)
+- Bag Checkout Button takes you to your bag content page
+    ### ![text](/documentation/features/checkout-button.png)
+- Bag page 
+    - Update or remove item from your bag and secure checkout button that takes the user to checkout page.
+    ### ![text](/documentation/features/shopping-bag.png)
+- Checkout page 
+    - Fill in delevery details form.
+    ### ![text](/documentation/features/checkout-one.png)
+    - Complete delvery and comple order or ajust your bag.
+    ### ![text](/documentation/features/checkout-two.png)
+- Admin edit buttons on all pages with books displayed.
+    - Carousel admin edit button.
+    ### ![text](/documentation/features/car-edit-button.png)
+    - Authors of the month admin edit button takes admin to edit page.
+    ### ![text](/documentation/features/authors-edit-button.png)
+    - Deals of the month edit button takes admin to edit page.
+    ### ![text](/documentation/features/deals-edit-button.png)
+    - Popular genres and Books page edit button to edit page.
+    ### ![text](/documentation/features/books-edit-button.png)
+    - Book information page admin edit button to edit page, and delete that displays the delete model.
+    ### ![text](/documentation/features/book-info-edit-buttons.png)
+- Admin add, edit books page and model.
+    - Admin add book page details
+    ### ![text](/documentation/features/book-add-one.png)
+    ### ![text](/documentation/features/book-add-two.png)
+    - Admin edit book page details
+    ### ![text](/documentation/features/book-edit-one.png)
+    ### ![text](/documentation/features/book-edit-two.png)
+    - Admin delete book model
+    ### ![text](/documentation/features/delete-book-modal.png)
 
 ### owl carsel
 
