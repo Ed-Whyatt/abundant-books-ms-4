@@ -65,94 +65,84 @@
 
 - ### Large screens
 
-1. Landing Home page genral user Wireframe 
-### ![text](#)
+1. Home page general user Wireframe 
+### ![text](/documentation/wireframes/landing-page.png)
 
-2. Landing Home page Managment Wireframe 
-### ![text](#)
+2. Home page Managment Wireframe 
+### ![text](/documentation/wireframes/landing-page-management.png)
 
 3. Log In page Wireframe 
-### ![text](#)
+### ![text](/documentation/wireframes/log-in.png)
 
 4. Log Out page Wireframe 
-### ![text](#)
+### ![text](/documentation/wireframes/log-out.png)
 
 5. Register page Wireframe 
-### ![text](#)
+### ![text](/documentation/wireframes/register.png)
 
 6. Profile page Wireframe 
-### ![text](#)
+### ![text](/documentation/wireframes/profile.png)
 
 7. Books page Wireframe 
-### ![text](#)
+### ![text](/documentation/wireframes/books.png)
 
 8. Books Managment page Wireframe 
-### ![text](#)
+### ![text](/documentation/wireframes/books-management.png)
 
 9. Book Information page Wireframe
-### ![text](#)
+### ![text](/documentation/wireframes/book-info.png)
 
 10. Book Information Managment page Wireframe
-### ![text](#)
+### ![text](/documentation/wireframes/book-info-management.png)
 
 11. Shopping Bag page Wireframe
-### ![text](#)
+### ![text](/documentation/wireframes/shopping-bag.png)
 
 12. Checkout page Wireframe
-### ![text](#)
-
+### ![text](/documentation/wireframes/checkout.png)
+---
 - ### Medium Screens click to view
+---
 
-1. Landing Home page genral user Wireframe - [view](#)
+1. Home page genral user Wireframe - [view](/documentation/wireframes/landing-page-med.png)
 
-2. Landing Home page Managment Wireframe - [view](#)
+2. Log In page Wireframe - [view](/documentation/wireframes/log-in-med.png)
 
-3. Log In page Wireframe - [view](#)
+3. Log Out page Wireframe - [view](/documentation/wireframes/log-out-med.png)
 
-4. Log Out page Wireframe - [view](#)
+4. Register page Wireframe - [view](/documentation/wireframes/register-med.png)
 
-5. Register page Wireframe - [view](#)
+5. Profile page Wireframe - [view](/documentation/wireframes/profile-med.png)
 
-6. Profile page Wireframe - [view](#)
+6. Books page Wireframe - [view](/documentation/wireframes/books-med.png)
 
-7. Books page Wireframe - [view](#)
+7. Book Information page Wireframe - [view](/documentation/wireframes/book-info-med.png)
 
-8. Books Managment page Wireframe - [view](#)
+8. Shopping Bag page Wireframe - [view](/documentation/wireframes/shopping-bag-med.png)
 
-9. Book Information page Wireframe - [view](#)
+9. Checkout page Wireframe - [view](/documentation/wireframes/checkout-med.png)
 
-10. Book Information Managment page Wireframe - [view](#)
-
-11. Shopping Bag page Wireframe - [view](#)
-
-12. Checkout page Wireframe - [view](#)
-
-
+---
 - ### Small Screens click to view
+---
 
-1. Landing Home page genral user Wireframe - [view](#)
+1. Home page genral user Wireframe - [view](/documentation/wireframes/landing-page-sml.png)
 
-2. Landing Home page Managment Wireframe - [view](#)
+2. Log In page Wireframe - [view](/documentation/wireframes/log-in-sml.png)
 
-3. Log In page Wireframe - [view](#)
+3. Log Out page Wireframe - [view](/documentation/wireframes/log-out-sml.png)
 
-4. Log Out page Wireframe - [view](#)
+4. Register page Wireframe - [view](/documentation/wireframes/register-sml.png)
 
-5. Register page Wireframe - [view](#)
+5. Profile page Wireframe - [view](/documentation/wireframes/profile-sml.png)
 
-6. Profile page Wireframe - [view](#)
+6. Books page Wireframe - [view](/documentation/wireframes/books-sml.png)
 
-7. Books page Wireframe - [view](#)
+7. Book Information page Wireframe - [view](/documentation/wireframes/book-info-sml.png)
 
-8. Books Managment page Wireframe - [view](#)
+8. Shopping Bag page Wireframe - [view](/documentation/wireframes/shopping-bag-sml.png)
 
-9. Book Information page Wireframe - [view](#)
-
-10. Book Information Managment page Wireframe - [view](#)
-
-11. Shopping Bag page Wireframe - [view](#)
-
-12. Checkout page Wireframe - [view](#)
+9. Checkout page Wireframe - [view](/documentation/wireframes/checkout-sml.png)
 
 
 # Data Structure
