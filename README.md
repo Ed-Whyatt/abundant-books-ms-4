@@ -480,7 +480,47 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
 	- `EMAIL_HOST_PASS` = your new 16-character API key
 	- `EMAIL_HOST_USER` = your own personal Gmail email address (`you@gmail.com`)
 
+### Local Deployment
 
+This project can be cloned or forked in order to make a local copy on your own system.
+
+For either method, you will need to install any applicable packages found within the *requirements.txt* file.
+- `pip3 install -r requirements.txt`.
+
+You will need to create a new file called `env.py` at the root-level,
+and include the same environment variables listed above from the Heroku deployment steps.
+
+Sample `env.py` file:
+
+```python
+import os
+
+os.environ.setdefault("AWS_ACCESS_KEY_ID", "insert your own AWS Access Key ID key here")
+os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "insert your own AWS Secret Access key here")
+os.environ.setdefault("DATABASE_URL", "insert your own ElephantSQL database URL here")
+os.environ.setdefault("EMAIL_HOST_PASS", "insert your own Gmail API key here")
+os.environ.setdefault("EMAIL_HOST_USER", "insert your own Gmail email address here")
+os.environ.setdefault("SECRET_KEY", "this can be any random secret key")
+os.environ.setdefault("STRIPE_PUBLIC_KEY", "insert your own Stripe Public API key here")
+os.environ.setdefault("STRIPE_SECRET_KEY", "insert your own Stripe Secret API key here")
+os.environ.setdefault("STRIPE_WH_SECRET", "insert your own Stripe Webhook API key here")
+
+# local environment only (do not include these in production/deployment!)
+os.environ.setdefault("DEBUG", "True")
+```
+
+Once the project is cloned or forked, in order to run it locally, you'll need to follow these steps:
+- Start the Django app: `python3 manage.py runserver`
+- Stop the app once it's loaded: `CTRL+C` or `⌘+C` (Mac)
+- Make any necessary migrations: `python3 manage.py makemigrations`
+- Migrate the data to the database: `python3 manage.py migrate`
+- Create a superuser: `python3 manage.py createsuperuser`
+- Load fixtures (if applicable): `python3 manage.py loaddata file-name.json` (repeat for each file)
+- Everything should be ready now, so run the Django app again: `python3 manage.py runserver`
+
+If you'd like to backup your database models, use the following command for each model you'd like to create a fixture for:
+- `python3 manage.py dumpdata your-model > your-model.json`
+- *repeat this action for each model you wish to backup*
 
 
 
