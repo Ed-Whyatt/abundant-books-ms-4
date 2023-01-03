@@ -46,7 +46,9 @@
 
 ### The main colours used in this website are:
 - #### The main colours used for text and backgrounds:
-### ![Text](#)
+### ![Text](/documentation/color-mind/text-and-background.png)
+- #### The colours used for home page carousel and backgrounds:
+### ![Text](/documentation/color-mind/carousel.png)
 
 ## Typography:
 - ### The fonts use throughout this website are:
