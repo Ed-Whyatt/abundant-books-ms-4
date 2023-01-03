@@ -484,6 +484,12 @@ margin-top: -10px;
     height: 2px;
 }
 
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /* Media quries */
 
 @media screen and (max-width: 400px) {

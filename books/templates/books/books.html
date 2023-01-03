@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid bg-lite-gray">
+<div class="container-fluid bg-lite-gray pb-5">
     <div class="row">
         <div class="col text-center mt-3">
             <h2 class="books-blue-text">Books</h2>
@@ -61,7 +61,7 @@
         </div>
     </div>
 
-    <div class="container mb-2">
+    <div class="container">
         <div class="row">
 
             {% for book in books %}
@@ -110,7 +110,7 @@
                                     </li>
                                     <li>
                                         <br>
-                                        <strong>£ {{ book.price|floatformat:2 }}</strong>
+                                        <strong>£{{ book.price|floatformat:2 }}</strong>
                                     </li>
                                 </ul>  
                             </div>
