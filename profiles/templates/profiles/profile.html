@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link href="{% static 'profiles/css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -80,4 +80,5 @@
 
 {% block postloadjs %}
 {{ block.super }}
+<script src="{% static 'profiles/js/profile.js' %}"></script>
 {% endblock %}

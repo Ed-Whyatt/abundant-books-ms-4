@@ -56,7 +56,10 @@
 
 ## Imagery
 
-- 
+- ### The main images of all the book products are from the dataset used from [Kaggle.com](https://www.kaggle.com/datasets/lukaanicin/book-covers-dataset)
+- ### The other images used are the placeholder for if theres no book image in the database and the gray smoke image used in the carousel image.
+    - Grey smoke image from [webstockreview.net](https://webstockreview.net/pict/getfirst) 
+    - Book placeholder from [pixabay.com](https://pixabay.com/illustrations/a-book-isolated-book-cover-empty-3057902/)
 
 ## Wireframes
 
