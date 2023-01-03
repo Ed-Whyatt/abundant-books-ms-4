@@ -40,7 +40,7 @@
                         <br>
                     </li>
                     <li>
-                        <strong>£ {{ book.price }}</strong>
+                        <strong>£{{ book.price|floatformat:2 }}</strong>
                         <br>
                     </li>
                     <li>
@@ -130,7 +130,7 @@
                                                 <h4>{{ book.name }}</h4>
                                             </li>
                                             <li><small>By {{ book.author }}</small></li>
-                                            <li><strong>£ {{ book.price }}</strong></li>
+                                            <li><strong>£{{ book.price|floatformat:2 }}</strong></li>
                                             {% if request.user.is_superuser %}
                                             <li>
                                                 <small>
@@ -215,7 +215,7 @@
                                                             <small>RRP: {{ book.old_price }}</small>
                                                             <br>
                                                         </li>
-                                                        <li><strong>£ {{ book.price }}</strong></li>
+                                                        <li><strong>£{{ book.price|floatformat:2 }}</strong></li>
                                                     </ul>
                                                     <div>
                                                         <a class="pop-genres-button"
@@ -260,7 +260,7 @@
                                                         <small>RRP: {{ book.old_price }}</small>
                                                         <br>
                                                     </li>
-                                                    <li><strong>£ {{ book.price }}</strong></li>
+                                                    <li><strong>£{{ book.price|floatformat:2 }}</strong></li>
                                                 </ul>
                                                 <div>
                                                     <a class="pop-genres-button" href="{% url 'book_info' book.id %}"
@@ -312,7 +312,7 @@
                                                         <small>RRP: {{ book.old_price }}</small>
                                                         <br>
                                                     </li>
-                                                    <li><strong>£ {{ book.price }}</strong></li>
+                                                    <li><strong>£{{ book.price|floatformat:2 }}</strong></li>
                                                 </ul>
                                                 <div>
                                                     <a class="pop-genres-button" href="{% url 'book_info' book.id %}"
@@ -363,7 +363,7 @@
                                                         <small>RRP: {{ book.old_price }}</small>
                                                         <br>
                                                     </li>
-                                                    <li><strong>£ {{ book.price }}</strong></li>
+                                                    <li><strong>£{{ book.price|floatformat:2 }}</strong></li>
                                                 </ul>
                                                 <div>
                                                     <a class="pop-genres-button" href="{% url 'book_info' book.id %}"
