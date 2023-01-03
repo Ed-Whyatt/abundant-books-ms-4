@@ -264,9 +264,9 @@
 1. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
 1. [Gitpod](https://gitpod.io)
-    Gitpod used as a cloud-based IDE for development.
+    - Gitpod used as a cloud-based IDE for development.
 1. [Tim Nelson](https://traveltimn.github.io/readme-builder) 
-     Tim Nelsons traveltimn has been used to help generate the Markdown files.
+    - Tim Nelsons traveltimn has been used to help generate the Markdown files.
 1. [Balsamiq:](https://balsamiq.com/)
     - Balsamiq was used to create the wireframes.
 1. [Am I Responsive Design:](http://ami.responsivedesign.is/)
