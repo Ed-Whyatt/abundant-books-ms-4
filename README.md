@@ -480,6 +480,57 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
 	- `EMAIL_HOST_PASS` = your new 16-character API key
 	- `EMAIL_HOST_USER` = your own personal Gmail email address (`you@gmail.com`)
 
+### Heroku Deployment
+
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+Deployment steps are as follows, after account setup:
+
+- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
+- From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables.
+
+| Key | Value |
+| --- | --- |
+| `AWS_ACCESS_KEY_ID` | insert your own AWS Access Key ID key here |
+| `AWS_SECRET_ACCESS_KEY` | insert your own AWS Secret Access key here |
+| `DATABASE_URL` | insert your own ElephantSQL database URL here |
+| `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
+| `EMAIL_HOST_PASS` | insert your own Gmail API key here |
+| `EMAIL_HOST_USER` | insert your own Gmail email address here |
+| `SECRET_KEY` | this can be any random secret key |
+| `STRIPE_PUBLIC_KEY` | insert your own Stripe Public API key here |
+| `STRIPE_SECRET_KEY` | insert your own Stripe Secret API key here |
+| `STRIPE_WH_SECRET` | insert your own Stripe Webhook API key here |
+| `USE_AWS` | True |
+
+Heroku needs two additional files in order to deploy properly.
+- requirements.txt
+- Procfile
+
+You can install this project's **requirements** (where applicable) using:
+- `pip3 install -r requirements.txt`
+
+If you have your own packages that have been installed, then the requirements file needs updated using:
+- `pip3 freeze --local > requirements.txt`
+
+The **Procfile** can be created with the following command:
+- `echo web: gunicorn app_name.wsgi > Procfile`
+- *replace **app_name** with the name of your primary Django app name; the folder where settings.py is located*
+
+For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
+
+Either:
+- Select **Automatic Deployment** from the Heroku app.
+
+Or:
+- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
+- Set the remote for Heroku: `heroku git:remote -a app_name` (replace *app_name* with your app name)
+- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
+	- `git push heroku main`
+
+The project should now be connected and deployed to Heroku!
+
 ### Local Deployment
 
 This project can be cloned or forked in order to make a local copy on your own system.
