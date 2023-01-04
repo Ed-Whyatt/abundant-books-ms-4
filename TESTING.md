@@ -213,7 +213,16 @@ The bag grand total was not adding up correctley due to the sum being created wi
 - #### bag/ templatetags/ bag_tools.py after fix
     ![screenshot](/documentation/bug-fix-images/total-fix-bag-tools-after.png)
 
-
+#### News letter page footer placement
+The footer on the news letter page was not sitting at the bottom of the page due to a missing div in the html template.
+- #### Site image before fix
+    ![screenshot](/documentation/bug-fix-images/news-letter-before.png)
+- #### Site image after fix
+    ![screenshot](/documentation/bug-fix-images/news-letter-after.png)
+- #### news_lettr.html before fix
+    ![screenshot](/documentation/bug-fix-images/news-letter-code-before.png)
+- #### news_lettr.html  after fix
+    ![screenshot](/documentation/bug-fix-images/news-letter-code-after.png)
 
 
 ## Further Testing
