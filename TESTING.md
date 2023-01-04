@@ -327,4 +327,102 @@ I've tested my deployed project on [Am I Responsive Design:](http://ami.responsi
 
 ## Testing User Stories from User Experience (UX) section in README.md
 
+- ### First time user goals
+    
+    1. As a First time user, I want to easily navigate to register and then log in when first entering the website application.
+
+        - As a First time user, I can easily navigate to register when first entering the website application.
+        ### ![text](/documentation/features/large-account-nav.png)
+        ### ![text](/documentation/features/sign-up.png)
+
+        - As a First time user, I can easily navigate to log in when first entering the website application.
+        ### ![text](/documentation/features/large-account-nav.png)
+        ### ![text](/documentation/features/sign-in.png)
+
+    2. As a First Time User, I want to navigate the website easily and interact with the content.
+
+        - As a First time user, I can navigate the website easily and interact with the content.
+        ### ![text](/documentation/features/large-account-nav.png)
+        ### ![text](/documentation/features/large-cat-nav.png)
+        ### ![text](/documentation/features/nav-small.png)
+        ### ![text](/documentation/features/my-pro-logout.png)
+
+    3. As a first time user I want to easily navigate to look for the books available.
+
+        - As a First time user, I can navigate to look for the books available.
+        ### ![text](/documentation/features/large-cat-nav.png)
+        ### ![text](/documentation/features/nav-small.png)
+
+    4. As a first time user I want to easily add books to my bag.
+
+        - As a First time user, I can easily add books to my bag.
+        ### ![text](/documentation/features/add-to-bag.png)
+
+    5. As a first time user I want to easily checkout and pay for the items in my bag.
+
+        - As a First time user, I can easily checkout and pay for the items in my bag.
+        ### ![text](/documentation/features/checkout-button.png)
+        ### ![text](/documentation/features/shopping-bag.png)
+        ### ![text](/documentation/features/checkout-one.png)
+        ### ![text](/documentation/features/checkout-two.png)
+
+- ### Returning user goals
+    1. As a Returning User, I want log in easily and view my purchase history.
+
+        - As a Returning User, I can easily log in.
+        ### ![text](/documentation/features/sign-in.png)
+
+        - As a Returning User, I can easily view my purchase history once loged in.
+        ### ![text](/documentation/features/large-account-nav.png)
+        ### ![text](/documentation/features/profile-order-history-button.png)
+        
+
+    2. As a Returning User, I want to see the current deals of the month.
+
+        - As a Returning User, I can easily the current deals of the month.
+
+    3. As a Returning User, I want to see the current authors of the month.
+
+        - As a Returning User, I can easily the current authors of the month.
+
+- ### Frequent user goals
+    1. As a Frequent user, I want to easily sign up to the newsletter.
+
+        - As a Frequent user, I can easily sign up to the newsletter.
+        ### ![text](/documentation/features/large-cat-nav.png)
+        ### ![text](/documentation/features/news-letter.png)
+
+    2. As a Frequent user, I want to easily see the updated deals of the month.
+
+        - As a Frequent user, I can easily see the updated deals of the month.
+
+    3. As a Frequent user, I want to easily see the updated authors of the months.
+
+        - As a Frequent user, I can easily see the updated authors of the months.
+
+- ### Admin user goals
+    1. As an Admin User, I want access to add new books to the website application.
+
+        - As an Admin User, I can gain access to add new books to the website application via the product management navagation.
+        ### ![text](/documentation/features/large-account-admin.png)
+        ### ![text](/documentation/features/book-add-one.png)
+        ### ![text](/documentation/features/book-add-two.png)
+
+    2. As an Admin User, I want access to edit books on the website application.
+
+        - As an Admin User, I can gain access to edit books on the website application.
+        ### ![text](/documentation/features/car-edit-button.png)
+        ### ![text](/documentation/features/authors-edit-button.png)
+        ### ![text](/documentation/features/deals-edit-button.png)
+        ### ![text](/documentation/features/books-edit-button.png)
+        ### ![text](/documentation/features/book-info-edit-buttons.png)
+        ### ![text](/documentation/features/book-edit-one.png)
+        ### ![text](/documentation/features/book-edit-two.png)
+
+    3. As an Admin User, I want access to delete books on the website application.
+
+        - As an Admin User, I can gain access to edit books on the website application.
+        ### ![text](/documentation/features/book-info-edit-buttons.png)
+        ### ![text](/documentation/features/delete-book-modal.png)
+
 ## Known Bugs

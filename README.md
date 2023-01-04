@@ -15,19 +15,19 @@
     
     1. As a First time user, I want to easily navigate to register and then log in when first entering the website application.
     2. As a First Time User, I want to navigate the website easily and interact with the content.
-    3. As a first time user I want to easily navigate to look for the books available.
-    4. As a first time user I want to easily add books to my bag.
-    5. As a first time user I want to easily checkout and pay for the items in my bag.
+    3. As a first time user, I want to easily navigate to look for the books available.
+    4. As a first time user, I want to easily add books to my bag.
+    5. As a first time user, I want to easily checkout and pay for the items in my bag.
 
 - ### Returning user goals
     1. As a Returning User, I want log in easily and view my purchase history.
-    2. As a Returning User, I want to see the current deals of the months.
+    2. As a Returning User, I want to see the current deals of the month.
     3. As a Returning User, I want to see the current authors of the month.
 
 - ### Frequent user goals
     1. As a Frequent user, I want to easily sign up to the newsletter.
-    2. As a Frequent user, I want to easily the updated deals of the months.
-    3. As a Frequent user, I want to easily the updated authors of the months.
+    2. As a Frequent user, I want to easily see the updated deals of the month.
+    3. As a Frequent user, I want to easily see the updated authors of the month.
 
 - ### Admin user goals
     1. As an Admin User, I want access to add new books to the website application.
@@ -200,12 +200,12 @@
     - Synopsis and Author tabs to view more information.
     ### ![text](/documentation/features/syno-aut-buttons.png)
 - Profile page
-    - Profile order history button  open orer in new page
+    - Profile order history button open orer in new page
     ### ![text](/documentation/features/profile-order-history-button.png)
     - Profile update form and button.
     ### ![text](/documentation/features/profile-update-button.png)
 - News letter form to sucribe to the news letter.
-### ![text](/documentation/features/news-letter.png)
+    ### ![text](/documentation/features/news-letter.png)
 - Bag Checkout Button takes you to your bag content page
     ### ![text](/documentation/features/checkout-button.png)
 - Bag page 
