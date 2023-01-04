@@ -183,12 +183,21 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 | Browser | Screenshot | Notes |
 | --- | --- | --- |
-| Chrome | ![screenshot](/documentation/browsers/chrome.png) | Works as expected
-| Firefox | ![screenshot](/documentation/browsers/firefox.png) | Works as expected
-| Microsoft Edge | ![screenshot](/documentation/browsers/microsoft-edge.png) | Works as expected
+| Chrome | ![screenshot](/documentation/browsers-devices/chrome.png) | Works as expected
+| Firefox | ![screenshot](/documentation/browsers-devices/firefox.png) | Works as expected
+| Microsoft Edge | ![screenshot](/documentation/browsers-devices/microsoft-edge.png) | Works as expected
 
 ### Responsiveness
+I've tested my deployed project on [Am I Responsive Design:](http://ami.responsivedesign.is/) and multiple devices to check for compatibility issues and responsiveness.
+####  I Am I Responsive Image
+[Am I Responsive Design:](/documentation/i-am-responsive/iam-responsive-image.png)
 
+| Device | Screenshot | Notes |
+| --- | --- | --- |
+| Mobile | ![screenshot](/documentation/browsers-devices/note-10-Chrome.jpg) | Works as expected
+| Tablet | ![screenshot](/documentation/browsers-devices/tablet.png) | Works as expected
+| Laptop | ![screenshot] | Works as expected
+| Desktop | ![screenshot](/documentation/browsers-devices/chrome.png) | Works as expected
 
 ## Defensive Programming
 
