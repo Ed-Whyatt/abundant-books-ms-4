@@ -380,10 +380,12 @@ I've tested my deployed project on [Am I Responsive Design:](http://ami.responsi
     2. As a Returning User, I want to see the current deals of the month.
 
         - As a Returning User, I can easily the current deals of the month.
+        ### ![text](/documentation/features/deal-of-month.png)
 
     3. As a Returning User, I want to see the current authors of the month.
 
         - As a Returning User, I can easily the current authors of the month.
+        ### ![text](/documentation/features/authers-of-month.png)
 
 - ### Frequent user goals
     1. As a Frequent user, I want to easily sign up to the newsletter.
@@ -395,10 +397,13 @@ I've tested my deployed project on [Am I Responsive Design:](http://ami.responsi
     2. As a Frequent user, I want to easily see the updated deals of the month.
 
         - As a Frequent user, I can easily see the updated deals of the month.
+        ### ![text](/documentation/features/deal-of-month.png)
 
     3. As a Frequent user, I want to easily see the updated authors of the months.
 
         - As a Frequent user, I can easily see the updated authors of the months.
+        ### ![text](/documentation/features/authers-of-month.png)
+
 
 - ### Admin user goals
     1. As an Admin User, I want access to add new books to the website application.
@@ -424,5 +429,7 @@ I've tested my deployed project on [Am I Responsive Design:](http://ami.responsi
         - As an Admin User, I can gain access to edit books on the website application.
         ### ![text](/documentation/features/book-info-edit-buttons.png)
         ### ![text](/documentation/features/delete-book-modal.png)
+        ### ![text](/documentation/features/edit-book-delete.png)
+
 
 ## Known Bugs

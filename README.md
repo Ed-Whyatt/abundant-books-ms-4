@@ -194,6 +194,10 @@
     ### ![text](/documentation/features/pop-gen-tabs.png)
     - Popular genres view the book button opens book information page selected book.
     ### ![text](/documentation/features/pop-gen-button.png)
+    - Author of the month section
+    ### ![text](/documentation/features/authers-of-month.png)
+    - Deals of the month section
+    ### ![text](/documentation/features/deal-of-month.png)
 - Book information page
     - Add book to bag or keep shoping buttons.
     ### ![text](/documentation/features/add-to-bag.png)
@@ -234,6 +238,8 @@
     - Admin edit book page details
     ### ![text](/documentation/features/book-edit-one.png)
     ### ![text](/documentation/features/book-edit-two.png)
+    - Admin delete book button
+    ### ![text](/documentation/features/edit-book-delete.png)
     - Admin delete book model
     ### ![text](/documentation/features/delete-book-modal.png)
 
