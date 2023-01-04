@@ -433,3 +433,6 @@ I've tested my deployed project on [Am I Responsive Design:](http://ami.responsi
 
 
 ## Known Bugs
+
+#### Books page sort by price 
+The sort by price in books html dose not sort by acending or decending order.
