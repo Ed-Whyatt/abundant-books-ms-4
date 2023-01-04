@@ -286,7 +286,7 @@ I've tested my deployed project on [Am I Responsive Design:](http://ami.responsi
 | --- | --- | --- |
 | Mobile | ![screenshot](/documentation/browsers-devices/note-10-Chrome.jpg) | Works as expected
 | Tablet | ![screenshot](/documentation/browsers-devices/tablet.png) | Works as expected
-| Laptop | ![screenshot] | Works as expected
+| Laptop | ![screenshot](/documentation/browsers-devices/asus-laptop.png) | Works as expected
 | Desktop | ![screenshot](/documentation/browsers-devices/chrome.png) | Works as expected
 
 ## Defensive Programming
