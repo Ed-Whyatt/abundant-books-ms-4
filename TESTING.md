@@ -8,35 +8,35 @@ Return back to the [README.md](README.md) file.
 The W3C Markup Validator and W3C Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project. The most substantial bugs that were fixed are in the bug fixed section.
 
 - #### Home page
-![text](/documentation/w3c-marckup-validator/w3-html-home.png)
+    ![text](/documentation/w3c-marckup-validator/w3-html-home.png)
 - #### Books page
-![text](/documentation/w3c-marckup-validator/w3-html-books.png)
+    ![text](/documentation/w3c-marckup-validator/w3-html-books.png)
 - #### Books Information page
-![text](/documentation/w3c-marckup-validator/w3-html-book-info.png)
+    ![text](/documentation/w3c-marckup-validator/w3-html-book-info.png)
 - #### Bag page
-![text](/documentation/w3c-marckup-validator/w3-html-bag.png)
+    ![text](/documentation/w3c-marckup-validator/w3-html-bag.png)
 - #### Checkout page
-![text](/documentation/w3c-marckup-validator/w3-html-checkout.png)
+    ![text](/documentation/w3c-marckup-validator/w3-html-checkout.png)
 - #### Checkout Confirmation page
-![text](/documentation/w3c-marckup-validator/w3-html-checkout-confirmation.png)
+    ![text](/documentation/w3c-marckup-validator/w3-html-checkout-confirmation.png)
 - #### Profile page
-![text](/documentation/w3c-marckup-validator/w3-html-profile.png)
+    ![text](/documentation/w3c-marckup-validator/w3-html-profile.png)
 - #### News Letter page
-![text](/documentation/w3c-marckup-validator/w3-html-news-letter.png)
+    ![text](/documentation/w3c-marckup-validator/w3-html-news-letter.png)
 - #### Add book page
-![text](/documentation/w3c-marckup-validator/w3-html-add-book.png)
+    ![text](/documentation/w3c-marckup-validator/w3-html-add-book.png)
 - #### Edit Book page
-![text](/documentation/w3c-marckup-validator/w3-html-edit-book.png)
+    ![text](/documentation/w3c-marckup-validator/w3-html-edit-book.png)
 
 ## CSS
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 - #### base.css
-![text](/documentation/jigsaw-w3-css-validator/jigsaw-base-css.png)
+    ![text](/documentation/jigsaw-w3-css-validator/jigsaw-base-css.png)
 - #### checkout.css
-![text](/documentation/jigsaw-w3-css-validator/jigsaw-checkout-css.png)
+    ![text](/documentation/jigsaw-w3-css-validator/jigsaw-checkout-css.png)
 - #### profile.css
-![text](/documentation/jigsaw-w3-css-validator/jigsaw-profile-css.png)
+    ![text](/documentation/jigsaw-w3-css-validator/jigsaw-profile-css.png)
 
 ## Javascript
 
@@ -45,30 +45,30 @@ JSHint  Services were used to validate every JavaScript page of the project to e
 
 - #### base.js
     - #### Before fix
-    ![text](/documentation/jshint/base-javascript-before.png)
+        ![text](/documentation/jshint/base-javascript-before.png)
     - #### After Fix
-    ![text](/documentation/jshint/base-javascript-after.png)
+        ![text](/documentation/jshint/base-javascript-after.png)
 - #### postload_base.js
     - #### Before fix
-    ![text](/documentation/jshint/postload-javascript-before.png)
+        ![text](/documentation/jshint/postload-javascript-before.png)
     - #### After Fix
-    ![text](/documentation/jshint/postload-javascript-after.png)
+        ![text](/documentation/jshint/postload-javascript-after.png)
 - #### profile.js
-![text](/documentation/jshint/profile-js-clear.png)
+    ![text](/documentation/jshint/profile-js-clear.png)
 - #### stripe_js.js
-![text](/documentation/jshint/chckout-stripe-elements-js-clear.png)
+    ![text](/documentation/jshint/chckout-stripe-elements-js-clear.png)
 - #### bag.html script
     - #### Before fix
-    ![text](/documentation/jshint/bag-script-before.png)
+        ![text](/documentation/jshint/bag-script-before.png)
     - #### After Fix
-    ![text](/documentation/jshint/bag-script-after.png)
+        ![text](/documentation/jshint/bag-script-after.png)
 - #### books quantity_input_script.html
-![text](/documentation/jshint/quantity-input-script-clear.png)
+    ![text](/documentation/jshint/quantity-input-script-clear.png)
 - #### books synopsis_auther_script.html
     - #### Before fix
-    ![text](/documentation/jshint/synopsis-author-script-before.png)
+        ![text](/documentation/jshint/synopsis-author-script-before.png)
     - #### After Fix
-    ![text](/documentation/jshint/synopsis-author-script-after.png)
+        ![text](/documentation/jshint/synopsis-author-script-after.png)
 
 ## Python
 
@@ -173,8 +173,48 @@ The CI Python Linter can be used two different ways.
 Google Chrome Developer Tools has been used throughout the development of this page, To use it in Google Crome browser Right click anywhere on the screen and click inspect on the menu.
 
 ### Google Chrome Developer Tool Lighthouse results
+- #### Home page
+    ![screenshot](/documentation/lighthouse/home-lighthouse.png)
+- #### Books page
+    ![screenshot](/documentation/lighthouse/books-lighthouse.png)
+- #### News letter
+    ![screenshot](/documentation/lighthouse/news-letter-lighthouse.png)
+- #### Books detail
+    ![screenshot](/documentation/lighthouse/books-detail.png)
+- #### Bag
+    ![screenshot](/documentation/lighthouse/bag.png)
+- #### Checkout
+    ![screenshot](/documentation/lighthouse/checkout.png)
+- #### Checkout success
+    ![screenshot](/documentation/lighthouse/checkout-sucess.png)
+- #### Profile
+    ![screenshot](/documentation/lighthouse/profile.png)
+- #### Admin add book
+    ![screenshot](/documentation/lighthouse/books-add.png)
+- #### Admin edit book
+    ![screenshot](/documentation/lighthouse/books-edit.png)
+
 
 ## Bugs Fixed
+### Bugs highlighted during the development
+
+#### Bag app Checkout grand total
+The bag grand total was not adding up correctley due to the sum being created with a float. The float was corrected to a decimal place.
+- #### Site image before fix
+    ![screenshot](/documentation/bug-fix-images/total-fix-before.png)
+- #### Site image after fix
+    ![screenshot](/documentation/bug-fix-images/total-fix-after.png)
+- #### bag/ context.py before fix
+    ![screenshot](/documentation/bug-fix-images/total-fix-context-before.png)
+- #### bag/ context.py after fix
+    ![screenshot](/documentation/bug-fix-images/total-fix-context-after.png)
+- #### bag/ templatetags/ bag_tools.py before fix
+    ![screenshot](/documentation/bug-fix-images/total-fix-bag-tools-before.png)
+- #### bag/ templatetags/ bag_tools.py after fix
+    ![screenshot](/documentation/bug-fix-images/total-fix-bag-tools-after.png)
+
+
+
 
 ## Further Testing
 
