@@ -291,6 +291,28 @@ I've tested my deployed project on [Am I Responsive Design:](http://ami.responsi
 
 ## Defensive Programming
 
+| Page | User Type | User Action | Expected Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Profile | Non logged in user  | Direct link to profile | Redirection to Log In Page | Pass |
+| Profile Order | Non logged in user | Direct link to profile order | Redirection to Log In Page | Pass |
+| Product Managment Add Book | Non logged in user | Direct link to Product Managment | Redirection to Log In Page | Pass |
+| Product Managment Add Book | Non admin in user | Direct link to Product Managment | Redirection to Log In Page | Pass |
+| Home Carousel Edit Book | Non logged in user | Direct link to Edit Book  | Redirection to Log In Page | Pass |
+| Home Carousel Edit Book | Non admin in user | Direct link to Edit Book | Redirection to Log In Page | Pass |
+| Authors Of The Month Edit Book | Non logged in user | Direct link to Edit Book  | Redirection to Log In Page | Pass |
+| Authors Of The Month Edit Book | Non admin in user | Direct link to Edit Book  | Redirection to Log In Page | Pass |
+| Deals Of The Month Edit Book | Non logged in user | Direct link to Edit Book | Redirection to Log In Page | Pass |
+| Deals Of The Month Edit Book | Non admin in user | Direct link to Edit Book  | Redirection to Log In Page | Pass |
+| Books Edit Book | Non logged in user | Direct link to Edit Book | Redirection to Log In Page | Pass |
+| Books Edit Book | Non admin in user | Direct link to Edit Book | Redirection to Log In Page | Pass |
+| Books Info Edit Book | Non logged in user | Direct link to Edit Book | Redirection to Log In Page | Pass |
+| Books Info Edit Book | Non admin in user | Direct link to Edit Book | Redirection to Log In Page | Pass |
+| Book Info Delete Book | Non logged in user | Direct link to Delete Book | Redirection to Log In Page | Pass |
+| Book Info Delete Book | Non admin in user | Direct link to Delete Book | Redirection to Log In Page | Pass |
+| Edit Book Delete Book | Non logged in user | Direct link to Delete Book | Redirection to Log In Page | Pass |
+| Edit Book Delete Book | Non admin in user | Direct link to Delete Book | Redirection to Log In Page | Pass |
+
+
 ## Testing User Stories from User Experience (UX) section in README.md
 
 ## Known Bugs
