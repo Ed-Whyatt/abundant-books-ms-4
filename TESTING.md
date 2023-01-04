@@ -75,7 +75,84 @@ JSHint  Services were used to validate every JavaScript page of the project to e
 ## pep8
 ***
 
+I have used the recommended [CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+
+The CI Python Linter can be used two different ways.
+- Copy/Paste your Python code directly into the linter.
+- As an API, using the "raw" URL appended to the linter URL.
+    - To find the "raw" URL, navigate to your file directly on the GitHub repo.
+    - On that page, GitHub provides a button on the right called "Raw" that you can click on.
+    - From that new page, copy the full URL, and paste it after the CI Python Linter URL (with a `/` separator).
+    - Examples:
+
+| File | CI URL | Raw URL | Combined (CI PEP8) |
+| --- | --- | --- | --- |
+| PP3 *manage.py* file | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/manage.py` | `https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/manage.py`
+
 ### PEP8 Results
+
+#### abundent_books
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| settings.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/abundant_books/settings.py) | ![screenshot]() | All clear, no errors found |
+| urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/abundant_books/urls.py) | ![screenshot]() | All clear, no errors found |
+#### bag
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| contexts.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/bag/contexts.py) | ![screenshot]() | All clear, no errors found |
+| urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/bag/urls.py) | ![screenshot]() | All clear, no errors found |
+| views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/bag/views.py) | ![screenshot]() | All clear, no errors found |
+#### books
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| admin.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/books/admin.py) | ![screenshot]() | All clear, no errors found |
+| forms.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/books/forms.py) | ![screenshot]() | All clear, no errors found |
+| models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/books/models.py) | ![screenshot]() | All clear, no errors found |
+| urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/books/urls.py) | ![screenshot]() | All clear, no errors found |
+| views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/books/views.py) | ![screenshot]() | All clear, no errors found |
+#### checkout
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| admin.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/checkout/admin.py) | ![screenshot]() | All clear, no errors found |
+| forms.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/checkout/forms.py) | ![screenshot]() | All clear, no errors found |
+| models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/checkout/models.py) | ![screenshot]() | All clear, no errors found |
+| urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/checkout/urls.py) | ![screenshot]() | All clear, no errors found |
+| views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/checkout/views.py) | ![screenshot]() | All clear, no errors found |
+| webhook_handler.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/checkout/webhook_handler.py) | ![screenshot]() | All clear, no errors found |
+| webhooks.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/checkout/webhooks.py) | ![screenshot]() | All clear, no errors found |
+
+#### home
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/home/urls.py) | ![screenshot]() | All clear, no errors found |
+| views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/home/views.py) | ![screenshot]() | All clear, no errors found |
+
+#### news_letter
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| admin.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/news_letter/admin.py) | ![screenshot]() | All clear, no errors found |
+| forms.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/news_letter/forms.py) | ![screenshot]() | All clear, no errors found |
+| models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/news_letter/models.py) | ![screenshot]() | All clear, no errors found |
+| urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/news_letter/urls.py) | ![screenshot]() | All clear, no errors found |
+| views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/news_letter/views.py) | ![screenshot]() | All clear, no errors found |
+
+#### profiles
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| forms.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/profiles/forms.py) | ![screenshot]() | All clear, no errors found |
+| models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/profiles/models.py) | ![screenshot]() | All clear, no errors found |
+| urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/profiles/urls.py) | ![screenshot]() | All clear, no errors found |
+| views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/profiles/views.py) | ![screenshot]() | All clear, no errors found |
+
+#### custom_storages.py
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| custom_storages.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/custom_storages.py) | ![screenshot]() | All clear, no errors found |
+
+#### manage.py
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| manage.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/manage.py) | ![screenshot]() | All clear, no errors found |
 
 ## Google Chrome Developer Tools
 Google Chrome Developer Tools has been used throughout the development of this page, To use it in Google Crome browser Right click anywhere on the screen and click inspect on the menu.
