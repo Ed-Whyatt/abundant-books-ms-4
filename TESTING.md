@@ -178,15 +178,17 @@ Google Chrome Developer Tools has been used throughout the development of this p
 
 ## Further Testing
 
+### Browsers
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
 | Browser | Screenshot | Notes |
 | --- | --- | --- |
+| Chrome | ![screenshot](/documentation/browsers/chrome.png) | Works as expected
+| Firefox | ![screenshot](/documentation/browsers/firefox.png) | Works as expected
+| Microsoft Edge | ![screenshot](/documentation/browsers/microsoft-edge.png) | Works as expected
 
-## Responsiveness
-- Mobile
-- Tablet
-- Desktop
+### Responsiveness
+
 
 ## Defensive Programming
 

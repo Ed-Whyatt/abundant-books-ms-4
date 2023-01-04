@@ -270,7 +270,7 @@
 1. [Balsamiq:](https://balsamiq.com/)
     - Balsamiq was used to create the wireframes.
 1. [Am I Responsive Design:](http://ami.responsivedesign.is/)
-    - Am I Responsive Design was used for the responsive image in Readme.
+    - Am I Responsive Design was used for the responsive image in Readme.md and Testing.md.
 1. [Django jinja](https://pypi.org/project/django-jinja/)
     - Templating language for Python, to simplify displaying data from the backend of this project smoothly and effectively in HTML.
 1. [SQLAlchemy](https://www.sqlalchemy.org/)
