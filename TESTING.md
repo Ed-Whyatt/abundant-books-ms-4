@@ -220,6 +220,17 @@ Google dev tool lighthouse highlighted that the search button did not have an ar
 
 ### Bugs highlighted during the development.
 
+#### News letter button spaceing on small screens
+The news letter cancel button was hugging the sucribe button. This was fixed by adding bootstrap margin top 1.
+- #### Site image before fix
+    ![screenshot](/documentation/bug-fix-images/news-letter-button-before.jpg)
+- #### Site image after fix
+    ![screenshot](/documentation/bug-fix-images/news-letter-button-after.png)
+- #### news_lettr.html before fix
+    ![screenshot](/documentation/bug-fix-images/news-letter-button-code-before.jpg)
+- #### news_lettr.html  after fix
+    ![screenshot](/documentation/bug-fix-images/news-letter-button-code-after.jpg)
+
 #### Bag app Checkout grand total
 The bag grand total was not adding up correctly due to the sum being created with a float. The float was corrected to a decimal place.
 - #### Site image before fix
