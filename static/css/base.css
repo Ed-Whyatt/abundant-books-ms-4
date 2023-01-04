@@ -270,16 +270,18 @@ margin-top: -10px;
     border-bottom-right-radius: 0;
     box-shadow: 5px 5px 10px #000;
     border: 1px solid #00004d;
+    min-height: 63px;
 }
 
 .pop-genres-select-button-active {
-    background-color: #00004d;
-    color: #f0f0f0;
+    background-color: #00004d !important;
+    color: #f0f0f0 !important;
     border-radius: 50% / 50%;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     box-shadow: 5px 5px 10px #000;
     border: 1px solid #00004d;
+    min-height: 63px;
 }
 
 .pop-genres-button {

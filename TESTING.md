@@ -178,6 +178,11 @@ Google Chrome Developer Tools has been used throughout the development of this p
 
 ## Further Testing
 
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser | Screenshot | Notes |
+| --- | --- | --- |
+
 ## Responsiveness
 - Mobile
 - Tablet
