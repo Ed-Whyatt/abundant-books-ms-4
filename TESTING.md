@@ -196,9 +196,27 @@ Google Chrome Developer Tools has been used throughout the development of this p
 
 
 ## Bugs Fixed
-## Google dev tool lighthouse highlighted bugs.
+### Google dev tool lighthouse highlighted bugs.
 
+#### Dev tools list error
+Google dev tools highlighted that the lists had brake points in amoungst the html list elements.
+- #### Dev tools error 
+    ![screenshot](/documentation/bug-fix-images/list-order-fix.png)
+- #### books/ templates/ books_info.html code before fix
+    ![screenshot](/documentation/bug-fix-images/list-oredr-code-before.png)
+- #### books/ templates/ books_info.html code after fix
+    ![screenshot](/documentation/bug-fix-images/list-oredr-code-after.png)
 
+#### Dev tools ariea label error
+Google dev tool lighthouse highlighted that the search button did not have an aria label for accessibilty.
+- #### templates/ includes / mobile-top-header.html before fix
+    ![screenshot](/documentation/bug-fix-images/search-small-code-before.png)
+- #### templates/ includes / mobile-top-header.html after fix
+    ![screenshot](/documentation/bug-fix-images/search-small-code-after.png)
+- #### templates/ base.html after fix
+    ![screenshot](/documentation/bug-fix-images/seach-large-code-before.png)
+- #### templates/ base.html after fix
+    ![screenshot](/documentation/bug-fix-images/seach-large-code-after.png)
 
 ### Bugs highlighted during the development.
 
