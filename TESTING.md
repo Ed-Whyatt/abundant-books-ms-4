@@ -220,6 +220,18 @@ Google dev tool lighthouse highlighted that the search button did not have an ar
 
 ### Bugs highlighted during the development.
 
+#### Home page carousel image 
+The home page carousel image stretched to the full size of the div when a new book image was uploaded.
+- #### Site image before fix
+    ![screenshot](/documentation/bug-fix-images/car-book-image-before.png)
+- #### Site image after fix
+    ![screenshot](/documentation/bug-fix-images/car-book-image-after.png)
+- #### index.html before fix
+    ![screenshot](/documentation/bug-fix-images/car-book-css-before.png)
+- #### index.html  after fix
+    ![screenshot](/documentation/bug-fix-images/car-book-css-after.png)
+
+
 #### News letter button spaceing on small screens
 The news letter cancel button was hugging the sucribe button. This was fixed by adding bootstrap margin top 1.
 - #### Site image before fix
