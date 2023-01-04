@@ -196,10 +196,14 @@ Google Chrome Developer Tools has been used throughout the development of this p
 
 
 ## Bugs Fixed
-### Bugs highlighted during the development
+## Google dev tool lighthouse highlighted bugs.
+
+
+
+### Bugs highlighted during the development.
 
 #### Bag app Checkout grand total
-The bag grand total was not adding up correctley due to the sum being created with a float. The float was corrected to a decimal place.
+The bag grand total was not adding up correctly due to the sum being created with a float. The float was corrected to a decimal place.
 - #### Site image before fix
     ![screenshot](/documentation/bug-fix-images/total-fix-before.png)
 - #### Site image after fix
@@ -224,6 +228,14 @@ The footer on the news letter page was not sitting at the bottom of the page due
 - #### news_lettr.html  after fix
     ![screenshot](/documentation/bug-fix-images/news-letter-code-after.png)
 
+#### Email 
+The email onfirmation link returned an error due to unneeded crispy forms.
+- #### Django Error message with devlopment settings set to True.
+    ![screenshot](/documentation/bug-fix-images/e-mail-bug.png)
+- #### templates/ allauth/ account/ email_confirm.html code before
+    ![screenshot](/documentation/bug-fix-images/e-mail-bug-code-before.png)
+- #### templates/ allauth/ account/ email_confirm.html code after
+    ![screenshot](/documentation/bug-fix-images/e-mail-bug-code-after.png)
 
 ## Further Testing
 
