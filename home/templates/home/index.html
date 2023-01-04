@@ -81,9 +81,15 @@
                         <div class="col-lg-10 offset-lg-1 col-sm-6">
                             <div class="row">
                                 <div class="col-md-2 col-4">
-                                    <a href="{% url 'book_info' book.id %}">
-                                        <img class="author-image " src="{{ book.img_paths.url }}" alt="{{ book.name }}">
-                                    </a>
+                                    {% if book.img_paths %}
+                                        <a href="{% url 'book_info' book.id %}">
+                                            <img class="author-image" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'book_info' book.id %}">
+                                            <img class="author-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                                        </a>
+                                    {% endif %}
                                 </div>
                                 <div class="col-md-10 col-8 author-text">
                                     <h4>{{ book.author }}</h4>
@@ -198,9 +204,12 @@
                                             <div class="col-4">
                                                 <div>
                                                     <a href="{% url 'book_info' book.id %}">
-                                                        <img class="img-fluid" src="{{ book.img_paths.url }}"
-                                                            alt="{{ book.name }}">
-                                                    </a>
+                                                        {% if book.img_paths %}
+                                                        <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                                        {% else %}
+                                                        <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                                                        {% endif %}
+                                                    </a>   
                                                 </div>
                                             </div>
                                             <div class="col-8">
@@ -243,9 +252,12 @@
                                         <div class="col-4">
                                             <div>
                                                 <a href="{% url 'book_info' book.id %}">
-                                                    <img class="img-fluid" src="{{ book.img_paths.url }}"
-                                                        alt="{{ book.name }}">
-                                                </a>
+                                                    {% if book.img_paths %}
+                                                    <img class="img-fluid" src="{{ book.img_paths.url }}" alt="{{ book.name }}">
+                                                    {% else %}
+                                                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.name }}">
+                                                    {% endif %}
+                                                </a>   
                                             </div>
                                         </div>
                                         <div class="col-8">
