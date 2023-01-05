@@ -194,14 +194,14 @@
 ## Interactive elements.
 - Navigation
     - Browse Categories navigation on large screens
-    ### ![text](/documentation/features/large-cat-nav.png)
+        ### ![text](/documentation/features/large-cat-nav.png)
     - Browse Categories navigation on small screens
-    ### ![text](/documentation/features/nav-small.png)
+        ### ![text](/documentation/features/nav-small.png)
     - My account navgation for general users with login, register, or logout and My profile
-    ### ![text](/documentation/features/my-pro-logout.png)
-    ### ![text](/documentation/features/large-account-nav.png)
+        ### ![text](/documentation/features/my-pro-logout.png)
+        ### ![text](/documentation/features/large-account-nav.png)
     - My account admin product managment opens to add book page
-    ### ![text](/documentation/features/large-account-admin.png)
+        ### ![text](/documentation/features/large-account-admin.png)
 - Log in page form.
     ### ![text](/documentation/features/sign-in.png)
 - Register page form.
@@ -213,71 +213,71 @@
     
 - Books page
     - Books page view the book button takes user to book information page
-    ### ![text](/documentation/features/books-view-book-button.png)
+        ### ![text](/documentation/features/books-view-book-button.png)
     - Books page sort dropdown menu
-    ### ![text](/documentation/features/books-sort.png)
+        ### ![text](/documentation/features/books-sort.png)
 - Footer
     - Links to social media.
-    ### ![text](/documentation/features/social-buttons.png)
+        ### ![text](/documentation/features/social-buttons.png)
 - Back to top button on all pages.
     ### ![text](/documentation/features/back-to-top.png)
 - Home page
     - Carousel view the book button opens book information page for selected book.
-    ### ![text](/documentation/features/car-view-book.png)
+        ### ![text](/documentation/features/car-view-book.png)
     - Popular genres tabs buttons to select each tab.
-    ### ![text](/documentation/features/pop-gen-tabs.png)
+        ### ![text](/documentation/features/pop-gen-tabs.png)
     - Popular genres view the book button opens book information page selected book.
-    ### ![text](/documentation/features/pop-gen-button.png)
+        ### ![text](/documentation/features/pop-gen-button.png)
     - Author of the month section
-    ### ![text](/documentation/features/authers-of-month.png)
+        ### ![text](/documentation/features/authers-of-month.png)
     - Deals of the month section
-    ### ![text](/documentation/features/deal-of-month.png)
+        ### ![text](/documentation/features/deal-of-month.png)
 - Book information page
     - Add book to bag or keep shoping buttons.
-    ### ![text](/documentation/features/add-to-bag.png)
+        ### ![text](/documentation/features/add-to-bag.png)
     - Synopsis and Author tabs to view more information.
-    ### ![text](/documentation/features/syno-aut-buttons.png)
+        ### ![text](/documentation/features/syno-aut-buttons.png)
 - Profile page
     - Profile order history button open orer in new page
-    ### ![text](/documentation/features/profile-order-history-button.png)
+        ### ![text](/documentation/features/profile-order-history-button.png)
     - Profile update form and button.
-    ### ![text](/documentation/features/profile-update-button.png)
+        ### ![text](/documentation/features/profile-update-button.png)
 - News letter form to sucribe to the news letter.
     ### ![text](/documentation/features/news-letter.png)
 - Bag Checkout Button takes you to your bag content page
     ### ![text](/documentation/features/checkout-button.png)
 - Bag page 
     - Update or remove item from your bag and secure checkout button that takes the user to checkout page.
-    ### ![text](/documentation/features/shopping-bag.png)
+        ### ![text](/documentation/features/shopping-bag.png)
 - Checkout page 
     - Fill in delevery details form.
-    ### ![text](/documentation/features/checkout-one.png)
+        ### ![text](/documentation/features/checkout-one.png)
     - Complete delvery and comple order or ajust your bag.
-    ### ![text](/documentation/features/checkout-two.png)
+        ### ![text](/documentation/features/checkout-two.png)
     - Order confirmation page
-    ### ![text](/documentation/features/order-confirm.png)
+        ### ![text](/documentation/features/order-confirm.png)
 - Admin edit buttons on all pages with books displayed.
     - Carousel admin edit button.
-    ### ![text](/documentation/features/car-edit-button.png)
+        ### ![text](/documentation/features/car-edit-button.png)
     - Authors of the month admin edit button takes admin to edit page.
-    ### ![text](/documentation/features/authors-edit-button.png)
+        ### ![text](/documentation/features/authors-edit-button.png)
     - Deals of the month edit button takes admin to edit page.
-    ### ![text](/documentation/features/deals-edit-button.png)
+        ### ![text](/documentation/features/deals-edit-button.png)
     - Popular genres and Books page edit button to edit page.
-    ### ![text](/documentation/features/books-edit-button.png)
+        ### ![text](/documentation/features/books-edit-button.png)
     - Book information page admin edit button to edit page, and delete that displays the delete model.
-    ### ![text](/documentation/features/book-info-edit-buttons.png)
+        ### ![text](/documentation/features/book-info-edit-buttons.png)
 - Admin add, edit books page and model.
     - Admin add book page details
-    ### ![text](/documentation/features/book-add-one.png)
-    ### ![text](/documentation/features/book-add-two.png)
+        ### ![text](/documentation/features/book-add-one.png)
+        ### ![text](/documentation/features/book-add-two.png)
     - Admin edit book page details
-    ### ![text](/documentation/features/book-edit-one.png)
-    ### ![text](/documentation/features/book-edit-two.png)
+        ### ![text](/documentation/features/book-edit-one.png)
+        ### ![text](/documentation/features/book-edit-two.png)
     - Admin delete book button
-    ### ![text](/documentation/features/edit-book-delete.png)
+        ### ![text](/documentation/features/edit-book-delete.png)
     - Admin delete book model
-    ### ![text](/documentation/features/delete-book-modal.png)
+        ### ![text](/documentation/features/delete-book-modal.png)
 - Toasts
     Bootstrap toasts have been used for messages when an action is complete.
     - Register email sent
@@ -301,8 +301,11 @@
 - Modals
     Bootstrap modals have been used to make sure a user is sure they want to remove an item from there bag and admin are sure they want to delete a book product.
     - Remove item from bag
+        ### ![text](/documentation/modals/remove-bag-modal.png)
     - Delete item edit book page
+        ### ![text](/documentation/modals/delete-product-book-modal.png)
     - Delete item book info page 
+        ### ![text](/documentation/modals/delete-product-book-detail-modal.png)
 
 ## Technologies Used
 ### Languages Used
