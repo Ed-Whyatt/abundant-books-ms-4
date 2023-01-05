@@ -101,60 +101,92 @@
 12. Checkout page Wireframe
 ### ![text](/documentation/wireframes/checkout.png)
 ---
-- ### Medium Screens click to view
+- ### Medium Screens
 ---
 
-1. Home page genral user Wireframe - [view](/documentation/wireframes/landing-page-med.png)
+1. Home page genral user Wireframe 
+    ### ![view](/documentation/wireframes/landing-page-med.png)
 
-2. Log In page Wireframe - [view](/documentation/wireframes/log-in-med.png)
+2. Log In page Wireframe
+    ### ![view](/documentation/wireframes/log-in-med.png)
 
-3. Log Out page Wireframe - [view](/documentation/wireframes/log-out-med.png)
+3. Log Out page Wireframe 
+    ### ![view](/documentation/wireframes/log-out-med.png)
 
-4. Register page Wireframe - [view](/documentation/wireframes/register-med.png)
+4. Register page Wireframe 
+    ### ![view](/documentation/wireframes/register-med.png)
 
-5. Profile page Wireframe - [view](/documentation/wireframes/profile-med.png)
+5. Profile page Wireframe 
+    ### ![view](/documentation/wireframes/profile-med.png)
 
-6. Books page Wireframe - [view](/documentation/wireframes/books-med.png)
+6. Books page Wireframe 
+    ### ![view](/documentation/wireframes/books-med.png)
 
-7. Book Information page Wireframe - [view](/documentation/wireframes/book-info-med.png)
+7. Book Information page Wireframe 
+    ### ![view](/documentation/wireframes/book-info-med.png)
 
-8. Shopping Bag page Wireframe - [view](/documentation/wireframes/shopping-bag-med.png)
+8. Shopping Bag page Wireframe 
+    ### ![view](/documentation/wireframes/shopping-bag-med.png)
 
-9. Checkout page Wireframe - [view](/documentation/wireframes/checkout-med.png)
+9. Checkout page Wireframe 
+    ### ![view](/documentation/wireframes/checkout-med.png)
 
 ---
 - ### Small Screens click to view
 ---
 
-1. Home page genral user Wireframe - [view](/documentation/wireframes/landing-page-sml.png)
+1. Home page genral user Wireframe 
+    ### ![view](/documentation/wireframes/landing-page-sml.png)
 
-2. Log In page Wireframe - [view](/documentation/wireframes/log-in-sml.png)
+2. Log In page Wireframe 
+    ### ![view](/documentation/wireframes/log-in-sml.png)
 
-3. Log Out page Wireframe - [view](/documentation/wireframes/log-out-sml.png)
+3. Log Out page Wireframe 
+    ### ![view](/documentation/wireframes/log-out-sml.png)
 
-4. Register page Wireframe - [view](/documentation/wireframes/register-sml.png)
+4. Register page Wireframe 
+    ### ![view](/documentation/wireframes/register-sml.png)
 
-5. Profile page Wireframe - [view](/documentation/wireframes/profile-sml.png)
+5. Profile page Wireframe 
+    ### ![view](/documentation/wireframes/profile-sml.png)
 
-6. Books page Wireframe - [view](/documentation/wireframes/books-sml.png)
+6. Books page Wireframe 
+    ### ![view](/documentation/wireframes/books-sml.png)
 
-7. Book Information page Wireframe - [view](/documentation/wireframes/book-info-sml.png)
+7. Book Information page Wireframe 
+    ### ![view](/documentation/wireframes/book-info-sml.png)
 
-8. Shopping Bag page Wireframe - [view](/documentation/wireframes/shopping-bag-sml.png)
+8. Shopping Bag page Wireframe 
+    ### ![view](/documentation/wireframes/shopping-bag-sml.png)
 
-9. Checkout page Wireframe - [view](/documentation/wireframes/checkout-sml.png)
+9. Checkout page Wireframe 
+    ### ![view](/documentation/wireframes/checkout-sml.png)
 
 
 # Data Structure
-- [PostgreSQL](#) is used for the backend functionality of the application, that allows admin to create categories and users to register and log in to the Movie Lounge.
+- [PostgreSQL](PostgreSQL) is a relational used for the backend database functionality of the web application.
 
 ## Data Model
-# ![text](#)
+#### ![text](/documentation/data-model/data-model.png)
 
-- Collections
-- 
-- 
-- 
+#### Collections
+- Categories
+    - This collection holds the name and friendly names used for the the book categories.
+    - The Books collection links to this collection via the Books category.
+- Books
+    - This collection holds the books information used throughout the web application.
+    - This collection is connected to the Categories collection via the category and the Order Line item collection via the Book Name.
+- Order
+    - This collection holds the order details of the books and devevary details for each order created.
+    - This collection is connected to the order line item collection and the user profile collection.
+- Order Line Item
+    - This collection holds the books quantity and totals for the order and is linked to the book and order collections.
+    - This collection is connected to the book collection and the user order collection.
+- User Profile
+    - This collection holds the user profile details for the loged in users of the web application.
+    _ This collection is linked to the user information in the order details collection. 
+- News Letter
+    - This collection is used to store the name and email of people who have signed up to the news letter.
 
 
 # Features
