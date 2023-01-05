@@ -338,6 +338,12 @@
     - Am I Responsive Design was used for the responsive image in Readme.md and Testing.md.
 1. [Django jinja](https://pypi.org/project/django-jinja/)
     - Templating language for Python, to simplify displaying data from the backend of this project smoothly and effectively in HTML.
+1. [Django crispy forms 1.14.0](https://pypi.org/project/django-crispy-forms/)
+    -   The best way to have Django DRY forms. Build programmatic reusable layouts out of components, having full control of the rendered HTML without writing HTML in templates. All this without breaking the standard way of doing things in Django, so it plays nice with any other form application.
+1. [Django-countries 7.2.1](https://pypi.org/project/django-countries/)
+    - A Django application that provides country choices for use with forms, flag icons static files, and a country field for models.
+1. [Pillow 9.3.0](https://pypi.org/project/Pillow/) 
+    - The Python Imaging Library adds image processing capabilities to your Python interpreter. This library provides extensive file format support, an efficient internal representation, and fairly powerful image processing capabilities.
 1. [SQLAlchemy](https://www.sqlalchemy.org/)
     - Used to filter and search through the database.
 1. [PostgreSQL](https://www.postgresql.org) 
