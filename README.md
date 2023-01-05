@@ -57,7 +57,7 @@
 ## Imagery
 
 - ### The main images of all the book products are from the [Book covers dataset](https://www.kaggle.com/datasets/lukaanicin/book-covers-dataset) used from [Kaggle.com](https://www.kaggle.com)
-- ### The other images used are the placeholder for if theres no book image in the database and the gray smoke image used in the carousel image.
+- ### The other images used are the placeholder for if there’s no book image in the database and the Gray smoke image used in the carousel image.
     - [Grey smoke image](https://webstockreview.net/pict/getfirst) from [webstockreview.net](https://webstockreview.net/) 
     - [Book placeholder](https://pixabay.com/illustrations/a-book-isolated-book-cover-empty-3057902/) from [pixabay.com](https://pixabay.com/)
 
@@ -68,7 +68,7 @@
 1. Home page general user Wireframe 
 ### ![text](/documentation/wireframes/landing-page.png)
 
-2. Home page Managment Wireframe 
+2. Home page Management Wireframe 
 ### ![text](/documentation/wireframes/landing-page-management.png)
 
 3. Log In page Wireframe 
@@ -86,13 +86,13 @@
 7. Books page Wireframe 
 ### ![text](/documentation/wireframes/books.png)
 
-8. Books Managment page Wireframe 
+8. Books  Management page Wireframe 
 ### ![text](/documentation/wireframes/books-management.png)
 
 9. Book Information page Wireframe
 ### ![text](/documentation/wireframes/book-info.png)
 
-10. Book Information Managment page Wireframe
+10. Book Information Management page Wireframe
 ### ![text](/documentation/wireframes/book-info-management.png)
 
 11. Shopping Bag page Wireframe
@@ -104,7 +104,7 @@
 - ### Medium Screens
 ---
 
-1. Home page genral user Wireframe 
+1. Home page general user Wireframe 
     ### ![view](/documentation/wireframes/landing-page-med.png)
 
 2. Log In page Wireframe
@@ -135,7 +135,7 @@
 - ### Small Screens click to view
 ---
 
-1. Home page genral user Wireframe 
+1. Home page general user Wireframe 
     ### ![view](/documentation/wireframes/landing-page-sml.png)
 
 2. Log In page Wireframe 
@@ -171,23 +171,22 @@
 
 #### Collections
 - Categories
-    - This collection holds the name and friendly names used for the the book categories.
+    - This collection holds the name and friendly names used for the book categories.
     - The Books collection links to this collection via the Books category.
 - Books
     - This collection holds the books information used throughout the web application.
-    - This collection is connected to the Categories collection via the category and the Order Line item collection via the Book Name.
+    - This collection is connected to the Categories collection via the category and the Order Line-item collection via the Book Name.
 - Order
-    - This collection holds the order details of the books and devevary details for each order created.
-    - This collection is connected to the order line item collection and the user profile collection.
+    - This collection holds the order details of the books and delivery details for each order created.
+    - This collection is connected to the order line-item collection and the user profile collection.
 - Order Line Item
     - This collection holds the books quantity and totals for the order and is linked to the book and order collections.
     - This collection is connected to the book collection and the user order collection.
 - User Profile
-    - This collection holds the user profile details for the loged in users of the web application.
+    - This collection holds the user profile details for the logged in users of the web application.
     _ This collection is linked to the user information in the order details collection. 
 - News Letter
-    - This collection is used to store the name and email of people who have signed up to the news letter.
-
+    - This collection is used to store the name and email of people who have signed up to the newsletter.
 
 # Features
 
@@ -200,13 +199,13 @@
     - My account navgation for general users with login, register, or logout and My profile
         ### ![text](/documentation/features/my-pro-logout.png)
         ### ![text](/documentation/features/large-account-nav.png)
-    - My account admin product managment opens to add book page
+    - My account admin product management opens to add book page
         ### ![text](/documentation/features/large-account-admin.png)
 - Log in page form.
     ### ![text](/documentation/features/sign-in.png)
 - Register page form.
     ### ![text](/documentation/features/sign-up.png)
-- Register varify email page
+- Register verify email page
     ### ![text](/documentation/features/varify-email.png)
 - Log out page.
     ### ![text](/documentation/features/sign-out-button.png)
@@ -233,16 +232,16 @@
     - Deals of the month section
         ### ![text](/documentation/features/deal-of-month.png)
 - Book information page
-    - Add book to bag or keep shoping buttons.
+    - Add book to bag or keep shopping buttons.
         ### ![text](/documentation/features/add-to-bag.png)
     - Synopsis and Author tabs to view more information.
         ### ![text](/documentation/features/syno-aut-buttons.png)
 - Profile page
-    - Profile order history button open orer in new page
+    - Profile order history button open order in new page
         ### ![text](/documentation/features/profile-order-history-button.png)
     - Profile update form and button.
         ### ![text](/documentation/features/profile-update-button.png)
-- News letter form to sucribe to the news letter.
+- News-letter form to  subscribe to the news-letter.
     ### ![text](/documentation/features/news-letter.png)
 - Bag Checkout Button takes you to your bag content page
     ### ![text](/documentation/features/checkout-button.png)
@@ -250,9 +249,9 @@
     - Update or remove item from your bag and secure checkout button that takes the user to checkout page.
         ### ![text](/documentation/features/shopping-bag.png)
 - Checkout page 
-    - Fill in delevery details form.
+    - Fill in delivery details form.
         ### ![text](/documentation/features/checkout-one.png)
-    - Complete delvery and comple order or ajust your bag.
+    - Complete order or adjust your bag.
         ### ![text](/documentation/features/checkout-two.png)
     - Order confirmation page
         ### ![text](/documentation/features/order-confirm.png)
@@ -265,7 +264,7 @@
         ### ![text](/documentation/features/deals-edit-button.png)
     - Popular genres and Books page edit button to edit page.
         ### ![text](/documentation/features/books-edit-button.png)
-    - Book information page admin edit button to edit page, and delete that displays the delete model.
+    - Book information page admin edit button to edit page and delete that displays the delete model.
         ### ![text](/documentation/features/book-info-edit-buttons.png)
 - Admin add, edit books page and model.
     - Admin add book page details
@@ -346,7 +345,7 @@
 1. [ElephantSQL](https://www.elephantsql.com)
     - Used as the Postgres database.
 1. [Heroku](https://id.heroku.com/login)
-    - A cloud based platform for that is used for hosting this python web based application.
+    - A cloud-based platform for that is used for hosting this python web based application.
 1. [Stripe](https://stripe.com) 
     - Used for online secure payments of ecommerce products/services.
 1. [AWS S3](https://aws.amazon.com/s3)
@@ -359,10 +358,10 @@
 ### API Application Programming Interfaces Used
 
 1. [Google Books API](https://developers.google.com/books)
-    - Google Books API is used for the book Synopsis information in the books information Synopsis tab.
+    - Google Books API is used for the book Synopsis information in the book's information Synopsis tab.
 
 1. [openlibrary.org](https://openlibrary.org/dev/docs/api/authors)
-    - Open Libary is used for the Authors information in the books information Author tab.
+    - Open  Library is used for the Authors information in the book's information Author tab.
 
 ## Testing
 ***
@@ -697,7 +696,7 @@ You can fork this repository by using the following steps:
 
 ### Acknowledgments
 
-   -	My mentor for continuous helpful feedback.
+   -	My mentor Tim Nelson for continuous helpful feedback.
    -	Tutor support at Code Institute.
    -	Support from staff at The City of Bristol collage.
    -	Members on Code Institutes Slack.

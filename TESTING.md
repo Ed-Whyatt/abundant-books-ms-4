@@ -199,7 +199,7 @@ Google Chrome Developer Tools has been used throughout the development of this p
 ### Google dev tool lighthouse highlighted bugs.
 
 #### Dev tools list error
-Google dev tools highlighted that the lists had brake points in amoungst the html list elements.
+Google dev tools highlighted that the lists had brake points in amongst the html list elements.
 - #### Dev tools error 
     ![screenshot](/documentation/bug-fix-images/list-order-fix.png)
 - #### books/ templates/ books_info.html code before fix
@@ -208,7 +208,7 @@ Google dev tools highlighted that the lists had brake points in amoungst the htm
     ![screenshot](/documentation/bug-fix-images/list-oredr-code-after.png)
 
 #### Dev tools ariea label error
-Google dev tool lighthouse highlighted that the search button did not have an aria label for accessibilty.
+Google dev tool lighthouse highlighted that the search button did not have an aria label for accessibility.
 - #### templates/ includes / mobile-top-header.html before fix
     ![screenshot](/documentation/bug-fix-images/search-small-code-before.png)
 - #### templates/ includes / mobile-top-header.html after fix
@@ -232,8 +232,8 @@ The home page carousel image stretched to the full size of the div when a new bo
     ![screenshot](/documentation/bug-fix-images/car-book-css-after.png)
 
 
-#### News letter button spaceing on small screens
-The news letter cancel button was hugging the sucribe button. This was fixed by adding bootstrap margin top 1.
+#### Newsletter button spaceing on small screens
+The newsletter cancel button was hugging the subscribe button. This was fixed by adding bootstrap margin top one.
 - #### Site image before fix
     ![screenshot](/documentation/bug-fix-images/news-letter-button-before.jpg)
 - #### Site image after fix
@@ -258,8 +258,8 @@ The bag grand total was not adding up correctly due to the sum being created wit
 - #### bag/ templatetags/ bag_tools.py after fix
     ![screenshot](/documentation/bug-fix-images/total-fix-bag-tools-after.png)
 
-#### News letter page footer placement
-The footer on the news letter page was not sitting at the bottom of the page due to a missing div in the html template.
+#### Newsletter page footer placement
+The footer on the newsletter page was not sitting at the bottom of the page due to a missing div in the html template.
 - #### Site image before fix
     ![screenshot](/documentation/bug-fix-images/news-letter-before.png)
 - #### Site image after fix
@@ -270,8 +270,8 @@ The footer on the news letter page was not sitting at the bottom of the page due
     ![screenshot](/documentation/bug-fix-images/news-letter-code-after.png)
 
 #### Email 
-The email onfirmation link returned an error due to unneeded crispy forms.
-- #### Django Error message with devlopment settings set to True.
+The email confirmation link returned an error due to unneeded crispy forms.
+- #### Django Error message with development settings set to True.
     ![screenshot](/documentation/bug-fix-images/e-mail-bug.png)
 - #### templates/ allauth/ account/ email_confirm.html code before
     ![screenshot](/documentation/bug-fix-images/e-mail-bug-code-before.png)
@@ -302,17 +302,19 @@ I've tested my deployed project on [Am I Responsive Design:](http://ami.responsi
 | Desktop | ![screenshot](/documentation/browsers-devices/chrome.png) | Works as expected
 
 ## Defensive Programming
-Defencive programing has been use to make sure only registered users can see profile pages and orders, and only admin can add,edit or delete book products.
-If the user is not admin or registered they will be redirected to the Login page.
+Defensive programming has been used to make sure only registered users can see profile pages and orders, and only admin can add, edit or delete book products.
+If the user is not admin or registered, they will be redirected to the Login page.
+
 - Login page
+    ### ![screenshot](/documentation/features/sign-in.png)
 
 
 | Page | User Type | User Action | Expected Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Profile | Non logged in user  | Direct link to profile | Redirection to Log In Page | Pass |
 | Profile Order | Non logged in user | Direct link to profile order | Redirection to Log In Page | Pass |
-| Product Managment Add Book | Non logged in user | Direct link to Product Managment | Redirection to Log In Page | Pass |
-| Product Managment Add Book | Non admin in user | Direct link to Product Managment | Redirection to Log In Page | Pass |
+| Product Management Add Book | Non logged in user | Direct link to Product Management | Redirection to Log In Page | Pass |
+| Product Management Add Book | Non admin in user | Direct link to Product Management | Redirection to Log In Page | Pass |
 | Home Carousel Edit Book | Non logged in user | Direct link to Edit Book  | Redirection to Log In Page | Pass |
 | Home Carousel Edit Book | Non admin in user | Direct link to Edit Book | Redirection to Log In Page | Pass |
 | Authors Of The Month Edit Book | Non logged in user | Direct link to Edit Book  | Redirection to Log In Page | Pass |
@@ -338,16 +340,16 @@ Bootstrap toasts have been used for messages when an action is complete.
 | Bag | General User | Add book to bag | ![text](/documentation/toasts/add-book-toast.png) | Pass |
 | Bag | General User | update book quantity in bag | ![text](/documentation/toasts/update-bag-toast.png) | Pass |
 | Bag | General User | Remove book from bag | ![text](/documentation/toasts/remove-bag-toast.png) | Pass |
-| Product Managment | Admin | Add new book product | ![text](/documentation/toasts/add-book-product.png) | Pass |
-| Product Managment | Admin | Edit book product | ![text](/documentation/toasts/edit-book-toast.png) | Pass |
-| Product Managment | Admin | Delete book product | ![text](/documentation/toasts/delete-book-product-sucess.png) | Pass |
+| Product Management| Admin | Add new book product | ![text](/documentation/toasts/add-book-product.png) | Pass |
+| Product Management | Admin | Edit book product | ![text](/documentation/toasts/edit-book-toast.png) | Pass |
+| Product Management | Admin | Delete book product | ![text](/documentation/toasts/delete-book-product-sucess.png) | Pass |
 
 ### Testing Modals
 Bootstrap modals have been used to make sure a user is sure they want to remove an item from there bag and admin are sure they want to delete a book product.
 | Page  | User | User Action | Screenshot | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Bag | General User | Remove item from bag | ![text](/documentation/modals/remove-bag-modal.png) | Pass |
-| Product Managment | Admin | Delete book product | ![text](/documentation/modals/delete-product-book-modal.png) | Pass |
+| Product Management | Admin | Delete book product | ![text](/documentation/modals/delete-product-book-modal.png) | Pass |
 | Book info page | Admin | Delete book product |  ![text](/documentation/modals/delete-product-book-detail-modal.png) | Pass |
 
 
@@ -434,7 +436,7 @@ Bootstrap modals have been used to make sure a user is sure they want to remove 
 - ### Admin user goals
     1. As an Admin User, I want access to add new books to the website application.
 
-        - As an Admin User, I can gain access to add new books to the website application via the product management navagation.
+        - As an Admin User, I can gain access to add new books to the website application via the product management navigation.
         ### ![text](/documentation/features/large-account-admin.png)
         ### ![text](/documentation/features/book-add-one.png)
         ### ![text](/documentation/features/book-add-two.png)
@@ -461,4 +463,4 @@ Bootstrap modals have been used to make sure a user is sure they want to remove 
 ## Known Bugs
 
 #### Books page sort by price 
-The sort by price in books html dose not sort by acending or decending order.
+The sort by price in books html dose not sort by ascending or descending order.
