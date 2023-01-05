@@ -680,6 +680,8 @@ You can fork this repository by using the following steps:
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
+# Future features
+ 1. The books page loading time is slow because there is 300+ books on a single page. It is fine because there is a fixed "scroll to top" button. However, in the future I would like to add Django's Pagination to load only a few books and have the choice to see more to make this better.
 
 
 ## Credits
