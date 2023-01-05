@@ -125,6 +125,7 @@ The CI Python Linter can be used two different ways.
 | contexts.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/bag/contexts.py) | ![screenshot](/documentation/pep8/bag-contexts.png) | All clear, no errors found |
 | urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/bag/urls.py) | ![screenshot](/documentation/pep8/bag-url.png) | All clear, no errors found |
 | views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/bag/views.py) | ![screenshot](/documentation/pep8/bag-views.png) | All clear, no errors found |
+| tests.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/bag/tests.py) | ![screenshot](/documentation/pep8/bag-test.png) | All clear, no errors found |
 
 ---
 #### books app
@@ -132,11 +133,10 @@ The CI Python Linter can be used two different ways.
 | --- | --- | --- | --- |
 | admin.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/books/admin.py) | ![screenshot](/documentation/pep8/books-admin.png) | All clear, no errors found |
 | forms.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/books/forms.py) | ![screenshot](/documentation/pep8/books-forms.png) | All clear, no errors found |
-| models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/books/models.py) | ![screenshot](/documentation/pep8/books-models.png
-) | All clear, no errors found |
+| models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/books/models.py) | ![screenshot](/documentation/pep8/books-models.png) | All clear, no errors found |
 | urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/books/urls.py) | ![screenshot](/documentation/pep8/books-urls.png) | All clear, no errors found |
 | views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/books/views.py) | ![screenshot](/documentation/pep8/books-views.png) | All clear, no errors found |
-
+| tests.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/books/tests.py) | ![screenshot](/documentation/pep8/books-test.png)
 ---
 #### checkout app
 | File | CI URL | Screenshot | Notes |
@@ -148,6 +148,7 @@ The CI Python Linter can be used two different ways.
 | views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/checkout/views.py) | ![screenshot](/documentation/pep8/checkout-views.png) | All clear, no errors found |
 | webhook_handler.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/checkout/webhook_handler.py) | ![screenshot](/documentation/pep8/checkout-web-hook-handler.png) | All clear, no errors found |
 | webhooks.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/checkout/webhooks.py) | ![screenshot](/documentation/pep8/checkout-webhook.png) | All clear, no errors found |
+| tests.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/checkout/tests.py) | ![screenshot](/documentation/pep8/checkout-tests.png) | All clear, no errors found |
 
 ---
 #### home app
@@ -155,6 +156,7 @@ The CI Python Linter can be used two different ways.
 | --- | --- | --- | --- |
 | urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/home/urls.py) | ![screenshot](/documentation/pep8/home-urls.png) | All clear, no errors found |
 | views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/home/views.py) | ![screenshot](/documentation/pep8/home-views.png) | All clear, no errors found |
+| tests.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/home/tests.py) | ![screenshot](/documentation/pep8/home-tests.png) | All clear, no errors found |
 
 ---
 #### news_letter app
@@ -165,6 +167,7 @@ The CI Python Linter can be used two different ways.
 | models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/news_letter/models.py) | ![screenshot](/documentation/pep8/news-letter-model.png) | All clear, no errors found |
 | urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/news_letter/urls.py) | ![screenshot](/documentation/pep8/news-letter-urls.png) | All clear, no errors found |
 | views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/news_letter/views.py) | ![screenshot](/documentation/pep8/news-letter-views.png) | All clear, no errors found |
+| tests.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/news_letter/tests.py) | ![screenshot](/documentation/pep8/newsletter-tests.png) | All clear, no errors found |
 
 ---
 #### profiles app
@@ -174,6 +177,7 @@ The CI Python Linter can be used two different ways.
 | models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/profiles/models.py) | ![screenshot](/documentation/pep8/profile-models.png) | All clear, no errors found |
 | urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/profiles/urls.py) | ![screenshot](/documentation/pep8/profile-urls.png) | All clear, no errors found |
 | views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/profiles/views.py) | ![screenshot](/documentation/pep8/profile-views.png) | All clear, no errors found |
+| tests.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Ed-Whyatt/abundant-books-ms-4/main/profiles/tests.py) | ![screenshot](/documentation/pep8/profiles-tests.png) | All clear, no errors found |
 
 ---
 #### custom_storages.py
