@@ -203,9 +203,11 @@
     - My account admin product managment opens to add book page
     ### ![text](/documentation/features/large-account-admin.png)
 - Log in page form.
-   ### ![text](/documentation/features/sign-in.png)
+    ### ![text](/documentation/features/sign-in.png)
 - Register page form.
-   ### ![text](/documentation/features/sign-up.png)
+    ### ![text](/documentation/features/sign-up.png)
+- Register varify email page
+    ### ![text](/documentation/features/varify-email.png)
 - Log out page.
     ### ![text](/documentation/features/sign-out-button.png)
     
@@ -252,6 +254,8 @@
     ### ![text](/documentation/features/checkout-one.png)
     - Complete delvery and comple order or ajust your bag.
     ### ![text](/documentation/features/checkout-two.png)
+    - Order confirmation page
+    ### ![text](/documentation/features/order-confirm.png)
 - Admin edit buttons on all pages with books displayed.
     - Carousel admin edit button.
     ### ![text](/documentation/features/car-edit-button.png)
@@ -274,10 +278,31 @@
     ### ![text](/documentation/features/edit-book-delete.png)
     - Admin delete book model
     ### ![text](/documentation/features/delete-book-modal.png)
-
-### owl carsel
-
-### kaggle fixtures
+- Toasts
+    Bootstrap toasts have been used for messages when an action is complete.
+    - Register email sent
+         ### ![text](/documentation/toasts/alert-confirm-email-sent.png)
+    - Sign In
+        ### ![text](/documentation/toasts/login-toast.png)
+    - Sign out
+         ### ![text](/documentation/toasts/sign-out.png)
+    - Add book to bag
+        ### ![text](/documentation/toasts/add-book-toast.png)
+    - update book quantity in bag
+         ### ![text](/documentation/toasts/update-bag-toast.png)
+    - Remove book from bag
+         ### ![text](/documentation/toasts/remove-bag-toast.png)
+    - Admin add book
+        ### ![text](/documentation/toasts/add-book-product.png)
+    - Admin edit a book
+         ### ![text](/documentation/toasts/edit-book-toast.png)
+    - Admin delete book
+         ### ![text](/documentation/toasts/delete-book-product-sucess.png)
+- Modals
+    Bootstrap modals have been used to make sure a user is sure they want to remove an item from there bag and admin are sure they want to delete a book product.
+    - Remove item from bag
+    - Delete item edit book page
+    - Delete item book info page 
 
 ## Technologies Used
 ### Languages Used
