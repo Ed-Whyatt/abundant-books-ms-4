@@ -72,6 +72,26 @@ JSHint  Services were used to validate every JavaScript page of the project to e
 
 ## Python
 
+## Automated Testing
+
+I have conducted a series of automated tests on my application.
+
+I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+
+### Python (Unit Testing)
+
+I have used Django's built-in unit testing framework to test the application functionality.
+
+In order to run the tests, I ran the following command in the terminal each time:
+
+`python3 manage.py test name-of-app `
+
+- #### Image showing a failed test
+    ![text](/documentation/python-automated-testing/failed-test.png)
+
+- #### Image showing all passed test
+    ![text](/documentation/python-automated-testing/passed-test.png)
+
 ## pep8
 ***
 
