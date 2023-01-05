@@ -302,6 +302,10 @@ I've tested my deployed project on [Am I Responsive Design:](http://ami.responsi
 | Desktop | ![screenshot](/documentation/browsers-devices/chrome.png) | Works as expected
 
 ## Defensive Programming
+Defencive programing has been use to make sure only registered users can see profile pages and orders, and only admin can add,edit or delete book products.
+If the user is not admin or registered they will be redirected to the Login page.
+- Login page
+
 
 | Page | User Type | User Action | Expected Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
@@ -323,6 +327,28 @@ I've tested my deployed project on [Am I Responsive Design:](http://ami.responsi
 | Book Info Delete Book | Non admin in user | Direct link to Delete Book | Redirection to Log In Page | Pass |
 | Edit Book Delete Book | Non logged in user | Direct link to Delete Book | Redirection to Log In Page | Pass |
 | Edit Book Delete Book | Non admin in user | Direct link to Delete Book | Redirection to Log In Page | Pass |
+
+### Testing Toasts
+Bootstrap toasts have been used for messages when an action is complete.
+| Page  | User | User Action | Screenshot | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Register | New User | Register email sent | ![text](/documentation/toasts/alert-confirm-email-sent.png) | Pass |
+| Sign In | General User | Sign In | ![text](/documentation/toasts/login-toast.png) | Pass |
+| Sign out | General User | Sign out |![text](/documentation/toasts/sign-out.png) | Pass |
+| Bag | General User | Add book to bag | ![text](/documentation/toasts/add-book-toast.png) | Pass |
+| Bag | General User | update book quantity in bag | ![text](/documentation/toasts/update-bag-toast.png) | Pass |
+| Bag | General User | Remove book from bag | ![text](/documentation/toasts/remove-bag-toast.png) | Pass |
+| Product Managment | Admin | Add new book product | ![text](/documentation/toasts/add-book-product.png) | Pass |
+| Product Managment | Admin | Edit book product | ![text](/documentation/toasts/edit-book-toast.png) | Pass |
+| Product Managment | Admin | Delete book product | ![text](/documentation/toasts/delete-book-product-sucess.png) | Pass |
+
+### Testing Modals
+Bootstrap modals have been used to make sure a user is sure they want to remove an item from there bag and admin are sure they want to delete a book product.
+| Page  | User | User Action | Screenshot | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Bag | General User | Remove item from bag | ![text](/documentation/modals/remove-bag-modal.png) | Pass |
+| Product Managment | Admin | Delete book product | ![text](/documentation/modals/delete-product-book-modal.png) | Pass |
+| Book info page | Admin | Delete book product |  ![text](/documentation/modals/delete-product-book-detail-modal.png) | Pass |
 
 
 ## Testing User Stories from User Experience (UX) section in README.md
