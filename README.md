@@ -682,6 +682,8 @@ You can fork this repository by using the following steps:
 
 # Future features
  1. The books page loading time is slow because there is 300+ books on a single page. It is fine because there is a fixed "scroll to top" button. However, in the future I would like to add Django's Pagination to load only a few books and have the choice to see more to make this better.
+ 2. The sort by price in books html dose not sort by ascending or descending order this can be fixed as a future feature.
+ 3. The checkout countries border dose not match the rest for the form this can be fixed as a future feature.
 
 
 ## Credits

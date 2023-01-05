@@ -463,4 +463,7 @@ Bootstrap modals have been used to make sure a user is sure they want to remove 
 ## Known Bugs
 
 #### Books page sort by price 
-The sort by price in books html dose not sort by ascending or descending order.
+The sort by price in books html dose not sort by ascending or descending order this can be fixed as a future feature.
+
+#### Check out countries
+The checkout countries border dose not match the rest for the form this can be fixed as a future feature.
